@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/* Self-hosted (OFL) from Fontsource, so builds never depend on Google Fonts.
+   Romanian needs latin-ext for ă, ș, ț. */
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/fonts/fraunces-latin-full-normal.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/fonts/fraunces-latin-ext-full-normal.woff2") format("woff2-variations");
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/fonts/geist-latin-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/fonts/geist-latin-ext-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/*
+ * Design tokens, copied from the app's lib/app/theme.dart so the site and the
+ * app read as one product. Reference these names, never a hex literal.
+ */
+@theme {
+  --color-paper: #fcfaf2;
+  --color-surface: #f6f1e5;
+  --color-surface-subtle: #faf7ef;
+  --color-border: #eadfc9;
+  --color-accent-surface: #f5efcf;
+  --color-gold: #c59b27;
+  --color-burgundy: #5c1321;
+  --color-burgundy-deep: #3a0a12;
+  --color-ink: #261e14;
+  --color-muted: #6b5e4f;
+
+  /* Calendar semantics: the rank names *are* the colours. */
+  --color-feast-red: #c1272d;
+  --color-calendar-ink: #1b1b1b;
+  --color-feast-blue: #1f4e8c;
+  --color-fish-blue: #2c6f9b;
+  --color-dairy-gold: #d9b54b;
+  --color-romanian-saint: #8c2f2a;
+
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-sans: "Geist", system-ui, sans-serif;
+
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  background: var(--color-paper);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Fraunces drawn the way the Figma file draws it: SOFT 0, WONK 1. */
+.font-display {
+  font-family: var(--font-display);
+  font-variation-settings: "SOFT" 0, "WONK" 1;
+}
+
+/* A thin gold double rule, the ornament of a printed church calendar. */
+.rule-gold {
+  height: 4px;
+  border-top: 1px solid var(--color-gold);
+  border-bottom: 1px solid var(--color-gold);
+  opacity: 0.55;
+}
+
+/* Today's row in a month list, marked client-side so the page stays static. */
+[data-today="true"] {
+  background: var(--color-accent-surface);
+  box-shadow: inset 4px 0 0 var(--color-burgundy);
+}
+[data-today="true"] .today-label {
+  display: inline-block;
+}
+
+.prose-troita p {
+  margin: 0 0 1rem;
+  line-height: 1.7;
+}
+.prose-troita h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2.25rem 0 0.75rem;
+  color: var(--color-ink);
+}
+.prose-troita h3 {
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+}
+.prose-troita ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0 0 1rem;
+}
+.prose-troita li {
+  margin-bottom: 0.4rem;
+  line-height: 1.6;
+}
+.prose-troita a {
+  color: var(--color-burgundy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-burgundy);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
