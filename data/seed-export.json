@@ -1,0 +1,5837 @@
+{
+ "seedVersion": "202610161318",
+ "publishedYears": [
+  2026,
+  2027
+ ],
+ "feasts": [
+  {
+   "monthDay": "01-01",
+   "movableKey": null,
+   "name": "Tăierea-împrejur cea după trup a Domnului; †) Sf. Ier. Vasile cel Mare, arhiep. Cezareei Capadociei și mama sa Sf. Emilia",
+   "rank": "praznic",
+   "kind": "sfant",
+   "note": "Tedeum - Anul Nou; Harți. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-02",
+   "movableKey": null,
+   "name": "Înainte-prăznuirea Botezului Domnului; Sf. Ier. Silvestru, ep. Romei; Sf. Cuv. Serafim de Sarov;",
+   "rank": "simplu",
+   "kind": "sfant",
+   "note": "Sâmbăta dinaintea Botezului Domnului; Nu se fac nunți",
+   "dezlegare": "none"
+  },
+  {
+   "monthDay": "01-03",
+   "movableKey": null,
+   "name": "Sf. Prooroc Maleahi; Sf. Mc. Gordie",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Sâmbăta dinaintea Botezului Domnului",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-04",
+   "movableKey": null,
+   "name": "Soborul Sf. 70 de Apostoli; Sf. Cuv. Teoctist din Siciliei; Sf. Cuv. Apolinaria; Sf. Cuv. Nichifor cel Lepros",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-05",
+   "movableKey": null,
+   "name": "Sf. Mc. Teopempt și Teonas; Sf. Cuv. Sinclitichia",
+   "rank": "simplu",
+   "kind": "domnesc",
+   "note": "Zi de ajunare.",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-06",
+   "movableKey": null,
+   "name": "Botezul Domnului (Boboteaza - Dumnezeiasca Arătare)",
+   "rank": "praznic",
+   "kind": "domnesc",
+   "note": "Harți. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-07",
+   "movableKey": null,
+   "name": "Soborul Sf. Prooroc Ioan Botezătorul și Înaintemergătorul Domnului",
+   "rank": "cruce_rosie",
+   "kind": "sfant",
+   "note": "Dezlegare la pește.",
+   "dezlegare": "fish"
+  },
+  {
+   "monthDay": "01-08",
+   "movableKey": null,
+   "name": "Sf. Cuv. Gheorghe Hozevitul; Sf. Cuv. Domnica",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-09",
+   "movableKey": null,
+   "name": "Sf. Mc. Polieuct; Sf. Ier. Petru, ep. Sevastiei",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Sâmbăta după Botezul Domnului",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-10",
+   "movableKey": null,
+   "name": "Sf. Ier. Grigorie, ep. Nyssei; †) Sf. Cuv. Antipa de la Calapodești; Sf. Ier. Dometian, ep. Melitenei;",
+   "rank": "simplu",
+   "kind": "romanesc",
+   "note": "Sâmbăta după Botezul Domnului",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-11",
+   "movableKey": null,
+   "name": "Sf. Cuv. Teodosie, începătorul vieții călugărești de obște din Palestina; Sf. Cuv. Vitalie",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-12",
+   "movableKey": null,
+   "name": "Sf. Mc. Tatiana diaconița și Eutasia",
+   "rank": "simplu",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-13",
+   "movableKey": null,
+   "name": "Sf. Mc. Ermil și Stratonic; Sf. Ier. Iacob, ep. din Nisibe;",
+   "rank": "cruce_albastra",
+   "kind": "romanesc",
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-14",
+   "movableKey": null,
+   "name": "Odovania praznicului Botezului Domnului; Sf. Cuv. Mc. din Sinai și Rait; Sf. Nina, luminătoarea Georgiei;",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-15",
+   "movableKey": null,
+   "name": "Sf. Cuv. Pavel Tebeul și Ioan Colibașul",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-16",
+   "movableKey": null,
+   "name": "Cinstirea lanțului Sf. Ap. Petru; Sf. Mc. Danact citețul",
+   "rank": "simplu",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-17",
+   "movableKey": null,
+   "name": "Sf. Cuv. Antonie cel Mare; Sf. Cuv. Antonie cel nou de la Veria",
+   "rank": "cruce_albastra",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-18",
+   "movableKey": null,
+   "name": "Sf. Ier. Atanasie și Chiril, arhiep. Alexandriei",
+   "rank": "cruce_albastra",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-19",
+   "movableKey": null,
+   "name": "Sf. Cuv. Macarie cel Mare și Macarie Alexandrinul;Sf. Ier. Marcu, mitr. Efesului; Sf. Mc. Eufrasia",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-20",
+   "movableKey": null,
+   "name": "Sf. Cuv. Eftimie cel Mare; Sf. Mc. Eusebiu; † Sf. Mc. In, Pin și Rim;",
+   "rank": "cruce_albastra",
+   "kind": "romanesc",
+   "note": "Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-21",
+   "movableKey": null,
+   "name": "Sf. Cuv. Maxim Mărt.; Sf. Mc. Neofit; Sf. Mc. Agnia din Roma",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-22",
+   "movableKey": null,
+   "name": "Sf. Ap. Timotei; Sf. Cuv. Mc. Anastasie Persul",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-23",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Clement, ep. Ancirei; Sf. Mc. Agatanghel; Sf. Părinți de la Sinodul al VI-lea Ecumenic",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-24",
+   "movableKey": null,
+   "name": "Sf. Cuv. Xenia din Roma; Sf. Xenia din Sankt Petersburg",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Tedeum - Ziua Unirii Principatelor Române",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-25",
+   "movableKey": null,
+   "name": "Sf. Ier. Grigorie Teologul, arhiep. Constantinopolului; †) Sf. Ier. Bretanion, ep. Tomisului",
+   "rank": "cruce_albastra",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-26",
+   "movableKey": null,
+   "name": "Sf. Ier. Iosif cel Milostiv, mitr. Moldovei; Sf. Cuv. Xenofont, Maria, Arcadie și Ioan",
+   "rank": "cruce_albastra",
+   "kind": "romanesc",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-27",
+   "movableKey": null,
+   "name": "Aducerea moaștelor Sf. Ier. Ioan Gură de Aur; Sf. Marciana, împ.",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-28",
+   "movableKey": null,
+   "name": "Sf. Cuv. Efrem Sirul, Isaac Sirul, Paladie și Iacob Sihastrul",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-29",
+   "movableKey": null,
+   "name": "Aducerea moaștelor Sf. Sfințit Mc. Ignatie Teoforul; Sf. Mc. Filotei",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "01-30",
+   "movableKey": null,
+   "name": "Sf. Trei Ierarhi: Vasile cel Mare, Grigorie Teologul și Ioan Gură de Aur; Sf. Sfințit Mc. Ipolit, ep. Romei",
+   "rank": "cruce_rosie",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": "wineOil"
+  },
+  {
+   "monthDay": "01-31",
+   "movableKey": null,
+   "name": "Sf. Doctori fără de arginți Chir și Ioan",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-01",
+   "movableKey": null,
+   "name": "Înainte-prăznuirea Întâmpinării Domnului; Sf. Mc. Trifon; Sf. Mc. Perpetua și Felicitas",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-02",
+   "movableKey": null,
+   "name": "Întâmpinarea Domnului (Stratenia); Evrei VII, 7-17",
+   "rank": "praznic",
+   "kind": "domnesc",
+   "note": "Utrenie: Luca II, 25-32; Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-03",
+   "movableKey": null,
+   "name": "Sf. și Dreptul Simeon, primitorul de Dumnezeu; Sf. Proorociță Ana",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-04",
+   "movableKey": null,
+   "name": "Sf. Cuv. Isidor Pelusiotul; Sf. Sfințit Mc. Avramie",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-05",
+   "movableKey": null,
+   "name": "Sf. Mc. Agata și Teodula",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-06",
+   "movableKey": null,
+   "name": "Sf. Ier. Vucol, ep. Smirnei și Fotie, patr. Constantinopolului; Sf. Cuv. Varsanufie cel Mare și Ioan din Gaza",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-07",
+   "movableKey": null,
+   "name": "Sf. Ier. Partenie, ep. Lampsacului; Sf. Cuv. Luca din Elada",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-08",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Teodor Stratilat; Sf. Proroc Zaharia",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-09",
+   "movableKey": null,
+   "name": "Odovania Praznicului Întâmpinării Domnului; Sf. Mc. Nichifor",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-10",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Haralambie; Sf. Mc. Valentina",
+   "rank": "cruce_albastra",
+   "kind": "sfant",
+   "note": "Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-11",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Vlasie, ep. Sevastiei; Sf. Teodora, împ.",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-12",
+   "movableKey": null,
+   "name": "Sf. Ier. Meletie, arhiep. Antiohiei celei Mari; Sf. Mc. Hristea",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-13",
+   "movableKey": null,
+   "name": "Sf. Cuv. Martinian; Sf. Ap. și Mc. Acvila și soția sa, Priscila; Sf. Ier. Evloghie, patr. Alexandriei",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-14",
+   "movableKey": null,
+   "name": "Sf. Cuv. Auxenție, Maron și Avraam",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-15",
+   "movableKey": null,
+   "name": "Sf. Ap. Onisim; Sf. Mc. Maior",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-16",
+   "movableKey": null,
+   "name": "Sf. Mc. Pamfil preotul și Valent diaconul; Sf. Ier. Flavian, arhiep. Constantinopolului",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-17",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Teodor Tiron; Sf. Mariamna; Sf. Împ. Marcian și Pulheria",
+   "rank": "simplu",
+   "kind": "sfant",
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-18",
+   "movableKey": null,
+   "name": "Sf. Ier. Leon cel Mare, ep. Romei",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-19",
+   "movableKey": null,
+   "name": "Sf. Ap. Arhip, Filimon și soția sa, Apfia",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-20",
+   "movableKey": null,
+   "name": "Sf. Ier. Leon, ep. Cataniei; Sf. Cuv. Visarion",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-21",
+   "movableKey": null,
+   "name": "Sf. Cuv. Timotei; Sf. Ier. Eustatie, arhiep. Antiohiei",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Sâmbăta Sf. Cuvioși; Dezlegare la brânză, lapte și ouă",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-22",
+   "movableKey": null,
+   "name": "Aflarea moaștelor Sf. Mc. din Constantinopol",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-23",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Policarp, ep. Smirnei; Sf. Cuv. Gorgonia",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-24",
+   "movableKey": null,
+   "name": "Întâia și a doua aflare a Capului Sf. Ioan, Înaintemergătorul și Botezătorul Domnului; †) Sf. Cuv. Petroniu de la Prodromu",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-25",
+   "movableKey": null,
+   "name": "Sf. Ier. Tarasie, patr. Constantinopolului",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-26",
+   "movableKey": null,
+   "name": "Sf. Ier. Porfirie, ep. Gazei; Sf. Mc. Fotini Samarineanca",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-27",
+   "movableKey": null,
+   "name": "Sf. Cuv. Mărt. Procopie și Talaleu",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-28",
+   "movableKey": null,
+   "name": "Sf. Cuv. Ioan Casian Romanul și Gherman din Dobrogea; Sf. Cuv. Vasile Mărt.",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Sâmbăta Sf. Teodor - Pomenirea morților",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "02-29",
+   "movableKey": null,
+   "name": "Sf. Cuv. Casian Romanul",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-01",
+   "movableKey": null,
+   "name": "Sf. Cuv. Mc. Evdochia; Sf. Cuv. Domnina",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-02",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Teodot, ep. Chiriniei; Sf. Mc. Isihie",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-03",
+   "movableKey": null,
+   "name": "Sf. Mc. Eutropie, Cleonic și Vasilisc",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-04",
+   "movableKey": null,
+   "name": "Sf. Cuv. Gherasim de la Iordan; Sf. Mc. Pavel și sora sa, Iuliana",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-05",
+   "movableKey": null,
+   "name": "Sf. Mc. Conon din Isauria și Conon Grădinarul; Sf. Cuv. Marcu Pustnicul",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-06",
+   "movableKey": null,
+   "name": "Sf. 42 de Mc. din Amoreea; Aflarea Sfintei Cruci",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Pomenirea morților - Moșii de iarnă",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-07",
+   "movableKey": null,
+   "name": "Sf. Sfințiți Mc. Vasilevs, Evghenie, Capiton, Eterie, Agatodor și Elpidie, ep. din Herson; † Sf. Sfințit Mc. Efrem, ep. Tomisului",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Sâmbăta a II-a din Post - Pomenirea morților",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-08",
+   "movableKey": null,
+   "name": "Sf. Pr. Mc. Liviu-Galaction de la Cluj; Sf. Ier. Mărt. Teofilact, ep. Nicomidiei",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Dezlegare la ouă, lactate și pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-09",
+   "movableKey": null,
+   "name": "Sf. 40 de Mc. din Sevastia",
+   "rank": "cruce_albastra",
+   "kind": "sfant",
+   "note": "Pomenirea morților - Moșii de primăvară; Dezlegare la ouă, lactate și pește. Nu se fac nunți",
+   "dezlegare": "wineOil"
+  },
+  {
+   "monthDay": "03-10",
+   "movableKey": null,
+   "name": "Sf. Mc. Codrat, Ciprian, Dionisie și cei împreună cu ei",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Zi aliturgică; Dezlegare la ouă, lactate și pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-11",
+   "movableKey": null,
+   "name": "Sf. Ier. Sofronie, patr. Ierusalimului",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Dezlegare la ouă, lactate și pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-12",
+   "movableKey": null,
+   "name": "Sf. Cuv. Teofan Mărt. Sf. Ier. Grigorie Dialogul, ep. Romei; Sf. Cuv. Simeon Noul Teolog",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Zi aliturgică; Dezlegare la ouă, lactate și pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-13",
+   "movableKey": null,
+   "name": "Aducerea moaștelor Sf. Ier. Nichifor, patr. Constantinopolului",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Sâmbăta Sf. Cuvioși; Dezlegare la ouă, lactate și pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-14",
+   "movableKey": null,
+   "name": "Sf. Cuv. Benedict de Nursia; Sf. Sfințit Mc. Alexandru, pr. din Pidna",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Sâmbăta a III-a din Post - Pomenirea morților",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-15",
+   "movableKey": null,
+   "name": "Sf. Mc. Agapie și Plisie, Timolau",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Canonul cel Mare, partea I; Începutul Postului Sfintelor Paști; Zi aliturgică; Numai seara, pâine și apă. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-16",
+   "movableKey": null,
+   "name": "Sf. Mc. Sabin Egipteanul; Sf. Cuv. Hristodul din Patmos",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Canonul cel Mare, partea a II-a; Zi aliturgică; Numai seara, pâine și apă. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-17",
+   "movableKey": null,
+   "name": "Sf. Cuv. Alexie, omul lui Dumnezeu",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Canonul cel Mare, partea a III-a; Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-18",
+   "movableKey": null,
+   "name": "Sf. Ier. Chiril, arhiep. Ierusalimului",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Canonul cel Mare, partea a IV-a; Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-19",
+   "movableKey": null,
+   "name": "Sf. Mc. Hrisant și Daria, Claudiu și Ilaria; Sf. Mc. Marian diac.",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-20",
+   "movableKey": null,
+   "name": "Sf. Cuv. Mc. uciși în M. Sf. Sava cel Sfințit",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Sâmbăta Sf. Teodor - Pomenirea morților; Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-21",
+   "movableKey": null,
+   "name": "Sf. Ier. Iacob Mărt.; Sf. Cuv. Serapion;",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Sâmbăta a IV-a din Post - Pomenirea morților",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-22",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Vasile, pr. din Ancira; Sf. Mc. Drosida, fiica împ. Traian",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-23",
+   "movableKey": null,
+   "name": "Sf. Cuv. Mc. Nicon și cei 199 ucenici ai lui",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-24",
+   "movableKey": null,
+   "name": "Înainte-prăznuirea Bunei Vestiri; Sf. Ier. Artemon, ep. Seleuciei",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-25",
+   "movableKey": null,
+   "name": "Buna Vestire (Blagoveștenia)",
+   "rank": "praznic",
+   "kind": "maica_domnului",
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": "fish"
+  },
+  {
+   "monthDay": "03-26",
+   "movableKey": null,
+   "name": "Odovania Praznicului Bunei Vestiri; Soborul Sf. Arh. Gavriil; Sf. Mc. Montanus, pr. și soția sa, Maxima; Sf. 26 de Mc. din Goția/Dacia",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-27",
+   "movableKey": null,
+   "name": "Sf. Mc. Matrona din Tesalonic; Sf. Mc. Filit și Lidia, soția sa, cu cei 4 fii ai lor",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Sâmbăta a II-a din Post - Pomenirea morților; Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-28",
+   "movableKey": null,
+   "name": "Sf. Cuv. Ilarion cel Nou, eg. Pelechitului; Sf. Cuv. Ștefan, făcătorul de minuni",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Sâmbăta a V-a din Post - Pomenirea morților",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-29",
+   "movableKey": null,
+   "name": "Sf. Sfințiți Mc. Marcu, ep. Aretuselor și Chiril diac.; Sf. Mc. Iona și Varahisie; Sf. Ier. Diadoh, ep. Foticeei;",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-30",
+   "movableKey": null,
+   "name": "Sf. Cuv. Ioan Scărarul; Sf. Cuv. Euvula, mama Sf. Pantelimon",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "03-31",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Ipatie, ep. Gangrei; Sf. Mc. Veniamin, diac.",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-01",
+   "movableKey": null,
+   "name": "Sf. Cuv. Maria Egipteanca; Sf. Cuv. Macarie Mărt.; Sf. Mc. Gherontie; Sf. Varsanufie de la Optina",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-02",
+   "movableKey": null,
+   "name": "Sf. Cuv. Tit, făcătorul de minuni; Sf. Mc. Amfian și Edesie",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-03",
+   "movableKey": null,
+   "name": "Sf. Cuv. Nichita Mărt. și Ilirie",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Sâmbăta a III-a din Post - Pomenirea morților; Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-04",
+   "movableKey": null,
+   "name": "Sf. Cuv. Iosif Imnograful, Gheorghe din Maleon și Zosima",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Sâmbăta lui Lazăr - Pomenirea morților",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-05",
+   "movableKey": null,
+   "name": "Sf. Mc. Victorin și cei împreună cu el; Sf. Mc. Teodul și Agatopod",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-06",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Irineu, ep. de Sirmium; Sf. Ier. Eutihie, patr. Constantinopolului; Sf. Cuv. Grigorie Sinaitul și Platonida",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-07",
+   "movableKey": null,
+   "name": "Sf. Mc. Caliopie; Sf. Ier. Gheorghe Mărt., ep. Mitilenei",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-08",
+   "movableKey": null,
+   "name": "Sf. Ap. Irodion, Agav, Ruf, Flegon, Asincrit și Ermis; Sf. Ier. Celestin, ep. Romei",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-09",
+   "movableKey": null,
+   "name": "Sf. Mc. Eupsihie din Cezareea Capadociei; Sf. Cuv. Vadim",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-10",
+   "movableKey": null,
+   "name": "Sf. Mc. Terentie, Pompei, African, Maxim și Dima",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Sâmbăta a IV-a din Post - Pomenirea morților; Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-11",
+   "movableKey": null,
+   "name": "Sf. Ier. Calinic de la Cernica, ep. Râmnicului; Sf. Sfințit Mc. Antipa, ep. Pergamului Asiei",
+   "rank": "cruce_albastra",
+   "kind": "romanesc",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-12",
+   "movableKey": null,
+   "name": "Sf. Mc. Sava de la Buzău; Sf. Ier. Vasile Mărt., ep. Pariei",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-13",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Artemon; Sf. Mc. Elefterie Persul",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-14",
+   "movableKey": null,
+   "name": "Sf. Ier. Pahomie de la Gledin, ep. Romanului; Sf. Ier. Martin Mărt., ep. Romei; Sf. Mc. Tomaida",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Denia Canonului cel Mare; Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-15",
+   "movableKey": null,
+   "name": "Sf. Ap. Aristarh, Pud și Trofim; Sf. Mc. Crescent",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-16",
+   "movableKey": null,
+   "name": "Sf. Mc. fecioare Agapia, Irina și Hionia",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Denia Acatistului Bunei Vestiri; Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-17",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Simeon, ep. Persiei",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Sâmbăta a V-a din Post - Pomenirea morților; Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-18",
+   "movableKey": null,
+   "name": "Sf. Cuv. Ioan, ucenicul Sf. Grigorie Decapolitul",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-19",
+   "movableKey": null,
+   "name": "Sf. Cuv. Ioan de la Lavra Veche; Sf. Sfințit Mc. Pafnutie",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-20",
+   "movableKey": null,
+   "name": "Sf. Ier. Teotim, ep. Tomisului; Sf. Cuv. Teodor Trihina",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-21",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Ianuarie, ep. de Benevent; Sf. Mc. Teodor din Perga; Sf. Mc. Alexandra, împ.",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-22",
+   "movableKey": null,
+   "name": "Sf. Ier. Teodor Sicheotul, ep. Anastasiopolei",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-23",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Gheorghe, Purtătorul de biruință; Sf. Mc. Valerie",
+   "rank": "cruce_rosie",
+   "kind": "sfant",
+   "note": "Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-24",
+   "movableKey": null,
+   "name": "Sf. Ier. Mărt. Ilie Iorest, Sava Brancovici și Simion Ștefan, mitr. Transilvaniei; Sf. Ier. Iosif Mărt. din Maramureș; Sf. Mc. Pasicrat și Valentin; Sf. Cuv. Elisabeta",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Sâmbăta lui Lazăr - Pomenirea morților; Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-25",
+   "movableKey": null,
+   "name": "Sf. Ap. și Ev. Marcu; †) Sf. Cuv. Vasile de la Poiana Mărului",
+   "rank": "simplu",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-26",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Vasilevs, ep. Amasiei; Sf. Cuv. Glafira; † Sf. Mc. Chiril, Chindeu și Tasie din Axiopolis (Cernavodă)",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Denia Sf. și Marii Marți; Numai seara, pâine și apă. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-27",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Simeon, ruda Domnului, ep. Ierusalimului",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Denia Sf. și Marii Miercuri; Numai seara, pâine și apă. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-28",
+   "movableKey": null,
+   "name": "Sf. Ap. Iason și Sosipatru; Sf. Mc. Maxim, Cvintilian și Dadas din Ozovia",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Denia Sf. și Marii Joi; Numai seara, pâine și apă. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-29",
+   "movableKey": null,
+   "name": "Sf. 9 Mc. din Cizic; Sf. Cuv. Memnon, făcătorul de minuni",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Pomenirea morților - Denia celor 12 Evanghelii, a Sf. și Marii Vineri; Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "04-30",
+   "movableKey": null,
+   "name": "Sf. Ap. Iacob al lui Zevedeu, fratele Sf. Ap. și Ev. Ioan; Sf. Ier. Donat, ep. Evriei",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Denia Prohodului Domnului, a Sf. și Marii Sâmbete; Zi aliturgică; Post negru. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-01",
+   "movableKey": null,
+   "name": "Sf. Prooroc Ieremia; Sf. Cuv. Mc. Eftimie, Ignatie și Acachie; Sf. Cuv. Isidora",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-02",
+   "movableKey": null,
+   "name": "Aducerea moaștelor Sf. Ier. Atanasie cel Mare în Constantinopol; †) Sf. Ier. Atanasie al III-lea (Patelarie), patr. Constantinopolului; Sf. Matrona din Moscova",
+   "rank": "simplu",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-03",
+   "movableKey": null,
+   "name": "Cinstirea Sf. Ic. a M. D. „Axion Estin” de la M. Protaton - Athos; †) Sf. Cuv. Irodion de la Lainici; Sf. Mc. Timotei și soția sa, Mavra",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-04",
+   "movableKey": null,
+   "name": "Sf. Cuv. Mavra de pe Ceahlău; Sf. Mc. Pelaghia; Sf. Cuv. Monica, mama Fer. Augustin",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-05",
+   "movableKey": null,
+   "name": "Sf. Cuv. Matrona de la Hurezi; Sf. M. Mc. Irina; Sf. Cuv. Mc. Efrem cel Nou",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Harți. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-06",
+   "movableKey": null,
+   "name": "Sf. și Dreptul Iov, mult răbdătorul; Sf. Mc. Varvar",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-07",
+   "movableKey": null,
+   "name": "Cinstirea Sf. Ic. a M. D. „Siriaca” de la M. Ghighiu; Arătarea pe cer a semnului Sf. Cruci în Ierusalim; Sf. Mc. Acachie și Codrat",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Harți. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-08",
+   "movableKey": null,
+   "name": "Sf. Ap. și Ev. Ioan Teologul; Sf. Cuv. Arsenie cel Mare",
+   "rank": "cruce_albastra",
+   "kind": "sfant",
+   "note": "Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-09",
+   "movableKey": null,
+   "name": "Sf. Prooroc Isaia; Sf. Mc. Hristofor; Aducerea moaștelor Sf. Ier. Nicolae la Bari",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-10",
+   "movableKey": null,
+   "name": "Sf. Ap. Simon Zilotul; †) Sf. Cuv. Calistrat de la Timișeni și Vasiova",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-11",
+   "movableKey": null,
+   "name": "Sf. Cuv. Dionisie Vatopedinul de la Colciu; Sf. Sfințit Mc. Mochie pr.;Sf. Ier. Metodie și Sf. Cuv. Chiril, luminătorii slavilor",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-12",
+   "movableKey": null,
+   "name": "Sf. Mc. Ioan Valahul; Sf. Ier. Epifanie, arhiep. Ciprului și Gherman, patriarhul Constantinopolului",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-13",
+   "movableKey": null,
+   "name": "Sf. Mc. Glicheria; Sf. Cuv. Serghie Mărt.",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-14",
+   "movableKey": null,
+   "name": "Sf. Mc. Isidor din Hios; Sf. Sfințit Mc. Terapont, ep. Ciprului;",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-15",
+   "movableKey": null,
+   "name": "Sf. Cuv. Pahomie cel Mare; †) Sf. Ier. Iacob Putneanul, mitr. Moldovei",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-16",
+   "movableKey": null,
+   "name": "Sf. Cuv. Teodor cel Sfințit; †) Sf. Cuv. Sila, Paisie și Natan de la Sihăstria Putnei",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-17",
+   "movableKey": null,
+   "name": "Sf. Ap. Andronic și soția sa, Iunia; Sf. Cuv. Nectarie și Teofan",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-18",
+   "movableKey": null,
+   "name": "Sf. Mc. Petru, Dionisie și Paulin",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-19",
+   "movableKey": null,
+   "name": "Sf. Mc. Patrichie, ep. Prusei",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-20",
+   "movableKey": null,
+   "name": "Sf. Mc. Talaleu; Sf. Cuv. Talasie; Sf. Lidia din Filipi",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-21",
+   "movableKey": null,
+   "name": "Sf. Împ., întocmai cu ap., Constantin și mama sa, Elena",
+   "rank": "cruce_rosie",
+   "kind": "sfant",
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-22",
+   "movableKey": null,
+   "name": "Sf. Mc. Vasilisc și Marcel; Sf. Părinți de la Sinodul al II-lea Ecumenic",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-23",
+   "movableKey": null,
+   "name": "Sf. Ier. Mihail Mărt., ep. Sinadei; Sf. Mironosiță Maria lui Cleopa",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-24",
+   "movableKey": null,
+   "name": "Sf. Mărt. Blandina de la Iași; Sf. Cuv. Simeon cel din Muntele Minunat",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-25",
+   "movableKey": null,
+   "name": "A treia aflare a capului Sf. Ioan, Înaintemergătorul și Botezătorul Domnului",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-26",
+   "movableKey": null,
+   "name": "Sf. Ap. Carp și Alfeu; Sf. Mc. Averchie și Elena",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-27",
+   "movableKey": null,
+   "name": "Sf. Mc. Iuliu Veteranul; Sf. Sfințiți Mc. Eladie și Terapont, ep. Sardei; Sf. Mărt. Ioan Rusul",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-28",
+   "movableKey": null,
+   "name": "Sf. Ier. Eutihiei, ep. Melitinei și Nichita, ep. Calcedonului",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-29",
+   "movableKey": null,
+   "name": "Sf. Mc. Teodosia, fecioara; Sf. Sfințit Mc. Olivian",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-30",
+   "movableKey": null,
+   "name": "Sf. Cuv. Isaachie Mărt. și Varlaam",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Pomenirea morților - Moșii de vară",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "05-31",
+   "movableKey": null,
+   "name": "Sf. Mc. Ermie, Eusebiu și Haralambie",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-01",
+   "movableKey": null,
+   "name": "Sf. Iustin Martirul și Filosoful și cei impreună cu ei",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-02",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Ioan cel Nou de la Suceava; Sf. Ier. Nichifor, patr. Constantinopolului",
+   "rank": "cruce_albastra",
+   "kind": "romanesc",
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-03",
+   "movableKey": null,
+   "name": "Sf. Mc. Luchilian, Ipatie și Paula fecioara",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-04",
+   "movableKey": null,
+   "name": "Sf. Mc. Zotic, Atal, Camasie și Filip de la Niculițel; Sf. Ier. Mitrofan, patr. Constantinopolului; Sf. Mironosițe Maria și Marta, surorile Dreptului Lazăr",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-05",
+   "movableKey": null,
+   "name": "Sf. Cuv. Elisabeta de la Pasărea; Sf. Sfințit Mc. Dorotei, ep. Tirului; Sf. Mc. Apolon și Leonid",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-06",
+   "movableKey": null,
+   "name": "Odovania praznicului Pogorârii Sf. Duh; Sf. Cuv. Ilarion cel Nou, eg. M. Dalmaților; Sf. Cuv. Visarion",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-07",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Teodot, ep. Ancirei; Sf. Mc. Zenaida",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-08",
+   "movableKey": null,
+   "name": "Sf. Mc. Nicandru și Marcian; Aducerea moaștelor Sf. M. Mc. Teodor Stratilat",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-09",
+   "movableKey": null,
+   "name": "Sf. Ier. Chiril, arhiep. Alexandriei",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-10",
+   "movableKey": null,
+   "name": "Sf. Mc. Alexandru și Antonina; Sf. Sfințit Mc. Timotei, ep. Prusiei",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-11",
+   "movableKey": null,
+   "name": "Sf. Ap. Bartolomeu și Barnaba; Sf. Ier. Luca, arhiep. Crimeei",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-12",
+   "movableKey": null,
+   "name": "Sf. Cuv. Onufrie cel Mare și Petru Atonitul",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-13",
+   "movableKey": null,
+   "name": "Sf. Mc. Achilina; Sf. Ier. Trifilie, ep. Lefcosiei din Cipru",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-14",
+   "movableKey": null,
+   "name": "Sf. Prooroc Elisei; Sf. Ier. Metodie Mărturisitorul, patriarhul Constantinopolului",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-15",
+   "movableKey": null,
+   "name": "Sf. Prooroc Amos; † Sf. Mc. Isihie; Fer. Augustin și Ieronim",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-16",
+   "movableKey": null,
+   "name": "Sf. Ier. Martir Neofit Cretanul, mitropolitul Țării Româneti; Sf. Ier. Tihon, ep. Amatundei",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-17",
+   "movableKey": null,
+   "name": "Sf. Mc. Manuil, Savel, Ismail, Inochentie și Felix",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-18",
+   "movableKey": null,
+   "name": "Sf. Mc. Leontie, Ipatie și Teodul; Sf. Cuv. Erasm",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-19",
+   "movableKey": null,
+   "name": "Sf. Ap. Iuda, ruda Domnului; Sf. Cuv. Paisie cel Mare",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-20",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Metodie, ep. Patarelor; Sf. Ier. Calist, patr. Constantinopolului; Sf. Nicolae Cabasila",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-21",
+   "movableKey": null,
+   "name": "Sf. Mc. Iulian din Tars și Afrodisie",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-22",
+   "movableKey": null,
+   "name": "Sf. Ier. Grigorie Dascălul, mitr. Țării Românești; Sf. Sfințit Mc. Eusebiu, ep. Samosatei",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-23",
+   "movableKey": null,
+   "name": "Sf. Mc. Agripina; Sf. Sfințit Mc. Aristocleu, pr.",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-24",
+   "movableKey": null,
+   "name": "Nașterea Sf. Proroc Ioan Botezătorul (Sânzienele); † Aducerea moaștelor Sf. M. Mc. Ioan cel Nou de la Suceava; † Sf. Ier. Niceta de Remesiana;",
+   "rank": "praznic",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": "fish"
+  },
+  {
+   "monthDay": "06-25",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Fevronia; Sf. Mc. Orentie și frații săi; Sf. Mc. Livia",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-26",
+   "movableKey": null,
+   "name": "Sf. Cuv. David din Tesalonic; Sf. Ier. Ioan, ep. Goției",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-27",
+   "movableKey": null,
+   "name": "Sf. Cuv. Samson, primitorul de străini; Sf. Mironosiță Ioana",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-28",
+   "movableKey": null,
+   "name": "Aducerea moaștelor Sf. Mc. Doctori fără de arginți Chir și Ioan; Sf. Mc. Papias",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "06-29",
+   "movableKey": null,
+   "name": "Sf. Ap. Petru și Pavel",
+   "rank": "praznic",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": "fish"
+  },
+  {
+   "monthDay": "06-30",
+   "movableKey": null,
+   "name": "Soborul Sf. 12 Ap.; †) Sf. Ier. Ghelasie de la Râmeț",
+   "rank": "cruce_albastra",
+   "kind": "sfant",
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-01",
+   "movableKey": null,
+   "name": "Sf. Ier. Leontie de la Rădăuți; Sf. Mc. Doctori fără de arginți, Cosma și Damian, cei din Roma",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-02",
+   "movableKey": null,
+   "name": "Așezarea veșmântului Născătoarei de Dumnezeu în biserica Vlaherne; †) Sf. Voievod Ștefan cel Mare; Sf. Ier. Iuvenalie, patr. Ierusalimului; Sf. Ier. Ioan Maximovici",
+   "rank": "simplu",
+   "kind": "romanesc",
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-03",
+   "movableKey": null,
+   "name": "Sf. Mc. Iachint; Sf. Ier. Anatolie, patr. Constantinopolului",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-04",
+   "movableKey": null,
+   "name": "Sf. Olimpia de la Farcașa. ; Sf. Ier. Andrei, arhiep. Cretei; Sf. Cuv. Marta",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-05",
+   "movableKey": null,
+   "name": "Sf. Cuv. Atanasie Atonitul; Sf. Cuv. Lampadie",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-06",
+   "movableKey": null,
+   "name": "Sf. Cuv. Dometie cel Milostiv de la Râmeț și mama sa, Sf. Cuv. Filotimia; Sf. Cuv. Sisoe cel Mare; Sf. Mc. Lucia din Roma; Sf. Mc. Marius, soția sa, Marta, și fiii lor, Audifaciu și Avacum",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-07",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Chiriachi; Sf. Cuv. Toma din Maleon; Sf. Mc. Evanghel",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-08",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Procopie și mama sa, Teodosia; †) Sf. Mc. Epictet preotul și Astion monahul",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-09",
+   "movableKey": null,
+   "name": "Cinstirea Ic. Maicii Domnului „Îndrumătoarea” de la M. Neamț; Sf. Sfințiți Mc. Pangratie, ep. Tavromeniei",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-10",
+   "movableKey": null,
+   "name": "Sf. 45 de Mc. din Nicopolea Armeniei",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-11",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Eufimia; Sf. Olga, cea întocmai cu Ap. și luminătoarea Rusiei",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-12",
+   "movableKey": null,
+   "name": "Cinstirea Ic. Maicii Domnului „Prodromița” de la Muntele Athos; Sf. Mc. Proclu și Ilarie; Cuv. Mihai Maleinul; Sf. Veronica; Sf. Cuv. Paisie Aghioritul",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-13",
+   "movableKey": null,
+   "name": "Aducerea moaștelor Sfântului Cuvios Dimitrie cel Nou la București; Soborul Sf. Arh. Gavriil; Sf. Cuv. Ștefan Savaitul; Sf. Mc. Maria din Persia; Sf. Cuv. Sara",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-14",
+   "movableKey": null,
+   "name": "Sf. Ap. Achila; Sf. Mc. Iust și Iraclie; Sf. Cuv. Nicodim Aghioritul",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-15",
+   "movableKey": null,
+   "name": "Sf. Mc. Chiric și Iulita; Sf. Vladimir, luminătorul Rusiei",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-16",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Atinoghen cu cei 10 ucenici ai săi; Sf. Mc. Iulia",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-17",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Marina; Sf. Ier. Eufrasie, ep. Ionopolei",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-18",
+   "movableKey": null,
+   "name": "Sf. Mc. Emilian de la Durostorum (Ostrov); Sf. Cuv. Pamvo",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-19",
+   "movableKey": null,
+   "name": "Sf. Cuv. Macrina, sora Sf. Vasile cel Mare; Sf. Cuv. Die; Aflarea moaștelor Sf. Cuv. Serafim de Sarov",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-20",
+   "movableKey": null,
+   "name": "Sf. Slăvitul Prooroc Ilie Tesviteanul",
+   "rank": "cruce_rosie",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-21",
+   "movableKey": null,
+   "name": "Sf. Cuv. Simeon și Ioan Pustnicul; Sf. Prooroc Iezechiel; †) Sf. Cuv. Rafail și Partenie, de la Agapia Veche",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-22",
+   "movableKey": null,
+   "name": "Sf. Pr. Mărt. Ilie Lăcătușu; Sf. Mironosiță, întocmai cu Ap., Maria Magdalena; Sf. Cuv. Mc. Marcela",
+   "rank": "cruce_albastra",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-23",
+   "movableKey": null,
+   "name": "Aducerea Moaștelor Sf. Sfințit Mc. Foca; Sf. Mc. Apolinarie, Vitalie și Valeria",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-24",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Hristina; Sf. Mc. Ermoghen",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-25",
+   "movableKey": null,
+   "name": "Adormirea Sf. Ana, mama Preasfintei Născătoare de Dumnezeu; Sf. Părinți de la Sinodul al V-lea Ecumenic; Sf. Cuv. Eupraxia și Olimpiada",
+   "rank": "simplu",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-26",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Ermolae; Sf. Mc. Cuv. Paraschevi din Roma; †) Sf. Cuv. Ioanichie cel Nou de la Muscel (Argeș)",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-27",
+   "movableKey": null,
+   "name": "Sf. M. Mc. și Tămăduitor Pantelimon",
+   "rank": "cruce_albastra",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-28",
+   "movableKey": null,
+   "name": "Sf. Ap. și Diac. Prohor, Nicanor, Timon și Parmena; Sf. Cuv. Pavel de la Xiropotamu",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-29",
+   "movableKey": null,
+   "name": "Sf. Mc. Calinic, Veniamin și Mamant; Sf. Mc. Teodota cu fiii săi",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-30",
+   "movableKey": null,
+   "name": "Sf. Ap. Sila, Silvan, Crescent, Epenet și Andronic; Sf. Mc. Valentin, ep. Umbriei",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "07-31",
+   "movableKey": null,
+   "name": "Înainte-prăznuirea scoaterii Sf. Cruci; Sf. și Dreptul Evdochim; Sf. și Dreptul Iosif din Arimateea",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Lăsatul secului pentru Postul Adormirii Maicii Domnului",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-01",
+   "movableKey": null,
+   "name": "Scoaterea Sf. Cruci; Sf. 7 frați Mc. Macabei",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-02",
+   "movableKey": null,
+   "name": "Aducerea moaștelor Sf. Întâi Mc. și Arhid. Ștefan; Dreptul Gamaliel; Binecredinciosul Împ. Iustinian cel Mare",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-03",
+   "movableKey": null,
+   "name": "Sf. Cuv. Mărt. Iraclie din Basarabia; Sf. Cuv. Isaachie, Dalmat și Faust; Sf. Mironosiță Salomeea; Sf. Cuv. Teodora din Tesalonic",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-04",
+   "movableKey": null,
+   "name": "Sf. 7 tineri din Efes; Sf. Mc. Tatuil",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-05",
+   "movableKey": null,
+   "name": "Înainte-prăznuirea Schimbării la Față a Domnului; †) Sf. Cuv. Ioan Iacob de la Neamț; Sf. Mc. Evsignie; Sf. Nona, mama Sf. Ier. Grigorie Teologul; Sf. Ier. Fabian, ep. Romei",
+   "rank": "simplu",
+   "kind": "romanesc",
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-06",
+   "movableKey": null,
+   "name": "Schimbarea la Față a Domnului (Pobrejenia)",
+   "rank": "praznic",
+   "kind": "domnesc",
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": "fish"
+  },
+  {
+   "monthDay": "08-07",
+   "movableKey": null,
+   "name": "Sf. Cuv. Teodora de la Sihla; †) Sf. Cuv. Pafnutie - Pârvu Zugravul; Sf. Cuv. Mc. Dometie Persul; Sf. Sfințit Mc. Narcis, arhep. Ierusalimului; Sf. Cuv. Nicanor",
+   "rank": "cruce_rosie",
+   "kind": null,
+   "note": "Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-08",
+   "movableKey": null,
+   "name": "Sf. Pr. Mc. Alexandru din Basarabia; Sf. Ier. Emilian Mărt., ep. Cizicului și Miron, ep. Cretei",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-09",
+   "movableKey": null,
+   "name": "Sf. Ap. Matia; Sf. 10 Mc. Mărt. pentru icoana lui Hristos",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-10",
+   "movableKey": null,
+   "name": "Sf. Mc. Laurențiu, arhid.; Sf. Sfințit Mc. Xist, ep. Romei; Sf. Mc. Ipolit",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-11",
+   "movableKey": null,
+   "name": "Sf. Ier. Nifon, patr. Constantinopolului; Sf. M. Mc. Evplu, arhid.",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-12",
+   "movableKey": null,
+   "name": "Sf. Mc. Fotie și Anichit",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-13",
+   "movableKey": null,
+   "name": "Odovania praznicului Schimbării la Față a Domnului; Mutarea moaștelor Sf. Cuv. Maxim Mărt.; Sf. Cuv. Dorotei și Dositei",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-14",
+   "movableKey": null,
+   "name": "Înainte-prăznuirea Adormirii Maicii Domnului; Sf. Prooroc Miheia",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Prohodul M. D.; Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-15",
+   "movableKey": null,
+   "name": "Adormirea Maicii Domnului",
+   "rank": "praznic",
+   "kind": "maica_domnului",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-16",
+   "movableKey": null,
+   "name": "Aducerea Sf. Mahrame a Domnului din Edesa la Constantinopol; †) Sf. Martiri Brâncoveni: Constantin Voievod cu cei patru fii ai săi: Constantin, Ștefan, Radu și Matei, și sfetnicul Ianache; Sf. Doamnă Maria Brâncovenu; †) Sf. Cuv. Iosif de la Văratec; Sf. Mc. Diomid",
+   "rank": "simplu",
+   "kind": "romanesc",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-17",
+   "movableKey": null,
+   "name": "Sf. Gheorghe Pelerinul; † Sf. Cuv. Nazaria, Olimpiada, Elisabeta (Safta) Brâncoveanu, de la Văratec ; Sf. Mc. Miron pr., Straton și Ciprian",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-18",
+   "movableKey": null,
+   "name": "Sf. Mc. Flor și Lavru",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-19",
+   "movableKey": null,
+   "name": "Sf. Mc. Andrei Stratilat, Timotei, Agapie și Tecla",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-20",
+   "movableKey": null,
+   "name": "Sf. Prooroc Samuel; Sf. Mc. Sever, Eliodor și Teoharie",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-21",
+   "movableKey": null,
+   "name": "Sf. Ap. Tadeu; Sf. Mc. Vasa, cu fiii ei; † Sf. Mc. Donat diac., Romul pr., Silvan diac. și Venust",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-22",
+   "movableKey": null,
+   "name": "Sf. Mc. Agatonic și cei îmtruna cu ei",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-23",
+   "movableKey": null,
+   "name": "Odovania praznicului Adormirii Maicii Domnului; † Sf. Mc. Lup; Sf. Sfințit Mc. Irineu, ep. de Lugdunum (Lyon)",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-24",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Eutihie; Sf. Mc. Tation",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-25",
+   "movableKey": null,
+   "name": "Aducerea moaștelor Sf. Ap. Bartolomeu; Sf. Ap. Tit",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-26",
+   "movableKey": null,
+   "name": "Sf. Mc. Adrian și Natalia, soția sa",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-27",
+   "movableKey": null,
+   "name": "Sf. Cuv. Pimen cel Mare; Sf. Mc. Fanurie; Sf. Ier. Osie, ep. Cordobei",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-28",
+   "movableKey": null,
+   "name": "Sf. Cuv. Moise Etiopianul; Dreptul Iezechia",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-29",
+   "movableKey": null,
+   "name": "Tăierea Capului Sf. Prooroc Ioan Botezătorul; Fapte XIII, 25-33",
+   "rank": "praznic",
+   "kind": "sfant",
+   "note": "Zi de post aspru.",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-30",
+   "movableKey": null,
+   "name": "Sf. Ier. Varlaam, mitr. Moldovei și Ioan de la Râșca și Secu, ep. Romanului; Sf. Ier. Ioan, Pavel cel Nou și Alexandru, patr. Constantinopolului",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "08-31",
+   "movableKey": null,
+   "name": "Așezarea în raclă a cinstitului brâu al Maicii Domnului; †) Sf. Cuv. Macarie Protopsaltul",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-01",
+   "movableKey": null,
+   "name": "Începutul anului bisericesc; † Sf. Cuv. Dionisie Exiguul (cel Smerit); Sf. Cuv. Simeon Stâlpnicul; Sf. 40 de Mucenițe din Adrianopol; Dreptul Iosua",
+   "rank": "cruce_albastra",
+   "kind": "domnesc",
+   "note": "Tedeum - Anul Nou bisericesc; Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-02",
+   "movableKey": null,
+   "name": "Sf. Mc. Mamant; Sf. Ier. Ioan Postitorul, patr. Constantinopolului",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-03",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Antim, ep. Nicomidiei; Sf. Cuv. Teoctist din Palestina; †) Sf. Cuv. Neofit și Meletie de la M-rea. Stânișoara",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-04",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Vavila, ep. Antiohiei; Sf. Prooroc Moise; Sf. Mc. Petroniu",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-05",
+   "movableKey": null,
+   "name": "Sf. Prooroc Zaharia și Dreapta Elisabeta, părinții Sf. Ioan Botezătorul",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-06",
+   "movableKey": null,
+   "name": "Pomenirea minunii Sf. Arh. Mihail în Colose; Sf. Mc. Eudoxie;",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-07",
+   "movableKey": null,
+   "name": "Înainte-prăznuirea Nașterii Maicii Domnului; Sf. Mc. Sozont; Sf. Cuv. Casiana Imnografa;†) Sf. Cuv. Simeon și Amfilohie de la Pângărați",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-08",
+   "movableKey": null,
+   "name": "Nașterea Maicii Domnului",
+   "rank": "praznic",
+   "kind": "maica_domnului",
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-09",
+   "movableKey": null,
+   "name": "Sf. și Drepții dumnezeiești Părinți Ioachim și Ana; †) Sf. Cuv. Chiriac de la Tazlău; †) Sf. Cuv. Onufrie de la Vorona; Sf. Părinți de la Sinodul al III-lea Ecumenic; Sf. Mc. Severian",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-10",
+   "movableKey": null,
+   "name": "Sf. Mc. Minodora, Mitrodora și Nimfodora; Sf. Împ. Pulheria",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-11",
+   "movableKey": null,
+   "name": "Sf. Cuv. Teodora din Alexandria; Sf. Cuv. Eufrosin Bucătarul",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Sâmbăta dinaintea Înălțării Sf. Cruci",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-12",
+   "movableKey": null,
+   "name": "Odovania Praznicului Nașterii Maicii Domnului; Sf. Mc. Avtonom, Macedonie și Teodul",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Sâmbăta dinaintea Înălțării Sf. Cruci",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-13",
+   "movableKey": null,
+   "name": "Înainte-prăznuirea Înălțării Sf. Cruci; † Târnosirea Bisericii Învierii din Ierusalim; Sf. Sfințiți Mc. Corneliu Sutașul și Ciprian, ep. Cartaginei; †) Sf. Cuv. Ioan de la Prislop; † Sf. Mc. din Dobrogea: Macrobie, Gordian, Ilie, Zotic, Lucian și Valerian",
+   "rank": "simplu",
+   "kind": "romanesc",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-14",
+   "movableKey": null,
+   "name": "Înălțarea Sfintei Cruci; Sf. Nou Mc. Macarie, ucenicul patr. Nifon",
+   "rank": "praznic",
+   "kind": "domnesc",
+   "note": "Zi de post aspru, chiar dacă este praznic.",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-15",
+   "movableKey": null,
+   "name": "Sf. Ier. Iosif cel Nou de la Partoș, mitr. Banatului; † Sf. M. Mc. Nichita; † Sf. Ier. Visarion, arhiep. Larisei",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-16",
+   "movableKey": null,
+   "name": "Sf. Cuv. Mărt. Sofian de la Antim; Sf. M. Mc. Eufimia; Sf. Mc. Meletina și Ludmila",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-17",
+   "movableKey": null,
+   "name": "Sf. Ier. Dionisie, ep. Cetății Albe - Ismail; Sf. Mc. Sofia și fiicele sale: Pistis, Elpis și Agapi",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-18",
+   "movableKey": null,
+   "name": "Sf. Pr. Mc. Ilarion Felea; Sf. Ier. Eumenie, ep. Gortinei; Sf. Mc. Ariadna",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Sâmbăta după Înălțarea Sf. Cruci",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-19",
+   "movableKey": null,
+   "name": "Sf. Mc. Trofim, Savatie și Dorimedont",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Sâmbăta după Înălțarea Sf. Cruci",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-20",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Eustatie și soția sa, Teopista, cu cei doi fii ai lor: Agapie și Teopist",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-21",
+   "movableKey": null,
+   "name": "Odovania Praznicului Înălțării Sfintei Cruci; Sf. Ap. Codrat; Sf. Prooroc Iona",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-22",
+   "movableKey": null,
+   "name": "Sf. Ier. Mc. Teodosie de la M. Brazi, mitr. Moldovei; Sf. Sfințit Mc. Foca, ep. de Sinope",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-23",
+   "movableKey": null,
+   "name": "Zămislirea Sf. Prooroc Ioan Botezătorul; Sf. Cuv. Xantipa și Polixenia",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-24",
+   "movableKey": null,
+   "name": "Sf. întâia Mc., întocmai cu ap., Tecla; Sf. Cuv. Siluan Athonitul",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-25",
+   "movableKey": null,
+   "name": "Sf. Cuv. Eufrosina; Sf. Cuv. Pafnutie Egipteanul; Sf. Cuv. Serghie de la Radonej",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-26",
+   "movableKey": null,
+   "name": "Mutarea Sf. Ap. și Ev. Ioan; †) Sf. Voievod Neagoe Basarab; Sf. Cuv. Platonida de la Argeș (fosta Despina Milița, soția voievodului); Dreptul Ghedeon",
+   "rank": "cruce_albastra",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-27",
+   "movableKey": null,
+   "name": "Sf. Ier. Martir Antim Ivireanul, mitr. Țării Românești; Sf. Mc. Calistrat și Epiharia",
+   "rank": "cruce_albastra",
+   "kind": "romanesc",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-28",
+   "movableKey": null,
+   "name": "Sf. Cuv. Hariton Mărt.; Sf. Prooroc Baruh; Sf. Neofit Zăvorâtul din Cipru",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-29",
+   "movableKey": null,
+   "name": "Sf. Cuv. Chiriac Sihastrul; Sf. Mc. Petronia",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "09-30",
+   "movableKey": null,
+   "name": "Sf. Ier. Grigorie Luminătorul, arhiep. Armeniei; Sf. Mc. Ripsimia și Gaiani",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-01",
+   "movableKey": null,
+   "name": "Acoperământul Maicii Domnului; Sf. Ap. Anania; Sf. Cuv. Roman Melodul; †) Sf. Cuv. Chiriac și Iosif de la Bisericani",
+   "rank": "praznic",
+   "kind": "maica_domnului",
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-02",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Ciprian; Sf. Mc. Iustina fecioara",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-03",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Dionisie Areopagitul; Sf. Mc. Teoctist",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-04",
+   "movableKey": null,
+   "name": "Sf. Pr. Mărt. Dumitru Stăniloae; Sf. Sfințit Mc. Ierotei, ep. Atenei",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-05",
+   "movableKey": null,
+   "name": "Sf. Mc. Haritina; †) Sf. Cuv. Misail și Daniil de la Mănăstirea Turnu",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-06",
+   "movableKey": null,
+   "name": "Sf. Ap. Toma; Sf. Mc. Erotiida",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-07",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Serghie și Vah; Sf. Mc. Iulian pr., Chesarie diac. și Polihronie",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-08",
+   "movableKey": null,
+   "name": "Sf. Cuv. Pelaghia și Taisia",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-09",
+   "movableKey": null,
+   "name": "Sf. Ap. Iacov al lui Alfeu; Sf. Cuv. Atanasia, Andronic și Anastasia",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-10",
+   "movableKey": null,
+   "name": "Sf. Mc. Evlampie și sora sa, Evlampia; Sf. Cuv. Vasian și Teofil Mărt.",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-11",
+   "movableKey": null,
+   "name": "Sf. Ap. Filip, unul din cei 7 diac.; Sf. Ier. Teofan Mărt., ep. Niceei",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-12",
+   "movableKey": null,
+   "name": "Sf. Mc. Prov, Tarah și Andronic; Sf. Ier. Cosma, ep. Maiumei",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-13",
+   "movableKey": null,
+   "name": "Aducerea moaștelor Sf. Ap. Andrei la Iași; Sf. Mc. Carp, Papil, Agatodor, Agatonica și Florentie",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-14",
+   "movableKey": null,
+   "name": "Sf. Cuv. Parascheva de la Iași; Sf. Mc. Nazarie, Ghervasie, Protasie și Chelsie",
+   "rank": "cruce_rosie",
+   "kind": "romanesc",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-15",
+   "movableKey": null,
+   "name": "Sf. Magdalena de la Mălainița; Sf. Mc. Luchian, pr. din Antiohia",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-16",
+   "movableKey": null,
+   "name": "Sf. Mc. Longhin Sutașul",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-17",
+   "movableKey": null,
+   "name": "Sf. Prooroc Oseea; Sf. Cuv. Mc. Andrei Criteanul",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-18",
+   "movableKey": null,
+   "name": "Sf. Ap. și Ev. Luca; Sf. Mc. Marin cel Bătrân",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-19",
+   "movableKey": null,
+   "name": "Sf. Prooroc Ioil; Sf. Mc. Uar; Sf. Cleopatra; Sf. Cuv. Ioan de la Rila;",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-20",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Artemie; Sf. Gherasim din Chefalonia",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-21",
+   "movableKey": null,
+   "name": "Sf. Cuv. Mărt. Visarion și Sofronie; Sf. Mc. Oprea; Sf. Pr. Mărt. Ioan din Galeș și Moise Măcinic din Sibiel; Sf. Cuv. Ilarion cel Mare",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-22",
+   "movableKey": null,
+   "name": "Sf. Ier. Averchie, ep. Ierapolei; Sf. 7 tineri din Efes;",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-23",
+   "movableKey": null,
+   "name": "Sf. Ap. Iacob, ruda Domnului, întâiul ep. al Ierusalimului; †) Sf. Pr. Mc. Constantin Sârbu; Sf. Cuv. Macarie Romanul",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-24",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Areta; Sf. Mc. Marcu, Sotirih și Valentin",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-25",
+   "movableKey": null,
+   "name": "Sf. Mc. Marcian și Martirie; Sf. Tavita",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-26",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Dimitrie, Izvorâtorul de mir",
+   "rank": "cruce_rosie",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-27",
+   "movableKey": null,
+   "name": "Sf. Cuv. Dimitrie cel Nou, Ocrotitorul Bucureștilor, ale cărui moaște se află în Catedrala Patriarhală; Sf. Mc. Nestor",
+   "rank": "cruce_rosie",
+   "kind": "romanesc",
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-28",
+   "movableKey": null,
+   "name": "Sf. Ier. Iachint, mitr. Țării Românești; †) Sf. Cuv. Teofana Basarab; Sf. Mc. Terentie, soția sa Neonila și cei 7 fii ai lor: Nita, Sarvil, Ierax, Teodul, Fota, Vilie si Evnichi; Sf. Ier. Firmilian, ep. Cezareei Capadociei;",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-29",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Anastasia Romana; Sf. Cuv. Avramie și Maria, nepoata sa",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-30",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Zenovie, ep. Ciliciei și sora sa, Zenovia; Sf. Ap. Cleopa",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Pomenirea morților - Moşii de toamnă",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "10-31",
+   "movableKey": null,
+   "name": "Sf. Ap. Apelie, Stahie, Amplie, Urban, Aristobul și Narcis; Sf. Mc. Epimah",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-01",
+   "movableKey": null,
+   "name": "Sf. doctori fără de arginți Cosma și Damian, cei din Asia",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-02",
+   "movableKey": null,
+   "name": "Sf. Mc. Achindin, Pigasie, Aftonie, Elpifidor și Anempodist",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-03",
+   "movableKey": null,
+   "name": "Sf. Mc. Achepsima ep., Iosif pr. și Aitala diac.; Așezarea moaștelor Sf. M. Mc. Gheorghe în Lida",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-04",
+   "movableKey": null,
+   "name": "Sf. Cuv. Ioanichie cel Mare; Sf. Mc. Nicandru și Ermeu; Sf. Cuv.Gheorghe Mărt. din Drama",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-05",
+   "movableKey": null,
+   "name": "Sf. Mc. Galaction și Epistimia",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-06",
+   "movableKey": null,
+   "name": "Sf. Pavel Mărt., patr. Constantinopolului; Sf. Cuv. Luca din Sicilia",
+   "rank": "simplu",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-07",
+   "movableKey": null,
+   "name": "Sf. 33 de Mc. din Melitina; Sf. Cuv. Lazăr din Muntele Galisiei",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Pomenirea morților - Moşii de toamnă",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-08",
+   "movableKey": null,
+   "name": "Soborul Sf. Arh. Mihail și Gavriil și al tuturor cereștilor puteri",
+   "rank": "cruce_rosie",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-09",
+   "movableKey": null,
+   "name": "Sf. Ier. Nectarie Taumaturgul de la Eghina; Sf. Mc. Claudiu, Castor, Sempronian și Nicostrat; Sf. Mc. Onisifor și Porfirie; Sf. Cuv. Matrona",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-10",
+   "movableKey": null,
+   "name": "Sf. Ap. Olimp, Rodion, Sosipatru, Erast, Terțiu și Cvart; †) Sf. Cuv. Mc. Visarion de la Lainici; Sf. Mc. Orest",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-11",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Mina; Sf. Mc. Victor, Vichentie și Ștefanida; Sf. Cuv. Teodor Studitul",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-12",
+   "movableKey": null,
+   "name": "Sf. Ier. Ioan cel Milostiv, patr. Alexandriei; †) Sf. Martiri și Mărt. Năsăudeni: Atanasie Todoran din Bichigiu, Vasile din Mocod, Grigorie din Zagra și Vasile din Telciu; Sf. Cuv. Nil Pustnicul",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-13",
+   "movableKey": null,
+   "name": "Sf. Ier. Ioan Gură de Aur, arhiep. Constantinopolului și mama sa, Sf. Antuza",
+   "rank": "cruce_albastra",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-14",
+   "movableKey": null,
+   "name": "Sf. Ap. Filip unul dintre cei 12 Apostoli; Sf. Ier. Grigorie Palama, arhiep. Tesalonicului",
+   "rank": "cruce_albastra",
+   "kind": "sfant",
+   "note": "Lăsatul secului pentru Postul Nașterii Domnului.",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-15",
+   "movableKey": null,
+   "name": "Sf. Cuv. Paisie de la Neamț; Sf. Mc. și Mărt. Gurie, Samona și Aviv, diac.",
+   "rank": "cruce_albastra",
+   "kind": "romanesc",
+   "note": "Începutul Postului Nașterii Domnului.",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-16",
+   "movableKey": null,
+   "name": "Sf. Ap. și Ev. Matei",
+   "rank": "simplu",
+   "kind": "sfant",
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-17",
+   "movableKey": null,
+   "name": "Sf. Ier. Grigorie Taumaturgul, ep. Neocezareei Pontului și Ghenadiei, patr. Constantinopolului; Sf. Cuv. Lazăr Zugravul",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-18",
+   "movableKey": null,
+   "name": "Sf. Mc. Platon, Roman și Zaheu",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-19",
+   "movableKey": null,
+   "name": "Sf. Prooroc Avdie; Sf. Mc. Varlaam",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-20",
+   "movableKey": null,
+   "name": "Înainte-prăznuirea Intrării în Biserică a Maicii Domnului; †) Sf. Cuv. Grigorie Decapolitul; † Sf. Mc. Dasie; Sf. Ier. Proclu, arhiep. Constantinopolului;",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-21",
+   "movableKey": null,
+   "name": "Intrarea în Biserică a Maicii Domnului (Vovidenia)",
+   "rank": "praznic",
+   "kind": "maica_domnului",
+   "note": null,
+   "dezlegare": "fish"
+  },
+  {
+   "monthDay": "11-22",
+   "movableKey": null,
+   "name": "Sf. Ap. Filimon, Arhip, Onisim și Apfia; Sf. Mc. Cecilia",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-23",
+   "movableKey": null,
+   "name": "Sf. Cuv. Antonie de la Iezerul Vâlcii; Sf. Ier. Amfilohie, ep. Iconiei și Grigorie, ep. Acragandelor",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-24",
+   "movableKey": null,
+   "name": "Sf. Sfințiți Mc. Clement, ep. Romei și Petru, ep. Alexandriei",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-25",
+   "movableKey": null,
+   "name": "Odovania Praznicului Intrării în Biserică a Maicii Domnului; † Sf. M. Mc. Ecaterina; Sf. M. Mc. Mercurie",
+   "rank": "simplu",
+   "kind": "sfant",
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-26",
+   "movableKey": null,
+   "name": "Sf. Cuv. Alipie Stâlpnicul, Nicon și Stelian Paflagonul",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-27",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Iacob Persul; Sf. Cuv. Natanail și Pinufrie",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-28",
+   "movableKey": null,
+   "name": "Sf. Cuv. Mărt. Arsenie de la Prislop; Sf. Cuv. Mc. Ștefan cel Nou; Sf. Mc. Irinarh",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-29",
+   "movableKey": null,
+   "name": "Sf. Mc. Paramon și Filumen; Sf. Cuv. Pitirun",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "11-30",
+   "movableKey": null,
+   "name": "Sf. Ap. Andrei, cel Întâi Chemat, Ocrotitorul României; †) Sf. Ier. Andrei Șaguna, mitr. Transilvaniei; Sf. Ier. Frumentie, ep. Etiopiei",
+   "rank": "cruce_rosie",
+   "kind": "romanesc",
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": "fish"
+  },
+  {
+   "monthDay": "12-01",
+   "movableKey": null,
+   "name": "Sf. Anastasia, mama Sfântului Ier. Andrei Șaguna; Sf. Prooroc Naum; Sf. Cuv. Filaret cel Milostiv",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Tedeum - Ziua Națională a României; Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-02",
+   "movableKey": null,
+   "name": "Sf. Cuv. Paisie și Cleopa de la Sihăstria; Sf. Prooroc Avacum; Sf. Mc. Miropi; Sf. Porfirie Cavsocalivitul; Sf. Ier. Solomon, arhiep. Efesului",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-03",
+   "movableKey": null,
+   "name": "Sf. Cuv. Gheorghe de la Cernica și Căldărușani; Sf. Prooroc Sofonie",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-04",
+   "movableKey": null,
+   "name": "Sf. M. Mc. Varvara; Sf. Cuv. Ioan Damaschin",
+   "rank": "cruce_albastra",
+   "kind": "sfant",
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-05",
+   "movableKey": null,
+   "name": "Sf. Cuv. Sava cel Sfințit; Sf. Mc. Anastasie",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-06",
+   "movableKey": null,
+   "name": "Sf. Ier. Nicolae, arhiep. Mirelor Lichiei, făcătorul de minuni",
+   "rank": "cruce_rosie",
+   "kind": "sfant",
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": "fish"
+  },
+  {
+   "monthDay": "12-07",
+   "movableKey": null,
+   "name": "Sf. Mc. Filofteia de la Curtea de Argeș; Sf. Ier. Ambrozie, ep. Mediolanului (Milano)",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-08",
+   "movableKey": null,
+   "name": "Sf. Cuv. Patapie; Sf. Ap. Cezar, Tihic și Onisifor",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-09",
+   "movableKey": null,
+   "name": "Zămislirea Sfintei Fecioare Maria de către Sf. Ana; Sf. Proorociță Ana, mama Proorocului Samuel",
+   "rank": "simplu",
+   "kind": "maica_domnului",
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-10",
+   "movableKey": null,
+   "name": "Sf. Mc. Mina, Ermoghen și Evgraf",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-11",
+   "movableKey": null,
+   "name": "Sf. Cuv. Daniil Stâlpnicul și Luca cel Nou",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-12",
+   "movableKey": null,
+   "name": "Sf. Ier. Spiridon, ep. Trimitundei, făcătorul de minuni",
+   "rank": "cruce_albastra",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-13",
+   "movableKey": null,
+   "name": "Sf. Ier. Dosoftei, mitr. Moldovei; † Sf. M. Mc. Eustratie, Auxentie, Evghenie, Mardarie și Orest; Sf. Mc. Lucia, fecioara din Siracuza",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-14",
+   "movableKey": null,
+   "name": "Sf. Mc. Tirs, Calinic, Filimon și Apolonie",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-15",
+   "movableKey": null,
+   "name": "Sf. Sfințit Mc. Elefterie, ep. Iliriei; Sf. Mc. Antia și Suzana; Sf. Cuv. Pavel din Latro",
+   "rank": "simplu",
+   "kind": "sfant",
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-16",
+   "movableKey": null,
+   "name": "Sf. Prooroc Agheu; Sf. Teofana, împ.",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Dezlegare la ulei și vin. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-17",
+   "movableKey": null,
+   "name": "Sf. Prooroc Daniel și Sf. trei tineri: Anania, Azaria și Misail",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-18",
+   "movableKey": null,
+   "name": "Sf. Cuv. Daniil Sihastrul; Sf. Mc. Sebastian și Zoe; Sf. Ier. Modest, arhiep. Ierusalimului",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Sâmbăta dinaintea Nașterii Domnului; Dezlegare la pește. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-19",
+   "movableKey": null,
+   "name": "Sf. Cuv. Muceniță Evloghia de la Samurcășești; Sf. Mc. Bonifatie; Sf. Cuv. Aglaia, Sf. Ier. Grichentie, ep. Etiopiei;",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Sâmbăta dinaintea Nașterii Domnului",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-20",
+   "movableKey": null,
+   "name": "Înainte-prăznuirea Nașterii Domnului; Sf. Sfințit Mc. Ignatie Teoforul, ep. Antiohiei; †) Sf. Cuv. Serafim cel Răbdător de la Sâmbăta de Sus",
+   "rank": "simplu",
+   "kind": "sfant",
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-21",
+   "movableKey": null,
+   "name": "Sf. Mc. Iuliana din Nicomidia; Sf. Mc. Temistocle",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-22",
+   "movableKey": null,
+   "name": "Sf. Ier. Petru Movilă, mitr. Kievului; Sf. M. Mc. Anastasia",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-23",
+   "movableKey": null,
+   "name": "Sf. Cuv. Antonina de la Tismana ; Sf. 10 Mc. din Creta; Sf. Ier. Pavel, arhiep. Neocezareei",
+   "rank": "cruce_albastra",
+   "kind": null,
+   "note": "Post. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-24",
+   "movableKey": null,
+   "name": "Sf. Mc. Eugenia",
+   "rank": "simplu",
+   "kind": "domnesc",
+   "note": "Zi de ajunare.",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-25",
+   "movableKey": null,
+   "name": "Nașterea Domnului (Crăciunul)",
+   "rank": "praznic",
+   "kind": "domnesc",
+   "note": "Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-26",
+   "movableKey": null,
+   "name": "A doua zi de Crăciun; †) Soborul Maicii Domnului; †) Sf. Cuv. Nicodim cel Sfințit de la Tismana; †) Sf. Cuv. Mc. Gherasim de la Tismana; Sf. Sfințit Mc. Eftimie, ep. Sardelor",
+   "rank": "cruce_rosie",
+   "kind": "maica_domnului",
+   "note": "Sâmbăta după Nașterea Domnului",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-27",
+   "movableKey": null,
+   "name": "A treia zi de Crăciun; † Sf. Ap., întâiul Mc. și arhid. Ștefan; Sf. Cuv. Teodor Mărt.",
+   "rank": "cruce_rosie",
+   "kind": "sfant",
+   "note": "Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-28",
+   "movableKey": null,
+   "name": "Sf. 20.000 de Mc. arși în Nicomidia",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-29",
+   "movableKey": null,
+   "name": "Sf. 14.000 de prunci uciși din porunca lui Irod; Sf. Cuv. Marcel și Tadeu",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Harți. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-30",
+   "movableKey": null,
+   "name": "Sf. Mc. Anisia fecioara; Sf. Cuv. Teodora din Cezareea; Sf. Cuv. Leon, arhim.",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": "12-31",
+   "movableKey": null,
+   "name": "Odovania Praznicului Nașterii Domnului; Sf. Cuv. Melania Romana; † Sf. Mc. Hermes",
+   "rank": "simplu",
+   "kind": null,
+   "note": "Slujba în noaptea trecerii dintre ani; Harți. Nu se fac nunți",
+   "dezlegare": null
+  },
+  {
+   "monthDay": null,
+   "movableKey": "all_saints",
+   "name": "Duminica Tuturor Sfinților",
+   "rank": "cruce_albastra",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": null,
+   "movableKey": "ascension",
+   "name": "Înălțarea Domnului",
+   "rank": "praznic",
+   "kind": "domnesc",
+   "note": "Ziua Eroilor.",
+   "dezlegare": null
+  },
+  {
+   "monthDay": null,
+   "movableKey": "bright_friday",
+   "name": "Izvorul Tămăduirii",
+   "rank": "cruce_rosie",
+   "kind": "maica_domnului",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": null,
+   "movableKey": "lazarus_saturday",
+   "name": "Sâmbăta lui Lazăr",
+   "rank": "cruce_albastra",
+   "kind": "domnesc",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": null,
+   "movableKey": "myrrhbearers",
+   "name": "Duminica Mironosițelor",
+   "rank": "cruce_albastra",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": null,
+   "movableKey": "orthodoxy_sunday",
+   "name": "Duminica Ortodoxiei",
+   "rank": "cruce_albastra",
+   "kind": "domnesc",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": null,
+   "movableKey": "palm_sunday",
+   "name": "Intrarea Domnului în Ierusalim (Floriile)",
+   "rank": "praznic",
+   "kind": "domnesc",
+   "note": null,
+   "dezlegare": "fish"
+  },
+  {
+   "monthDay": null,
+   "movableKey": "pascha",
+   "name": "Învierea Domnului (Sfintele Paști)",
+   "rank": "praznic",
+   "kind": "domnesc",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": null,
+   "movableKey": "pentecost",
+   "name": "Pogorârea Sfântului Duh (Rusaliile)",
+   "rank": "praznic",
+   "kind": "domnesc",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": null,
+   "movableKey": "pentecost_monday",
+   "name": "Sfânta Treime",
+   "rank": "cruce_rosie",
+   "kind": "domnesc",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": null,
+   "movableKey": "romanian_saints",
+   "name": "Duminica Sfinților Români",
+   "rank": "cruce_rosie",
+   "kind": "romanesc",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": null,
+   "movableKey": "theodore_saturday",
+   "name": "Sfântul Mucenic Teodor Tiron",
+   "rank": "cruce_albastra",
+   "kind": "sfant",
+   "note": null,
+   "dezlegare": null
+  },
+  {
+   "monthDay": null,
+   "movableKey": "thomas_sunday",
+   "name": "Duminica Tomii",
+   "rank": "cruce_albastra",
+   "kind": "domnesc",
+   "note": null,
+   "dezlegare": null
+  }
+ ],
+ "overrides": [
+  {
+   "year": 2026,
+   "monthDay": "01-01",
+   "notes": "Tedeum - Anul Nou"
+  },
+  {
+   "year": 2026,
+   "monthDay": "01-02",
+   "fastLevel": "none"
+  },
+  {
+   "year": 2026,
+   "monthDay": "01-03",
+   "notes": "Sâmbăta dinaintea Botezului Domnului"
+  },
+  {
+   "year": 2026,
+   "monthDay": "01-05",
+   "fastLevel": "strict",
+   "notes": "Ajunul Botezului Domnului"
+  },
+  {
+   "year": 2026,
+   "monthDay": "01-07",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "01-09",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "01-10",
+   "notes": "Sâmbăta după Botezul Domnului"
+  },
+  {
+   "year": 2026,
+   "monthDay": "01-14",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "01-16",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "01-21",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "01-23",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "01-24",
+   "notes": "Tedeum - Ziua Unirii Principatelor Române"
+  },
+  {
+   "year": 2026,
+   "monthDay": "01-28",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "01-30",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-01",
+   "notes": "Începutul Triodului"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-02",
+   "notes": "Utrenie: Luca II, 25-32"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-04",
+   "fastLevel": "none"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-06",
+   "fastLevel": "none"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-11",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-13",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-14",
+   "notes": "Pomenirea morților - Moșii de iarnă"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-16",
+   "notes": "Dezlegare la brânză, lapte și ouă"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-17",
+   "notes": "Dezlegare la brânză, lapte și ouă"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-18",
+   "fastLevel": "fish",
+   "notes": "Zi aliturgică; Dezlegare la brânză, lapte și ouă"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-19",
+   "notes": "Dezlegare la brânză, lapte și ouă"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-20",
+   "fastLevel": "fish",
+   "notes": "Zi aliturgică; Dezlegare la brânză, lapte și ouă"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-21",
+   "notes": "Sâmbăta Sf. Cuvioși; Dezlegare la brânză, lapte și ouă"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-22",
+   "notes": "Lăsatul secului pentru Postul Sfintelor Paști"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-23",
+   "notes": "Canonul cel Mare, partea I; Începutul Postului Sfintelor Paști; Zi aliturgică; Numai seara, pâine și apă"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-24",
+   "notes": "Canonul cel Mare, partea a II-a; Zi aliturgică; Numai seara, pâine și apă"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-25",
+   "fastLevel": "fast",
+   "notes": "Canonul cel Mare, partea a III-a"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-26",
+   "fastLevel": "fast",
+   "notes": "Canonul cel Mare, partea a IV-a"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-27",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "02-28",
+   "fastLevel": "wineOil",
+   "notes": "Sâmbăta Sf. Teodor - Pomenirea morților"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-01",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-02",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-03",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-04",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-05",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-06",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-07",
+   "fastLevel": "wineOil",
+   "notes": "Sâmbăta a II-a din Post - Pomenirea morților"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-08",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-09",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-10",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-11",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-12",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-13",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-14",
+   "fastLevel": "wineOil",
+   "notes": "Sâmbăta a III-a din Post - Pomenirea morților"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-15",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-16",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-17",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-18",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-19",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-20",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-21",
+   "fastLevel": "wineOil",
+   "notes": "Sâmbăta a IV-a din Post - Pomenirea morților"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-22",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-23",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-24",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-25",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-26",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-27",
+   "fastLevel": "fast",
+   "notes": "Denia Acatistului Bunei Vestiri"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-28",
+   "fastLevel": "wineOil",
+   "notes": "Sâmbăta a V-a din Post - Pomenirea morților"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-29",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-30",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "03-31",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "04-01",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "04-02",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "04-03",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "04-04",
+   "fastLevel": "wineOil",
+   "notes": "Sâmbăta lui Lazăr - Pomenirea morților"
+  },
+  {
+   "year": 2026,
+   "monthDay": "04-05",
+   "fastLevel": "fish",
+   "notes": "Denia Sf. și Marii Luni"
+  },
+  {
+   "year": 2026,
+   "monthDay": "04-06",
+   "notes": "Denia Sf. și Marii Marți; Numai seara, pâine și apă"
+  },
+  {
+   "year": 2026,
+   "monthDay": "04-07",
+   "notes": "Denia Sf. și Marii Miercuri; Numai seara, pâine și apă"
+  },
+  {
+   "year": 2026,
+   "monthDay": "04-08",
+   "notes": "Denia Sf. și Marii Joi; Numai seara, pâine și apă"
+  },
+  {
+   "year": 2026,
+   "monthDay": "04-09",
+   "fastLevel": "wineOil",
+   "notes": "Pomenirea morților - Denia celor 12 Evanghelii, a Sf. și Marii Vineri"
+  },
+  {
+   "year": 2026,
+   "monthDay": "04-10",
+   "fastLevel": "strict",
+   "notes": "Denia Prohodului Domnului, a Sf. și Marii Sâmbete; Zi aliturgică"
+  },
+  {
+   "year": 2026,
+   "monthDay": "04-11",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "04-15",
+   "fastLevel": "none"
+  },
+  {
+   "year": 2026,
+   "monthDay": "04-17",
+   "fastLevel": "none"
+  },
+  {
+   "year": 2026,
+   "monthDay": "04-22",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "04-24",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "04-29",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "05-01",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "05-06",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "05-08",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "05-13",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "05-15",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "05-20",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "05-22",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "05-27",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "05-29",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "05-30",
+   "notes": "Pomenirea morților - Moșii de vară"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-03",
+   "fastLevel": "none"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-05",
+   "fastLevel": "none"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-07",
+   "notes": "Lăsatul secului pentru Postul Sf. Ap. Petru și Pavel"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-08",
+   "fastLevel": "fish",
+   "notes": "Începutul Postului Sf. Ap. Petru și Pavel"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-09",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-10",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-11",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-12",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-13",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-14",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-15",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-16",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-17",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-18",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-19",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-20",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-21",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-22",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-23",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-24",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-25",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-26",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-27",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "06-28",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "07-01",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "07-03",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "07-08",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "07-10",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "07-15",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "07-17",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "07-22",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "07-24",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "07-29",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "07-30",
+   "notes": "Lăsatul secului pentru Postul Adormirii Maicii Domnului"
+  },
+  {
+   "year": 2026,
+   "monthDay": "07-31",
+   "fastLevel": "fast",
+   "notes": "Începutul Postului Adormirii Maicii Domnului"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-01",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-02",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-03",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-04",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-05",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-06",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-07",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-08",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-09",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-10",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-11",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-12",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-13",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-14",
+   "fastLevel": "fast",
+   "notes": "Prohodul M. D."
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-19",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-21",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-26",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-28",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "08-29",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "09-01",
+   "notes": "Tedeum - Anul Nou bisericesc"
+  },
+  {
+   "year": 2026,
+   "monthDay": "09-02",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "09-04",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "09-09",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "09-11",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "09-12",
+   "notes": "Sâmbăta dinaintea Înălțării Sf. Cruci"
+  },
+  {
+   "year": 2026,
+   "monthDay": "09-14",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "09-16",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "09-18",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "09-19",
+   "notes": "Sâmbăta după Înălțarea Sf. Cruci"
+  },
+  {
+   "year": 2026,
+   "monthDay": "09-23",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "09-25",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "09-30",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "10-02",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "10-07",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "10-09",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "10-14",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "10-16",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "10-21",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "10-23",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "10-28",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "10-30",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-04",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-06",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-07",
+   "notes": "Pomenirea morților - Moşii de toamnă"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-11",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-13",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-14",
+   "notes": "Lăsatul secului pentru Postul Nașterii Domnului"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-15",
+   "fastLevel": "wineOil",
+   "notes": "Începutul Postului Nașterii Domnului"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-16",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-17",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-18",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-19",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-20",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-21",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-22",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-23",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-24",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-25",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-26",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-27",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-28",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-29",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "11-30",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-01",
+   "fastLevel": "fish",
+   "notes": "Tedeum - Ziua Națională a României"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-02",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-03",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-04",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-05",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-06",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-07",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-08",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-09",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-10",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-11",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-12",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-13",
+   "fastLevel": "fish"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-14",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-15",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-16",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-17",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-18",
+   "fastLevel": "wineOil"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-19",
+   "fastLevel": "fish",
+   "notes": "Sâmbăta dinaintea Nașterii Domnului"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-21",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-22",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-23",
+   "fastLevel": "fast"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-24",
+   "fastLevel": "strict",
+   "notes": "Ajunul Crăciunului; Numai seara, grâu fiert îndulcit cu miere, poame, covrigi sau turte de făină"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-25",
+   "fastLevel": "none"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-26",
+   "notes": "Sâmbăta după Nașterea Domnului"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-30",
+   "fastLevel": "none"
+  },
+  {
+   "year": 2026,
+   "monthDay": "12-31",
+   "notes": "Slujba în noaptea trecerii dintre ani"
+  },
+  {
+   "year": 2027,
+   "monthDay": "01-01",
+   "fastLevel": "none",
+   "notes": "Tedeum - Anul Nou; Harți. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "01-02",
+   "fastLevel": "none",
+   "notes": "Sâmbăta dinaintea Botezului Domnului; Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "01-03",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "01-04",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "01-05",
+   "notes": "Ajunul Botezului Domnului; Post negru. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "01-06",
+   "fastLevel": "none",
+   "notes": "Harți. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "01-08",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "01-09",
+   "notes": "Sâmbăta după Botezul Domnului"
+  },
+  {
+   "year": 2027,
+   "monthDay": "01-13",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "01-15",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "01-20",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "01-22",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "01-24",
+   "notes": "Tedeum - Ziua Unirii Principatelor Române"
+  },
+  {
+   "year": 2027,
+   "monthDay": "01-27",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "01-29",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "02-01",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "02-02",
+   "fastLevel": "none",
+   "notes": "Utrenie: Luca II, 25-32; Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "02-03",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "02-05",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "02-10",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "02-12",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "02-17",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "02-19",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "02-21",
+   "notes": "Începutul Triodului"
+  },
+  {
+   "year": 2027,
+   "monthDay": "02-24",
+   "fastLevel": "none"
+  },
+  {
+   "year": 2027,
+   "monthDay": "02-26",
+   "fastLevel": "none"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-03",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-05",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-06",
+   "notes": "Pomenirea morților - Moșii de iarnă"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-08",
+   "fastLevel": "dairy",
+   "notes": "Dezlegare la ouă, lactate și pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-09",
+   "fastLevel": "dairy",
+   "notes": "Pomenirea morților - Moșii de primăvară; Dezlegare la ouă, lactate și pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-10",
+   "fastLevel": "dairy",
+   "notes": "Zi aliturgică; Dezlegare la ouă, lactate și pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-11",
+   "fastLevel": "dairy",
+   "notes": "Dezlegare la ouă, lactate și pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-12",
+   "fastLevel": "dairy",
+   "notes": "Zi aliturgică; Dezlegare la ouă, lactate și pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-13",
+   "fastLevel": "dairy",
+   "notes": "Sâmbăta Sf. Cuvioși; Dezlegare la ouă, lactate și pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-14",
+   "fastLevel": "dairy",
+   "notes": "Lăsatul secului pentru Postul Sfintelor Paști; Dezlegare la ouă, lactate și pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-15",
+   "fastLevel": "strict",
+   "notes": "Canonul cel Mare, partea I; Începutul Postului Sfintelor Paști; Zi aliturgică; Numai seara, pâine și apă. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-16",
+   "fastLevel": "strict",
+   "notes": "Canonul cel Mare, partea a II-a; Zi aliturgică; Numai seara, pâine și apă. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-17",
+   "fastLevel": "fast",
+   "notes": "Canonul cel Mare, partea a III-a; Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-18",
+   "fastLevel": "fast",
+   "notes": "Canonul cel Mare, partea a IV-a; Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-19",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-20",
+   "fastLevel": "wineOil",
+   "notes": "Sâmbăta Sf. Teodor - Pomenirea morților; Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-21",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-22",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-23",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-24",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-25",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-26",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-27",
+   "fastLevel": "wineOil",
+   "notes": "Sâmbăta a II-a din Post - Pomenirea morților; Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-28",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-29",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-30",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "03-31",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-01",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-02",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-03",
+   "fastLevel": "wineOil",
+   "notes": "Sâmbăta a III-a din Post - Pomenirea morților; Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-04",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-05",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-06",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-07",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-08",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-09",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-10",
+   "fastLevel": "wineOil",
+   "notes": "Sâmbăta a IV-a din Post - Pomenirea morților; Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-11",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-12",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-13",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-14",
+   "fastLevel": "wineOil",
+   "notes": "Denia Canonului cel Mare; Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-15",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-16",
+   "fastLevel": "fast",
+   "notes": "Denia Acatistului Bunei Vestiri; Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-17",
+   "fastLevel": "wineOil",
+   "notes": "Sâmbăta a V-a din Post - Pomenirea morților; Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-18",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-19",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-20",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-21",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-22",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-23",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-24",
+   "fastLevel": "wineOil",
+   "notes": "Sâmbăta lui Lazăr - Pomenirea morților; Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-25",
+   "fastLevel": "fish",
+   "notes": "Denia Sf. și Marii Luni; Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-26",
+   "fastLevel": "strict",
+   "notes": "Denia Sf. și Marii Marți; Numai seara, pâine și apă. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-27",
+   "fastLevel": "strict",
+   "notes": "Denia Sf. și Marii Miercuri; Numai seara, pâine și apă. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-28",
+   "fastLevel": "strict",
+   "notes": "Denia Sf. și Marii Joi; Numai seara, pâine și apă. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-29",
+   "fastLevel": "wineOil",
+   "notes": "Pomenirea morților - Denia celor 12 Evanghelii, a Sf. și Marii Vineri; Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "04-30",
+   "notes": "Denia Prohodului Domnului, a Sf. și Marii Sâmbete; Zi aliturgică; Post negru. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "05-01",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "05-02",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "05-03",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "05-04",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "05-05",
+   "fastLevel": "none",
+   "notes": "Harți. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "05-06",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "05-07",
+   "fastLevel": "none",
+   "notes": "Harți. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "05-08",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "05-12",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "05-14",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "05-19",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "05-21",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "05-26",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "05-28",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-02",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-04",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-09",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-10",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-11",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-16",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-18",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-19",
+   "fastLevel": "none",
+   "notes": "Pomenirea morților - Moșii de vară; Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-20",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-21",
+   "fastLevel": "none",
+   "notes": "Lăsatul secului pentru Postul Sf. Ap. Petru și Pavel; Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-22",
+   "fastLevel": "fish",
+   "notes": "Începutul Postului Sf. Ap. Petru și Pavel; Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-23",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-24",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-25",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-26",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-27",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-28",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "06-30",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "07-02",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "07-07",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "07-09",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "07-14",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "07-16",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "07-21",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "07-23",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "07-28",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "07-30",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "07-31",
+   "notes": "Lăsatul secului pentru Postul Adormirii Maicii Domnului"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-01",
+   "fastLevel": "wineOil",
+   "notes": "Începutul Postului Adormirii Maicii Domnului; Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-02",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-03",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-04",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-05",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-06",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-07",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-08",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-09",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-10",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-11",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-12",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-13",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-14",
+   "fastLevel": "wineOil",
+   "notes": "Prohodul M. D.; Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-15",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-18",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-20",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-25",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-27",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "08-29",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "09-01",
+   "fastLevel": "fast",
+   "notes": "Tedeum - Anul Nou bisericesc; Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "09-03",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "09-07",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "09-08",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "09-10",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "09-11",
+   "notes": "Sâmbăta dinaintea Înălțării Sf. Cruci"
+  },
+  {
+   "year": 2027,
+   "monthDay": "09-14",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "09-15",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "09-17",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "09-18",
+   "notes": "Sâmbăta după Înălțarea Sf. Cruci"
+  },
+  {
+   "year": 2027,
+   "monthDay": "09-22",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "09-24",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "09-29",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "09-30",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "10-01",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "10-06",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "10-08",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "10-13",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "10-15",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "10-20",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "10-22",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "10-27",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "10-29",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "10-30",
+   "notes": "Pomenirea morților - Moşii de toamnă"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-03",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-05",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-10",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-12",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-14",
+   "notes": "Lăsatul secului pentru Postul Nașterii Domnului"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-15",
+   "fastLevel": "fast",
+   "notes": "Începutul Postului Nașterii Domnului; Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-16",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-17",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-18",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-19",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-20",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-21",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-22",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-23",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-24",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-25",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-26",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-27",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-28",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-29",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "11-30",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-01",
+   "fastLevel": "fast",
+   "notes": "Tedeum - Ziua Națională a României; Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-02",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-03",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-04",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-05",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-06",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-07",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-08",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-09",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-10",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-11",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-12",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-13",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-14",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-15",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-16",
+   "fastLevel": "wineOil",
+   "notes": "Dezlegare la ulei și vin. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-17",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-18",
+   "fastLevel": "fish",
+   "notes": "Sâmbăta dinaintea Nașterii Domnului; Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-19",
+   "fastLevel": "fish",
+   "notes": "Dezlegare la pește. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-20",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-21",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-22",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-23",
+   "fastLevel": "fast",
+   "notes": "Post. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-24",
+   "fastLevel": "strict",
+   "notes": "Ajunul Crăciunului"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-25",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-26",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-27",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-28",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-29",
+   "fastLevel": "none",
+   "notes": "Harți. Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-30",
+   "fastLevel": "none",
+   "notes": "Nu se fac nunți"
+  },
+  {
+   "year": 2027,
+   "monthDay": "12-31",
+   "fastLevel": "none",
+   "notes": "Slujba în noaptea trecerii dintre ani; Harți. Nu se fac nunți"
+  }
+ ]
+}
