@@ -53,6 +53,12 @@ Everything ad-related is off until you fill in `ADS` in `src/lib/site.ts`:
 
 The privacy policy at `/confidentialitate` already covers AdSense on the site and AdMob in the app.
 
+## Design rules
+
+The visual rules are in [`DESIGN.MD`](DESIGN.MD): fonts (Literata, Alegreya Sans, Plus Jakarta Sans, JetBrains Mono, self-hosted in `public/fonts`), colours for light and dark mode, 4px corners (8px max), the 3px liturgical-colour bar, feast cards and fasting badges. Tokens live in `src/app/globals.css`; components never use a hex value directly.
+
+`npm run lint:design` checks the code against the DESIGN.MD ban list (pills, radii over 8px, big shadows, blur, gradients, banned fonts, emoji). It also runs automatically before every `npm run build`, so a violation fails the Vercel deploy. `npm test` checks the liturgical colour of known days.
+
 ## Run locally
 
 ```bash
