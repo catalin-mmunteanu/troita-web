@@ -16,7 +16,8 @@ export default function Confidentialitate() {
     <>
       <Breadcrumbs items={[{ href: "/", label: "Acasă" }, { label: "Confidențialitate" }]} />
       <PageHeader eyebrow={`Actualizată la ${UPDATED}`} title="Confidențialitate și cookie-uri" />
-      <article className="prose-troita mx-auto max-w-2xl px-4 text-[16.5px] sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <article className="prose-troita text-[16.5px]">
         <p>
           Această politică descrie ce date folosesc aplicația pentru Android <strong>Troița</strong> și site-ul{" "}
           <strong>troita.ro</strong>. Pe scurt: nu avem conturi și nu vă cerem locația. Atât site-ul, cât și
@@ -156,6 +157,7 @@ export default function Confidentialitate() {
           importante sunt anunțate și în aplicație.
         </p>
       </article>
+      </div>
     </>
   );
 }

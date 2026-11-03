@@ -1,18 +1,18 @@
-import Link from "next/link";
+import { ButtonLink } from "@/components/chrome";
+import { TroitaEmblem } from "@/components/icons";
 
 export default function NotFound() {
   return (
-    <div className="mx-auto max-w-xl px-4 py-24 text-center sm:px-6">
-      <p className="font-display text-[64px] font-bold leading-none text-gold">404</p>
-      <h1 className="font-display mt-4 text-[32px] font-bold text-burgundy">Pagina nu există</h1>
-      <p className="mt-3 text-[17px] text-muted">Poate a fost mutată, sau adresa are o greșeală.</p>
-      <div className="mt-8 flex flex-wrap justify-center gap-3">
-        <Link href="/" className="rounded-full bg-burgundy px-5 py-3 font-semibold text-paper hover:bg-burgundy-deep">
-          Acasă
-        </Link>
-        <Link href="/azi" className="rounded-full border border-border px-5 py-3 font-semibold text-burgundy hover:border-gold">
-          Sfântul zilei
-        </Link>
+    <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <div className="max-w-xl">
+        <TroitaEmblem width={44} height={44} className="text-red" />
+        <p className="rubric mt-6 text-red">Eroare 404</p>
+        <h1 className="mt-2 text-[36px] font-bold leading-[1.15] text-ink">Pagina nu există</h1>
+        <p className="mt-3 text-[17px] text-umber">Poate a fost mutată, sau adresa are o greșeală.</p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <ButtonLink href="/">Pagina principală</ButtonLink>
+          <ButtonLink href="/azi" variant="secondary">Sfântul zilei</ButtonLink>
+        </div>
       </div>
     </div>
   );

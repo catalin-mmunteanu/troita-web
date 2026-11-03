@@ -3,7 +3,8 @@ import Link from "next/link";
 import { AdSlot } from "@/components/ads";
 import { notFound } from "next/navigation";
 import { AppNote, Breadcrumbs } from "@/components/chrome";
-import { DayRow, FastLegend } from "@/components/calendar-bits";
+import { DayCard, FastLegend } from "@/components/calendar-bits";
+import type { DayEntry } from "@/lib/calendar";
 import { ChevronLeft, ChevronRight } from "@/components/icons";
 import { TodayMarker } from "@/components/today-marker";
 import { getMonth, isPublishedYear, PUBLISHED_YEARS } from "@/lib/calendar";
@@ -51,57 +52,99 @@ export default async function MonthPage({ params }: PageProps<"/calendar-ortodox
           { label: capitalize(luna) },
         ]}
       />
-      <div className="mx-auto max-w-3xl px-4 pt-8 sm:px-6">
-        <p className="text-[13px] font-bold uppercase tracking-[0.14em] text-gold">Calendar ortodox {year}</p>
-        <div className="mt-2 flex items-center justify-between gap-3">
-          <h1 className="font-display text-[38px] font-bold leading-tight text-burgundy sm:text-[48px]">
-            {capitalize(luna)} {year}
-          </h1>
-          <div className="flex gap-1.5">
-            {[
-              { href: prevHref, label: `${MONTHS[prev.m - 1]} ${prev.y}`, Icon: ChevronLeft },
-              { href: nextHref, label: `${MONTHS[next.m - 1]} ${next.y}`, Icon: ChevronRight },
-            ].map(({ href, label, Icon }) =>
-              href ? (
-                <Link key={label} href={href} aria-label={capitalize(label)} className="grid h-11 w-11 place-items-center rounded-full border border-border bg-surface text-burgundy hover:border-gold">
-                  <Icon />
-                </Link>
-              ) : (
-                <span key={label} aria-hidden className="grid h-11 w-11 place-items-center rounded-full border border-border text-border">
-                  <Icon />
-                </span>
-              ),
-            )}
+      <div className="mx-auto max-w-6xl px-4 pt-8 sm:px-6">
+        <div className="grid gap-8 md:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] md:gap-12">
+          <div>
+            <div className="md:sticky md:top-24">
+              <p className="rubric text-red">Calendar ortodox {year}</p>
+              <div className="mt-2 flex items-center justify-between gap-3">
+                <h1 className="text-[36px] font-bold leading-[1.15] text-ink sm:text-[40px]">
+                  {capitalize(luna)} {year}
+                </h1>
+                <div className="flex gap-1.5">
+                  {[
+                    { href: prevHref, label: `${MONTHS[prev.m - 1]} ${prev.y}`, Icon: ChevronLeft },
+                    { href: nextHref, label: `${MONTHS[next.m - 1]} ${next.y}`, Icon: ChevronRight },
+                  ].map(({ href, label, Icon }) =>
+                    href ? (
+                      <Link key={label} href={href} aria-label={capitalize(label)} className="grid h-10 w-10 place-items-center rounded-sm border border-oak bg-surface text-ink hover:border-umber">
+                        <Icon />
+                      </Link>
+                    ) : (
+                      <span key={label} aria-hidden className="grid h-10 w-10 place-items-center rounded-sm border border-oak text-oak">
+                        <Icon />
+                      </span>
+                    ),
+                  )}
+                </div>
+              </div>
+              <p className="mt-4 text-[16px] leading-relaxed text-umber">
+                În {luna} {year} {red.length === 1 ? "este" : "sunt"}{" "}
+                {red.length === 0 ? "nicio sărbătoare cu cruce roșie" : count(red.length, "sărbătoare cu cruce roșie", "sărbători cu cruce roșie")}
+                {red.length > 0 && (
+                  <>
+                    {" "}({red.slice(0, 3).map((d) => `${d.day} ${luna}`).join(", ")}
+                    {red.length > 3 ? " și altele" : ""})
+                  </>
+                )}{" "}
+                și {count(fasting, "zi", "zile")} de post
+                {fish > 0 ? `, dintre care ${fish} cu dezlegare la pește` : ""}.
+              </p>
+              <MonthGrid days={days} />
+              <div className="mt-6">
+                <FastLegend />
+              </div>
+            </div>
+          </div>
+          <div className="min-w-0">
+            <ol className="space-y-2">
+              {days.map((d) => (
+                <DayCard key={d.date} day={d} />
+              ))}
+            </ol>
+            <TodayMarker />
+            <div className="mt-6 flex justify-between font-ui text-[17px] font-medium text-red">
+              {prevHref ? <Link href={prevHref} className="hover:underline">← {capitalize(MONTHS[prev.m - 1])} {prev.y}</Link> : <span />}
+              {nextHref ? <Link href={nextHref} className="hover:underline">{capitalize(MONTHS[next.m - 1])} {next.y} →</Link> : <span />}
+            </div>
+            <AdSlot />
           </div>
         </div>
-        <p className="mt-4 text-[16.5px] leading-relaxed text-ink/85">
-          În {luna} {year} {red.length === 1 ? "este" : "sunt"}{" "}
-          {red.length === 0 ? "nicio sărbătoare cu cruce roșie" : count(red.length, "sărbătoare cu cruce roșie", "sărbători cu cruce roșie")}
-          {red.length > 0 && (
-            <>
-              {" "}({red.slice(0, 3).map((d) => `${d.day} ${luna}`).join(", ")}
-              {red.length > 3 ? " și altele" : ""})
-            </>
-          )}{" "}
-          și {count(fasting, "zi", "zile")} de post
-          {fish > 0 ? `, dintre care ${fish} cu dezlegare la pește` : ""}.
-        </p>
-        <div className="mt-5">
-          <FastLegend />
-        </div>
-        <ol className="mt-8 overflow-hidden rounded-[20px] border border-border bg-paper">
-          {days.map((d) => (
-            <DayRow key={d.date} day={d} />
-          ))}
-        </ol>
-        <TodayMarker />
-        <div className="mt-6 flex justify-between text-[15px] font-semibold text-burgundy">
-          {prevHref ? <Link href={prevHref} className="hover:underline">← {capitalize(MONTHS[prev.m - 1])} {prev.y}</Link> : <span />}
-          {nextHref ? <Link href={nextHref} className="hover:underline">{capitalize(MONTHS[next.m - 1])} {next.y} →</Link> : <span />}
-        </div>
       </div>
-<AdSlot />
       <AppNote />
     </>
+  );
+}
+
+/** A small month grid in the margin, like the index of a wall calendar. */
+function MonthGrid({ days }: { days: DayEntry[] }) {
+  const lead = days[0].weekday - 1;
+  return (
+    <div className="mt-6" aria-label="Zilele lunii">
+      <div className="grid grid-cols-7 border-t border-l border-oak text-center">
+        {["L", "Ma", "Mi", "J", "V", "S", "D"].map((w, i) => (
+          <div key={w} className={`rubric border-r border-b border-oak py-1 text-[11px] ${i === 6 ? "text-red" : "text-umber"}`}>
+            {w}
+          </div>
+        ))}
+        {Array.from({ length: lead }, (_, i) => (
+          <div key={`e${i}`} className="border-r border-b border-oak" />
+        ))}
+        {days.map((d) => {
+          const red = d.rank === "praznic" || d.rank === "cruce_rosie" || d.weekday === 7;
+          return (
+            <a
+              key={d.date}
+              href={`#ziua-${d.day}`}
+              data-date={d.date}
+              className="border-r border-b border-oak py-1.5 font-display text-[15px] font-semibold hover:bg-surface"
+              style={{ color: red ? "var(--rosie-title)" : "var(--ink)" }}
+            >
+              {d.day}
+            </a>
+          );
+        })}
+      </div>
+    </div>
   );
 }

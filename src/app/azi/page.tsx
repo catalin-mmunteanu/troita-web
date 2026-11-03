@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AdSlot } from "@/components/ads";
 import { cacheLife } from "next/cache";
+import { AdSlot } from "@/components/ads";
 import { AppNote, Breadcrumbs } from "@/components/chrome";
-import { Commemorations, DayRow, FastPill } from "@/components/calendar-bits";
+import { DayCard, DayLeaf } from "@/components/calendar-bits";
 import { ArrowIcon } from "@/components/icons";
+import { Section } from "@/components/section";
 import { getDay, getRange, isPublishedYear, upcomingMajor } from "@/lib/calendar";
 import { addDays, capitalize, formatWithWeekday, monthSlug, todayInRomania } from "@/lib/dates";
-import { FAST_LABEL, PERIOD_LABEL } from "@/lib/liturgical";
+import { PERIOD_LABEL } from "@/lib/liturgical";
 import { currentOrNextFast, FAST_INFO } from "@/lib/fasts";
 
 export const metadata: Metadata = {
@@ -23,95 +24,90 @@ export default async function AziPage() {
   const today = todayInRomania();
   const day = getDay(today);
   const week = getRange(addDays(today, 1), addDays(today, 7));
-  const next = upcomingMajor(today, 3);
+  const next = upcomingMajor(today, 4);
   const fast = currentOrNextFast(today);
+  const inFast = fast && day.periodKind === FAST_INFO[fast.slug].get(fast.year)?.kind;
   const monthHref = isPublishedYear(today.y) ? `/calendar-ortodox/${today.y}/${monthSlug(today.m)}` : null;
+
+  const facts = [
+    day.periodKind ? { t: "Perioada", d: PERIOD_LABEL[day.periodKind] } : null,
+    day.explanation ? { t: "De ce", d: day.explanation } : null,
+    day.notes.length ? { t: "Rânduială", d: day.notes.join(" · ") } : null,
+  ].filter(Boolean) as { t: string; d: string }[];
 
   return (
     <>
       <Breadcrumbs items={[{ href: "/", label: "Acasă" }, { label: "Sfântul zilei" }]} />
-      <article className="mx-auto max-w-3xl px-4 pt-8 sm:px-6">
-        <p className="text-[13px] font-bold uppercase tracking-[0.14em] text-gold">Sfântul zilei</p>
-        <h1 className="font-display mt-2 text-[36px] font-bold leading-tight text-burgundy sm:text-[46px]">
-          {capitalize(formatWithWeekday(today, true))}
-        </h1>
-
-        <div className="mt-8 rounded-[20px] border border-border bg-surface p-6 sm:p-8">
-          <Commemorations day={day} size="lg" />
-          <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-border pt-5">
-            <FastPill level={day.fastLevel} />
-            {day.noWeddings && <span className="text-[15px] text-muted">Nu se fac nunți</span>}
+      <article className="mx-auto max-w-6xl px-4 pt-8 pb-14 sm:px-6">
+        <div className="grid gap-10 md:grid-cols-[minmax(0,8fr)_minmax(0,4fr)] md:gap-12">
+          <div>
+            <DayLeaf
+              day={day}
+              heading={
+                <>
+                  <p className="rubric text-red">Sfântul zilei</p>
+                  <h1 className="mt-2 text-[34px] font-bold leading-[1.15] text-ink sm:text-[40px]">
+                    {capitalize(formatWithWeekday(today, true))}
+                  </h1>
+                </>
+              }
+            />
+            {facts.length > 0 && (
+              <dl className="mt-6 divide-y divide-oak border-y border-oak">
+                {facts.map((f) => (
+                  <div key={f.t} className="grid gap-1 py-3 sm:grid-cols-[9rem_1fr] sm:gap-6">
+                    <dt className="rubric pt-0.5 text-umber">{f.t}</dt>
+                    <dd className="text-[16px] leading-relaxed">{f.d}</dd>
+                  </div>
+                ))}
+              </dl>
+            )}
           </div>
-          {(day.periodKind || day.explanation || day.notes.length > 0 || day.glas) && (
-            <dl className="mt-5 grid gap-3 text-[15.5px] sm:grid-cols-[auto_1fr] sm:gap-x-6">
-              {day.periodKind && (
-                <>
-                  <dt className="font-semibold text-muted">Perioada</dt>
-                  <dd>{PERIOD_LABEL[day.periodKind]}</dd>
-                </>
-              )}
-              {day.explanation && (
-                <>
-                  <dt className="font-semibold text-muted">De ce</dt>
-                  <dd>{day.explanation}</dd>
-                </>
-              )}
-              {day.notes.length > 0 && (
-                <>
-                  <dt className="font-semibold text-muted">Rânduială</dt>
-                  <dd>{day.notes.join(" · ")}</dd>
-                </>
-              )}
-              {day.glas && (
-                <>
-                  <dt className="font-semibold text-muted">Glasul</dt>
-                  <dd>
-                    Glasul {day.glas}, voscreasna {day.voscreasna}
-                  </dd>
-                </>
-              )}
-            </dl>
-          )}
+
+          <aside className="space-y-8">
+            {fast && (
+              <div>
+                <p className="rubric text-red">{inFast ? "Suntem în post" : "Următorul post"}</p>
+                <Link
+                  href={`/posturi/${fast.year}/${fast.slug}`}
+                  className="mt-1.5 block font-display text-[20px] font-semibold leading-snug text-ink hover:text-red"
+                >
+                  {FAST_INFO[fast.slug].title} {fast.year}
+                </Link>
+              </div>
+            )}
+            {next.length > 0 && (
+              <div>
+                <p className="rubric text-red">Sărbători mari care vin</p>
+                <ul className="mt-2 divide-y divide-oak border-y border-oak">
+                  {next.map((d) => (
+                    <li key={d.date} className="py-2.5">
+                      <p className="rubric text-umber">{formatWithWeekday({ y: d.year, m: d.month, d: d.day })}</p>
+                      <p className="font-display text-[17px] font-semibold leading-snug" style={{ color: "var(--rosie-title)" }}>
+                        {d.feasts[0]?.parts[0]?.text}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </aside>
         </div>
+        <AdSlot />
+      </article>
 
-        {fast && (
-          <p className="mt-6 text-[16px] leading-relaxed text-ink/85">
-            {day.periodKind === FAST_INFO[fast.slug].get(fast.year)?.kind ? "Suntem în " : "Următorul post: "}
-            <Link href={`/posturi/${fast.year}/${fast.slug}`} className="font-semibold text-burgundy underline underline-offset-4">
-              {FAST_INFO[fast.slug].title} {fast.year}
-            </Link>
-            .
-          </p>
-        )}
-
-<AdSlot />
-        <h2 className="font-display mt-14 text-[26px] font-bold text-burgundy">Zilele care urmează</h2>
-        <ol className="mt-4 rounded-[20px] border border-border bg-paper">
+      <Section id="zilele-urmatoare" eyebrow="Calendar" title="Zilele care urmează">
+        <ol className="space-y-2">
           {week.map((d) => (
-            <DayRow key={d.date} day={d} showMonth />
+            <DayCard key={d.date} day={d} showMonth />
           ))}
         </ol>
         {monthHref && (
-          <Link href={monthHref} className="mt-4 inline-flex items-center gap-1.5 text-[15px] font-semibold text-burgundy hover:underline">
+          <Link href={monthHref} className="mt-4 inline-flex items-center gap-1.5 font-ui text-[17px] font-medium text-red hover:underline">
             Toată luna în calendar <ArrowIcon width={15} height={15} />
           </Link>
         )}
-
-        {next.length > 0 && (
-          <>
-            <h2 className="font-display mt-14 text-[26px] font-bold text-burgundy">Sărbătorile mari care vin</h2>
-            <ul className="mt-4 space-y-2 text-[16.5px]">
-              {next.map((d) => (
-                <li key={d.date} className="flex flex-wrap gap-x-2">
-                  <span className="font-semibold text-feast-red">{capitalize(formatWithWeekday({ y: d.year, m: d.month, d: d.day }))}:</span>
-                  <span className="font-display">{d.feasts[0]?.parts[0]?.text}</span>
-                  {d.fastLevel !== "none" && <span className="text-muted">({FAST_LABEL[d.fastLevel].toLowerCase()})</span>}
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
-      </article>
+      </Section>
       <AppNote />
     </>
   );

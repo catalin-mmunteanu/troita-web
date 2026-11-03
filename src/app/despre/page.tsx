@@ -15,7 +15,8 @@ export default function Despre() {
     <>
       <Breadcrumbs items={[{ href: "/", label: "Acasă" }, { label: "Despre" }]} />
       <PageHeader eyebrow="Despre" title="De ce Troița" />
-      <article className="prose-troita mx-auto max-w-2xl px-4 text-[17px] sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <article className="prose-troita text-[17px]">
         <p>
           Troițele de la margine de drum sunt un semn pe care îl recunoaște oricine în România: o cruce pusă acolo
           ca să ne aducă aminte. Aplicația vrea să fie același lucru pe telefon. Un semn mic, la îndemână, care vă
@@ -62,6 +63,7 @@ export default function Despre() {
           Corectăm repede.
         </p>
       </article>
+      </div>
       <AppNote />
     </>
   );

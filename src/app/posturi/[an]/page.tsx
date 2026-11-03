@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AppNote, Breadcrumbs, PageHeader } from "@/components/chrome";
-import { FastPill } from "@/components/calendar-bits";
+import { FastBadge } from "@/components/calendar-bits";
+import { Section } from "@/components/section";
 import { isPublishedYear, PUBLISHED_YEARS } from "@/lib/calendar";
 import { count, formatLong, formatRange } from "@/lib/dates";
 import { harti, pascha, periodDays, saptamanaBranzei, type FastLevel } from "@/lib/liturgical";
@@ -35,34 +36,39 @@ export default async function PosturiYear({ params }: PageProps<"/posturi/[an]">
       <PageHeader eyebrow="Calendar de post" title={`Posturile din ${year}`}>
         Paștele este în {formatLong(pascha(year))}, iar de data lui depind Postul Mare și Postul Sfinților Apostoli.
       </PageHeader>
-      <div className="mx-auto max-w-3xl space-y-4 px-4 sm:px-6">
-        {FAST_ORDERED.map((slug) => {
-          const f = fastDays(slug, year);
-          if (!f) return null;
-          const c = countLevels(f.days);
-          return (
-            <Link
-              key={slug}
-              href={`/posturi/${year}/${slug}`}
-              className="block rounded-[20px] border border-border bg-surface p-6 transition hover:border-gold"
-            >
-              <h2 className="font-display text-[24px] font-bold text-burgundy">{FAST_INFO[slug].title}</h2>
-              <p className="mt-1 text-[16px] text-muted">
-                {formatRange(f.period.start, f.period.end)} · {count(periodDays(f.period), "zi", "zile")}
-              </p>
-              <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
-                {SHOWN.filter((l) => c[l]).map((l) => (
-                  <span key={l} className="inline-flex items-center gap-2 text-[14.5px]">
-                    <FastPill level={l} compact /> <span className="text-muted">× {c[l]}</span>
-                  </span>
-                ))}
-              </div>
-            </Link>
-          );
-        })}
+      <Section id="posturile" eyebrow={`Anul ${year}`} title="Cele patru posturi mari" rope={false}>
+        <ul className="space-y-2">
+          {FAST_ORDERED.map((slug) => {
+            const f = fastDays(slug, year);
+            if (!f) return null;
+            const c = countLevels(f.days);
+            return (
+              <li key={slug}>
+                <Link
+                  href={`/posturi/${year}/${slug}`}
+                  className="relative block overflow-hidden rounded-sm border border-oak bg-parchment py-4 pr-4 pl-5 shadow-micro hover:border-umber"
+                >
+                  <span aria-hidden className="absolute inset-y-0 left-0 w-[3px] bg-purple" />
+                  <p className="rubric text-umber">
+                    {formatRange(f.period.start, f.period.end)} · {count(periodDays(f.period), "zi", "zile")}
+                  </p>
+                  <h2 className="mt-1 text-[22px] font-semibold leading-tight text-ink">{FAST_INFO[slug].title}</h2>
+                  <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
+                    {SHOWN.filter((l) => c[l]).map((l) => (
+                      <span key={l} className="inline-flex items-center gap-2">
+                        <FastBadge level={l} compact /> <span className="rubric text-umber">× {c[l]}</span>
+                      </span>
+                    ))}
+                  </div>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </Section>
 
-        <section className="prose-troita pt-10">
-          <h2>Săptămânile fără post în {year}</h2>
+      <Section id="harti" eyebrow="Fără post" title={`Săptămânile fără post în ${year}`}>
+        <div className="prose-troita text-[16.5px]">
           <ul>
             {harti(year)
               .filter((h) => h.start.y === year)
@@ -74,11 +80,11 @@ export default async function PosturiYear({ params }: PageProps<"/posturi/[an]">
               ))}
           </ul>
           <p>
-            Săptămâna Brânzei ({formatRange(br.start, br.end)}) are dezlegare la lactate
-            și ouă în toate zilele, dar nu la carne.
+            Săptămâna Brânzei ({formatRange(br.start, br.end)}) are dezlegare la lactate și ouă în toate zilele,
+            dar nu la carne.
           </p>
-        </section>
-      </div>
+        </div>
+      </Section>
       <AppNote />
     </>
   );

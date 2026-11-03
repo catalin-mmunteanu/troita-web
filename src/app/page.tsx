@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { cacheLife } from "next/cache";
-import { AppNote, StoreButton } from "@/components/chrome";
-import { Commemorations, FastPill } from "@/components/calendar-bits";
-import { ArrowIcon, BellIcon, LockIcon, MapPinIcon, PhoneIcon } from "@/components/icons";
-import { Phone } from "@/components/phone";
-import { getDay, upcomingMajor } from "@/lib/calendar";
-import { formatLong, formatWithWeekday, todayInRomania, capitalize, type Ymd } from "@/lib/dates";
-import { FAST_LABEL, PERIOD_LABEL } from "@/lib/liturgical";
+import { AppNote, ButtonLink, StoreStatus } from "@/components/chrome";
+import { DayCard, DayLeaf, FastBadge } from "@/components/calendar-bits";
+import { ArrowIcon, OrthodoxCross } from "@/components/icons";
+import { AppScreen } from "@/components/phone";
+import { Section } from "@/components/section";
+import { getDay, getRange } from "@/lib/calendar";
+import { addDays, capitalize, formatWithWeekday, todayInRomania, type Ymd } from "@/lib/dates";
+import type { FastLevel } from "@/lib/liturgical";
 
 export default async function Home() {
   "use cache";
@@ -16,281 +17,196 @@ export default async function Home() {
   return (
     <>
       <Hero today={today} />
-      <TodayStrip today={today} />
-      <Features today={today} />
+      <Week today={today} />
+      <Tabs today={today} />
       <Colours />
       <Privacy />
       <Faq />
-      <FinalCta />
+      <AppNote>
+        Troița vine în curând pe Google Play, pentru Android. Până atunci, găsiți aici{" "}
+        <Link href="/azi" className="text-red underline underline-offset-4">sfântul zilei</Link>, calendarul și{" "}
+        <Link href="/posturi" className="text-red underline underline-offset-4">posturile anului</Link>.
+      </AppNote>
     </>
   );
 }
 
 function Hero({ today }: { today: Ymd }) {
-  return (
-    <section className="relative overflow-hidden">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-[520px] bg-[radial-gradient(ellipse_at_top,var(--color-accent-surface),transparent_65%)]"
-      />
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 pt-12 pb-16 sm:px-6 md:grid-cols-[1.1fr_1fr] md:pt-20 md:pb-24">
-        <div>
-          <StoreButton />
-          <h1 className="font-display mt-6 text-[44px] font-bold leading-[1.02] tracking-tight text-burgundy sm:text-[60px] lg:text-[68px]">
-            Calendarul ortodox, zi de zi.
-          </h1>
-          <p className="mt-6 max-w-xl text-[18px] leading-relaxed text-ink/85 sm:text-[19px]">
-            Sfântul zilei, posturile și dezlegările, bisericile, mănăstirile și troițele de pe hartă.
-            Toate într-o aplicație simplă, cu litere mari și culorile calendarului pe care îl știți.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/azi"
-              className="inline-flex items-center gap-2 rounded-full bg-burgundy px-5 py-3 text-[15.5px] font-semibold text-paper transition hover:bg-burgundy-deep"
-            >
-              Sfântul zilei <ArrowIcon width={16} height={16} />
-            </Link>
-            <Link
-              href={`/calendar-ortodox/${today.y}`}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-paper px-5 py-3 text-[15.5px] font-semibold text-burgundy transition hover:border-gold"
-            >
-              Calendar ortodox {today.y}
-            </Link>
-          </div>
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[14.5px] text-muted">
-            <li className="flex items-center gap-1.5"><LockIcon width={16} height={16} /> Fără cont</li>
-            <li className="flex items-center gap-1.5"><BellIcon width={16} height={16} /> Notificări programate pe telefon</li>
-            <li className="flex items-center gap-1.5"><PhoneIcon width={16} height={16} /> Android</li>
-          </ul>
-        </div>
-        <Phone screen="calendar" today={today} alt="Ecranul Calendar din aplicația Troița" priority />
-      </div>
-    </section>
-  );
-}
-
-function TodayStrip({ today }: { today: Ymd }) {
   const day = getDay(today);
-  const next = upcomingMajor(today, 4);
   return (
-    <section aria-labelledby="azi-titlu" className="border-y border-border bg-surface">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-[1.4fr_1fr]">
-        <div className="rounded-[20px] border border-border bg-paper p-6 sm:p-8">
-          <p className="text-[13px] font-bold uppercase tracking-[0.14em] text-gold">Astăzi</p>
-          <h2 id="azi-titlu" className="font-display mt-1 text-[26px] font-bold text-burgundy">
-            {capitalize(formatWithWeekday(today))}
-          </h2>
-          <div className="mt-5">
-            <Commemorations day={day} size="lg" />
+    <section className="mx-auto max-w-6xl px-4 pt-10 pb-14 sm:px-6 md:pt-16 md:pb-20">
+      <div className="grid items-start gap-10 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-14">
+        <div className="md:pt-4">
+          <p className="rubric text-red">Calendar ortodox românesc</p>
+          <h1 className="mt-3 text-[38px] font-bold leading-[1.15] text-ink sm:text-[40px]">
+            Calendarul ortodox, zi de zi
+          </h1>
+          <p className="mt-5 max-w-[46ch] text-[17px] leading-relaxed text-umber">
+            Sfântul zilei, posturile și dezlegările, bisericile, mănăstirile și troițele din toată țara. Cu
+            litere mari și cu culorile calendarului pe care îl știți.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <ButtonLink href="/azi">
+              Sfântul zilei <ArrowIcon width={16} height={16} />
+            </ButtonLink>
+            <ButtonLink href={`/calendar-ortodox/${today.y}`} variant="secondary">
+              Calendar {today.y}
+            </ButtonLink>
           </div>
-          <div className="mt-5 flex flex-wrap items-center gap-3">
-            <FastPill level={day.fastLevel} />
-            {day.periodKind && day.periodKind !== "harti" && (
-              <span className="text-[14px] text-muted">{PERIOD_LABEL[day.periodKind]}</span>
-            )}
+          <div className="mt-8">
+            <StoreStatus />
           </div>
-          <Link href="/azi" className="mt-6 inline-flex items-center gap-1.5 text-[15px] font-semibold text-burgundy hover:underline">
-            Toată ziua de azi <ArrowIcon width={15} height={15} />
-          </Link>
         </div>
-        <div>
-          <h2 className="text-[13px] font-bold uppercase tracking-[0.14em] text-muted">Sărbători care urmează</h2>
-          <ul className="mt-4 divide-y divide-border">
-            {next.map((d) => (
-              <li key={d.date} className="flex gap-4 py-3">
-                <div className="w-12 shrink-0 text-center text-feast-red">
-                  <div className="font-display text-[24px] font-bold leading-none">{d.day}</div>
-                  <div className="text-[12px] font-semibold">{formatLong({ y: d.year, m: d.month, d: d.day }, false).split(" ")[1].slice(0, 3)}</div>
-                </div>
-                <div className="font-display text-[16px] leading-snug text-calendar-ink">
-                  {d.feasts[0]?.parts[0]?.text}
-                  {d.fastLevel !== "none" && (
-                    <span className="mt-0.5 block font-sans text-[13px] text-muted">{FAST_LABEL[d.fastLevel]}</span>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
-          <Link href={`/calendar-ortodox/${today.y}`} className="mt-3 inline-flex items-center gap-1.5 text-[15px] font-semibold text-burgundy hover:underline">
-            Toate sărbătorile din {today.y} <ArrowIcon width={15} height={15} />
-          </Link>
-        </div>
+        <DayLeaf
+          day={day}
+          heading={
+            <p className="text-[32px] font-bold leading-[1.15] text-ink sm:text-[36px]" style={{ fontFamily: "var(--font-display)" }}>
+              {capitalize(formatWithWeekday(today))}
+            </p>
+          }
+        />
       </div>
     </section>
   );
 }
 
-function Feature({
-  eyebrow,
-  title,
-  children,
-  phone,
-  flip,
-}: {
-  eyebrow: string;
-  title: string;
-  children: React.ReactNode;
-  phone: React.ReactNode;
-  flip?: boolean;
-}) {
+function Week({ today }: { today: Ymd }) {
+  const days = getRange(addDays(today, 1), addDays(today, 6));
   return (
-    <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
-      <div className={flip ? "md:order-2" : ""}>{phone}</div>
-      <div className={flip ? "md:order-1" : ""}>
-        <p className="text-[13px] font-bold uppercase tracking-[0.14em] text-gold">{eyebrow}</p>
-        <h3 className="font-display mt-2 text-[32px] font-bold leading-tight text-burgundy sm:text-[38px]">{title}</h3>
-        <div className="mt-4 space-y-4 text-[17px] leading-relaxed text-ink/85">{children}</div>
-      </div>
-    </div>
+    <Section id="saptamana" eyebrow="Zilele care urmează" title="Săptămâna aceasta">
+      <ol className="space-y-2">
+        {days.map((d) => (
+          <DayCard key={d.date} day={d} showMonth />
+        ))}
+      </ol>
+      <Link href="/azi" className="mt-4 inline-flex items-center gap-1.5 font-ui text-[17px] font-medium text-red hover:underline">
+        Toată ziua de azi <ArrowIcon width={15} height={15} />
+      </Link>
+    </Section>
   );
 }
 
-function Features({ today }: { today: Ymd }) {
+const TABS = [
+  {
+    screen: "calendar" as const,
+    text: "Fiecare zi a anului, cu toți sfinții pomeniți, crucea zilei și dezlegarea, scrise în întregime. Căutați un sfânt după nume și trimiteți ziua cuiva drag.",
+  },
+  {
+    screen: "posturi" as const,
+    text: "Cele patru posturi mari, cu ziua în care vă aflați și toate dezlegările. Dacă doriți, notați zilele în care ați ținut postul.",
+  },
+  {
+    screen: "harta" as const,
+    text: "Peste 13.000 de biserici, mănăstiri, catedrale, paraclise și troițe din România, cu hramul și drumul până acolo.",
+  },
+  {
+    screen: "profil" as const,
+    text: "Un anunț pe zi, la ora aleasă de voi. Sunet doar la sărbătorile mari și o seară înainte de hramul bisericilor favorite.",
+  },
+];
+
+function Tabs({ today }: { today: Ymd }) {
   return (
-    <section aria-labelledby="ce-face" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 id="ce-face" className="font-display text-[34px] font-bold leading-tight text-burgundy sm:text-[42px]">
-          Patru file, ca într-un calendar de perete
-        </h2>
-        <p className="mt-4 text-[17px] leading-relaxed text-muted">Calendar · Posturi · Hartă · Profil</p>
-        <div className="rule-gold mx-auto mt-8 w-24" />
-      </div>
-      <div className="mt-16 space-y-24 md:space-y-32">
-        <Feature
-          eyebrow="Calendar"
-          title="Sfântul zilei, cu tot ce se cuvine știut"
-          phone={<Phone screen="calendar" today={today} alt="Lista zilelor din calendarul aplicației Troița" />}
-        >
-          <p>
-            Fiecare zi a anului, cu toți sfinții pomeniți, crucea roșie sau albastră și dezlegarea zilei, scrise
-            în întregime, nu prescurtate.
-          </p>
-          <p>
-            Căutați un sfânt după nume, aflați în ce zi se prăznuiește și trimiteți ziua cuiva drag. Duminicile au
-            glasul și voscreasna.
-          </p>
-        </Feature>
-        <Feature
-          flip
-          eyebrow="Posturi"
-          title="Știți dinainte când e post și când e dezlegare"
-          phone={<Phone screen="posturi" today={today} alt="Ecranul Posturi din aplicația Troița" />}
-        >
-          <p>
-            Cele patru posturi mari, cu ziua în care vă aflați și câte zile mai sunt. Pentru fiecare post, toate
-            zilele, cu dezlegările la pește, la untdelemn și vin sau zilele de ajunare.
-          </p>
-          <p>
-            Dacă doriți, puteți nota zilele în care ați ținut postul. Rămân doar pe telefonul vostru.
-          </p>
-        </Feature>
-        <Feature
-          eyebrow="Hartă"
-          title="Bisericile, mănăstirile și troițele din toată țara"
-          phone={<Phone screen="harta" today={today} alt="Harta bisericilor din aplicația Troița" />}
-        >
-          <p>
-            Peste 13.000 de locașuri din toată România, fiecare tip cu culoarea lui: biserici, mănăstiri,
-            catedrale, paraclise și troițe.
-          </p>
-          <p>
-            Deschideți o biserică pentru hram și drum până acolo, adăugați-o la favorite sau însemnați-o ca
-            vizitată.
-          </p>
-        </Feature>
-        <Feature
-          flip
-          eyebrow="Profil"
-          title="Notificări blânde, doar când vreți"
-          phone={<Phone screen="profil" today={today} alt="Setările de notificări din aplicația Troița" />}
-        >
-          <p>
-            Un singur anunț pe zi, la ora aleasă de voi, cu sfântul zilei. Sunet doar la sărbătorile mari și un
-            anunț cu o zi înainte de fiecare post.
-          </p>
-          <p>Vă amintim și de hramul bisericilor favorite, cu o seară înainte.</p>
-        </Feature>
-      </div>
-    </section>
+    <Section id="aplicatia" eyebrow="Aplicația" title="Patru file, ca într-un calendar de perete">
+      <ul className="grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-4">
+        {TABS.map((t) => (
+          <li key={t.screen}>
+            <AppScreen screen={t.screen} today={today} alt={`Fila ${t.screen} din aplicația Troița`} />
+            <p className="mt-2 text-[15px] leading-relaxed text-ink">{t.text}</p>
+          </li>
+        ))}
+      </ul>
+    </Section>
   );
 }
+
+const LITURGICAL = [
+  { c: "var(--gold)", t: "Aur", d: "Praznicele împărătești și duminicile." },
+  { c: "var(--red)", t: "Roșu", d: "Sfânta Cruce, Paștile și sfinții mucenici cu cruce în calendar." },
+  { c: "var(--blue)", t: "Albastru", d: "Sărbătorile Maicii Domnului și ale Sfinților Arhangheli." },
+  { c: "var(--green)", t: "Verde", d: "Floriile, Rusaliile și Sfânta Treime." },
+  { c: "var(--purple)", t: "Violet", d: "Zilele Postului Mare." },
+];
 
 function Colours() {
-  const ranks = [
-    { c: "var(--color-feast-red)", t: "Cruce roșie", d: "Praznicele împărătești, sfinții mari și toate duminicile." },
-    { c: "var(--color-feast-blue)", t: "Cruce albastră", d: "Sfinți cu cinstire deosebită. În unele calendare se tipărește neagră." },
-    { c: "var(--color-romanian-saint)", t: "Sfinți români", d: "Puși deoparte, cum îi pun și calendarele tipărite." },
-  ];
+  const fasts: FastLevel[] = ["fast", "fish", "wineOil", "dairy", "strict"];
   return (
-    <section aria-labelledby="culori" className="bg-burgundy text-paper">
-      <div className="mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 md:grid-cols-2">
-        <div>
-          <p className="text-[13px] font-bold uppercase tracking-[0.14em] text-gold">Culorile pe care le știți</p>
-          <h2 id="culori" className="font-display mt-2 text-[34px] font-bold leading-tight sm:text-[40px]">
-            Roșul înseamnă sărbătoare. Atât.
-          </h2>
-          <p className="mt-5 text-[17px] leading-relaxed text-paper/85">
-            Calendarul bisericesc are o limbă a culorilor pe care o citiți de o viață. Troița o păstrează așa cum
-            este: cifre și litere cu serife, roșu pentru zilele mari, negru pentru zilele obișnuite. Culoarea
-            aplicației nu se amestecă niciodată cu roșul sărbătorii.
-          </p>
-        </div>
-        <ul className="space-y-3">
-          {ranks.map((r) => (
-            <li key={r.t} className="flex gap-4 rounded-[16px] bg-paper p-5 text-ink">
-              <span className="font-display text-[28px] leading-none" style={{ color: r.c }} aria-hidden>✛</span>
-              <div>
-                <div className="font-semibold" style={{ color: r.c }}>{r.t}</div>
-                <p className="mt-0.5 text-[15px] leading-relaxed text-muted">{r.d}</p>
-              </div>
-            </li>
-          ))}
-          <li className="rounded-[16px] bg-paper p-5 text-ink">
-            <div className="font-semibold">Dezlegările, fiecare cu semnul și numele ei</div>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {(["fish", "wineOil", "dairy", "fast", "strict"] as const).map((l) => (
-                <FastPill key={l} level={l} compact />
-              ))}
-            </div>
+    <Section id="culori" eyebrow="Cum se citește" title="Culorile calendarului">
+      <p className="max-w-[62ch] text-[17px] leading-relaxed text-ink">
+        Calendarul bisericesc are o limbă a crucilor și a culorilor pe care o citiți de o viață. Troița o
+        păstrează: crucea arată rangul sărbătorii, iar linia de pe marginea zilei arată culoarea ei
+        liturgică.
+      </p>
+
+      <h3 className="mt-8 font-ui text-[19px] font-bold">Crucile</h3>
+      <dl className="mt-3 divide-y divide-oak border-y border-oak">
+        {[
+          { c: "var(--rosie-title)", t: "Cruce roșie", d: "Praznicele împărătești și sfinții mari. Zile de sărbătoare." },
+          { c: "var(--albastra-title)", t: "Cruce albastră", d: "Sfinți cu cinstire deosebită. Unele calendare o tipăresc neagră." },
+          { c: "var(--ink)", t: "Fără cruce", d: "Pomenirile zilnice ale sfinților." },
+        ].map((r) => (
+          <div key={r.t} className="grid gap-1 py-3 sm:grid-cols-[12rem_1fr] sm:gap-6">
+            <dt className="flex items-center gap-2 font-display text-[18px] font-semibold" style={{ color: r.c }}>
+              <OrthodoxCross width={15} height={15} style={{ opacity: r.t === "Fără cruce" ? 0 : 1 }} />
+              {r.t}
+            </dt>
+            <dd className="text-[15.5px] leading-relaxed text-umber">{r.d}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <h3 className="mt-8 font-ui text-[19px] font-bold">Culorile liturgice</h3>
+      <dl className="mt-3 divide-y divide-oak border-y border-oak">
+        {LITURGICAL.map((r) => (
+          <div key={r.t} className="grid gap-1 py-3 sm:grid-cols-[12rem_1fr] sm:gap-6">
+            <dt className="flex items-center gap-3 font-display text-[18px] font-semibold">
+              <span aria-hidden className="h-6 w-[3px]" style={{ background: r.c }} />
+              {r.t}
+            </dt>
+            <dd className="text-[15.5px] leading-relaxed text-umber">{r.d}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <h3 className="mt-8 font-ui text-[19px] font-bold">Postul și dezlegările</h3>
+      <ul className="mt-3 flex flex-wrap gap-2">
+        {fasts.map((l) => (
+          <li key={l}>
+            <FastBadge level={l} />
           </li>
-        </ul>
-      </div>
-    </section>
+        ))}
+        <li>
+          <FastBadge level="none" harti />
+        </li>
+      </ul>
+    </Section>
   );
 }
 
 function Privacy() {
-  const items = [
-    { Icon: LockIcon, t: "Fără cont", d: "Nu vă cerem nume, e-mail sau parolă. Deschideți aplicația și o folosiți." },
-    { Icon: BellIcon, t: "Notificări de pe telefon", d: "Sunt programate pe telefonul vostru. Nu există server care să vă trimită ceva." },
-    { Icon: MapPinIcon, t: "Fără acces la locație", d: "Aplicația nici nu cere permisiunea de localizare. Favoritele și vizitele rămân pe telefon." },
+  const rows = [
+    { t: "Fără cont", d: "Nu vă cerem nume, e-mail sau parolă. Deschideți aplicația și o folosiți." },
+    { t: "Notificări de pe telefon", d: "Sunt programate pe telefonul vostru; niciun server nu vă trimite mesaje." },
+    { t: "Fără acces la locație", d: "Aplicația nici nu cere permisiunea. Favoritele și vizitele rămân pe telefon." },
   ];
   return (
-    <section aria-labelledby="intimitate" className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 id="intimitate" className="font-display text-[34px] font-bold leading-tight text-burgundy sm:text-[40px]">
-          Ce faceți în aplicație rămâne la voi
-        </h2>
-      </div>
-      <div className="mt-12 grid gap-5 md:grid-cols-3">
-        {items.map(({ Icon, t, d }) => (
-          <div key={t} className="rounded-[20px] border border-border bg-surface p-6">
-            <span className="grid h-11 w-11 place-items-center rounded-full bg-accent-surface text-burgundy">
-              <Icon width={22} height={22} />
-            </span>
-            <h3 className="mt-4 text-[18px] font-semibold">{t}</h3>
-            <p className="mt-1.5 text-[15.5px] leading-relaxed text-muted">{d}</p>
+    <Section id="intimitate" eyebrow="Confidențialitate" title="Ce faceți în aplicație rămâne la voi">
+      <dl className="divide-y divide-oak border-y border-oak">
+        {rows.map((r) => (
+          <div key={r.t} className="grid gap-1 py-4 sm:grid-cols-[14rem_1fr] sm:gap-6">
+            <dt className="font-display text-[18px] font-semibold text-ink">{r.t}</dt>
+            <dd className="text-[16px] leading-relaxed text-umber">{r.d}</dd>
           </div>
         ))}
-      </div>
-      <p className="mt-6 text-center text-[15px] text-muted">
-        Detaliile sunt în{" "}
-        <Link href="/confidentialitate" className="font-semibold text-burgundy underline underline-offset-4">
+      </dl>
+      <p className="mt-4 text-[15px] text-umber">
+        Detaliile, inclusiv despre reclame și cookie-uri, sunt în{" "}
+        <Link href="/confidentialitate" className="text-red underline underline-offset-4">
           politica de confidențialitate
         </Link>
         .
       </p>
-    </section>
+    </Section>
   );
 }
 
@@ -299,10 +215,7 @@ const FAQ = [
     q: "Când apare aplicația?",
     a: "Troița este în pregătire și va apărea în curând pe Google Play, pentru telefoanele cu Android. Până atunci, calendarul și posturile sunt aici, pe site.",
   },
-  {
-    q: "Este și pentru iPhone?",
-    a: "Deocamdată nu. Prima versiune este pentru Android.",
-  },
+  { q: "Este și pentru iPhone?", a: "Deocamdată nu. Prima versiune este pentru Android." },
   {
     q: "De unde vin datele din calendar?",
     a: "Pomenirile, rangurile și dezlegările urmează calendarul ortodox românesc publicat pentru fiecare an. Perioadele de post se calculează din data Paștelui. Pentru rânduiala din parohia voastră, întrebați preotul duhovnic.",
@@ -315,31 +228,19 @@ const FAQ = [
 
 function Faq() {
   return (
-    <section aria-labelledby="intrebari" className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <h2 id="intrebari" className="font-display text-center text-[32px] font-bold text-burgundy">
-        Întrebări frecvente
-      </h2>
-      <div className="mt-8 divide-y divide-border rounded-[20px] border border-border bg-surface">
+    <Section id="intrebari" eyebrow="Întrebări" title="Întrebări frecvente">
+      <div className="divide-y divide-oak border-y border-oak">
         {FAQ.map((f) => (
-          <details key={f.q} className="group px-5 py-4 sm:px-6">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[17px] font-semibold">
+          <details key={f.q} className="group py-4">
+            <summary className="flex cursor-pointer list-none items-baseline justify-between gap-4 font-display text-[18px] font-semibold text-ink">
               {f.q}
-              <span className="text-gold transition group-open:rotate-45" aria-hidden>✛</span>
+              <span aria-hidden className="font-mono text-[18px] text-red group-open:hidden">+</span>
+              <span aria-hidden className="hidden font-mono text-[18px] text-red group-open:inline">−</span>
             </summary>
-            <p className="mt-3 text-[16px] leading-relaxed text-muted">{f.a}</p>
+            <p className="mt-2 max-w-[62ch] text-[16px] leading-relaxed text-umber">{f.a}</p>
           </details>
         ))}
       </div>
-    </section>
-  );
-}
-
-function FinalCta() {
-  return (
-    <AppNote>
-      <strong className="font-semibold">Troița vine în curând pe Google Play.</strong> Până atunci, găsiți aici{" "}
-      <Link href="/azi" className="text-burgundy underline underline-offset-4">sfântul zilei</Link> și{" "}
-      <Link href="/posturi" className="text-burgundy underline underline-offset-4">posturile anului</Link>.
-    </AppNote>
+    </Section>
   );
 }

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { AdSlot } from "@/components/ads";
 import { notFound } from "next/navigation";
 import { AppNote, Breadcrumbs } from "@/components/chrome";
-import { DayRow, FastPill } from "@/components/calendar-bits";
+import { DayCard, FastBadge } from "@/components/calendar-bits";
 import { TodayMarker } from "@/components/today-marker";
 import { isPublishedYear, PUBLISHED_YEARS } from "@/lib/calendar";
 import { count, formatLong, formatRange, MONTHS } from "@/lib/dates";
@@ -55,53 +55,57 @@ export default async function FastPage({ params }: PageProps<"/posturi/[an]/[pos
           { label: info.title },
         ]}
       />
-      <article className="mx-auto max-w-3xl px-4 pt-8 sm:px-6">
-        <p className="text-[13px] font-bold uppercase tracking-[0.14em] text-gold">{info.alsoKnown}</p>
-        <h1 className="font-display mt-2 text-[36px] font-bold leading-tight text-burgundy sm:text-[46px]">
-          {info.title} {year}
-        </h1>
-        <p className="mt-3 text-[19px] font-medium">
-          {formatRange(f.period.start, f.period.end, true)} · {count(periodDays(f.period), "zi", "zile")}
-        </p>
-        <p className="mt-4 text-[17px] leading-relaxed text-ink/85">{info.intro}</p>
-
-        <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3">
-          {SUMMARY.filter((l) => c[l]).map((l) => (
-            <div key={l} className="rounded-[14px] border border-border bg-surface p-3">
-              <div className="font-display text-[26px] font-bold leading-none">{c[l]}</div>
-              <div className="mt-2"><FastPill level={l} compact /></div>
+      <article className="mx-auto max-w-6xl px-4 pt-8 sm:px-6">
+        <div className="grid gap-8 md:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] md:gap-12">
+          <div>
+            <div className="md:sticky md:top-24">
+              <p className="rubric text-red">{info.alsoKnown}</p>
+              <h1 className="mt-2 text-[34px] font-bold leading-[1.15] text-ink sm:text-[40px]">
+                {info.title} {year}
+              </h1>
+              <p className="rubric mt-3 text-umber">
+                {formatRange(f.period.start, f.period.end, true)} · {count(periodDays(f.period), "zi", "zile")}
+              </p>
+              <p className="mt-4 text-[16px] leading-relaxed text-ink">{info.intro}</p>
+              <dl className="mt-6 divide-y divide-oak border-y border-oak">
+                {SUMMARY.filter((l) => c[l]).map((l) => (
+                  <div key={l} className="flex items-center justify-between gap-3 py-2">
+                    <dt><FastBadge level={l} /></dt>
+                    <dd className="font-display text-[20px] font-bold">{c[l]}</dd>
+                  </div>
+                ))}
+              </dl>
+              {fishDays.length > 0 && (
+                <p className="mt-5 text-[15.5px] leading-relaxed">
+                  <span className="rubric block text-umber">Dezlegare la pește în {year}</span>
+                  {fishDays.map((d) => `${d.day} ${MONTHS[d.month - 1]}`).join(", ")}.
+                </p>
+              )}
             </div>
-          ))}
+          </div>
+          <div className="min-w-0">
+            <h2 className="rubric mb-3 text-red">Zi cu zi</h2>
+            <ol className="space-y-2">
+              {f.days.map((d) => (
+                <DayCard key={d.date} day={d} showMonth />
+              ))}
+            </ol>
+            <TodayMarker />
+            <p className="mt-6 text-[15px] text-umber">
+              Rânduiala poate diferi de la o parohie la alta; pentru postul vostru, întrebați preotul duhovnic.
+              {otherYears.map((y) => (
+                <span key={y}>
+                  {" "}Vedeți și{" "}
+                  <Link href={`/posturi/${y}/${post}`} className="font-medium text-red underline underline-offset-4">
+                    {info.title} {y}
+                  </Link>
+                  .
+                </span>
+              ))}
+            </p>
+            <AdSlot />
+          </div>
         </div>
-
-        {fishDays.length > 0 && (
-          <p className="mt-6 text-[16.5px] leading-relaxed">
-            <strong className="font-semibold">Dezlegare la pește</strong> în {year}:{" "}
-            {fishDays.map((d) => `${d.day} ${MONTHS[d.month - 1]}`).join(", ")}.
-          </p>
-        )}
-
-<AdSlot />
-        <h2 className="font-display mt-12 text-[26px] font-bold text-burgundy">Zi cu zi</h2>
-        <ol className="mt-4 overflow-hidden rounded-[20px] border border-border bg-paper">
-          {f.days.map((d) => (
-            <DayRow key={d.date} day={d} showMonth />
-          ))}
-        </ol>
-        <TodayMarker />
-
-        <p className="mt-6 text-[15px] text-muted">
-          Rânduiala poate diferi de la o parohie la alta; pentru postul vostru, întrebați preotul duhovnic.
-          {otherYears.map((y) => (
-            <span key={y}>
-              {" "}Vedeți și{" "}
-              <Link href={`/posturi/${y}/${post}`} className="font-semibold text-burgundy hover:underline">
-                {info.title} {y}
-              </Link>
-              .
-            </span>
-          ))}
-        </p>
       </article>
       <AppNote />
     </>
