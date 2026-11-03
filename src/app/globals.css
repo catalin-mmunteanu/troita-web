@@ -1,150 +1,244 @@
 @import "tailwindcss";
 
-/* Self-hosted (OFL) from Fontsource, so builds never depend on Google Fonts.
-   Romanian needs latin-ext for ă, ș, ț. */
-@font-face {
-  font-family: "Fraunces";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url("/fonts/fraunces-latin-full-normal.woff2") format("woff2-variations");
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-}
-@font-face {
-  font-family: "Fraunces";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url("/fonts/fraunces-latin-ext-full-normal.woff2") format("woff2-variations");
-  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
-}
-@font-face {
-  font-family: "Geist";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url("/fonts/geist-latin-wght-normal.woff2") format("woff2-variations");
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-}
-@font-face {
-  font-family: "Geist";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url("/fonts/geist-latin-ext-wght-normal.woff2") format("woff2-variations");
-  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
-}
-
 /*
- * Design tokens, copied from the app's lib/app/theme.dart so the site and the
- * app read as one product. Reference these names, never a hex literal.
+ * Troița design system. Every value here comes from DESIGN.MD; read that file
+ * before changing anything. Components reference these tokens, never a hex.
+ *
+ * Fonts are self-hosted (OFL, from Fontsource) with latin-ext for ă, â, î, ș, ț.
  */
-@theme {
-  --color-paper: #fcfaf2;
-  --color-surface: #f6f1e5;
-  --color-surface-subtle: #faf7ef;
-  --color-border: #eadfc9;
-  --color-accent-surface: #f5efcf;
-  --color-gold: #c59b27;
-  --color-burgundy: #5c1321;
-  --color-burgundy-deep: #3a0a12;
-  --color-ink: #261e14;
-  --color-muted: #6b5e4f;
+@font-face { font-family: "Literata"; font-style: normal; font-display: swap; font-weight: 200 900;
+  src: url("/fonts/literata-latin-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Literata"; font-style: normal; font-display: swap; font-weight: 200 900;
+  src: url("/fonts/literata-latin-ext-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
 
-  /* Calendar semantics: the rank names *are* the colours. */
-  --color-feast-red: #c1272d;
-  --color-calendar-ink: #1b1b1b;
-  --color-feast-blue: #1f4e8c;
-  --color-fish-blue: #2c6f9b;
-  --color-dairy-gold: #d9b54b;
-  --color-romanian-saint: #8c2f2a;
+@font-face { font-family: "Plus Jakarta Sans"; font-style: normal; font-display: swap; font-weight: 200 800;
+  src: url("/fonts/plus-jakarta-sans-latin-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Plus Jakarta Sans"; font-style: normal; font-display: swap; font-weight: 200 800;
+  src: url("/fonts/plus-jakarta-sans-latin-ext-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
 
-  --font-display: "Fraunces", "Georgia", serif;
-  --font-sans: "Geist", system-ui, sans-serif;
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-display: swap; font-weight: 100 800;
+  src: url("/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-display: swap; font-weight: 100 800;
+  src: url("/fonts/jetbrains-mono-latin-ext-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
 
-  --radius-sm: 12px;
-  --radius-md: 16px;
-  --radius-lg: 20px;
-  --radius-xl: 32px;
-}
+@font-face { font-family: "Alegreya Sans"; font-style: normal; font-display: swap; font-weight: 400;
+  src: url("/fonts/alegreya-sans-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Alegreya Sans"; font-style: normal; font-display: swap; font-weight: 400;
+  src: url("/fonts/alegreya-sans-latin-ext-400-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Alegreya Sans"; font-style: normal; font-display: swap; font-weight: 500;
+  src: url("/fonts/alegreya-sans-latin-500-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Alegreya Sans"; font-style: normal; font-display: swap; font-weight: 500;
+  src: url("/fonts/alegreya-sans-latin-ext-500-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Alegreya Sans"; font-style: normal; font-display: swap; font-weight: 700;
+  src: url("/fonts/alegreya-sans-latin-700-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Alegreya Sans"; font-style: normal; font-display: swap; font-weight: 700;
+  src: url("/fonts/alegreya-sans-latin-ext-700-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+
+/* ------------------------------------------------------------ raw values */
 
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
+
+  /* §4 neutral palette */
+  --parchment: #fdfbf7;
+  --surface: #f5f0eb;
+  --ink: #1a1817;
+  --umber: #574f4a;
+  --oak: #e2d8c8;
+
+  /* §4 liturgical accents */
+  --gold: #d4af37;
+  --red: #8b1e1e;
+  --blue: #1a365d;
+  --green: #1e4d2b;
+  --purple: #3b0764;
+
+  /* §6 feast cards */
+  --rosie-bg: #fff8f8;
+  --rosie-border: #f0c8c8;
+  --rosie-title: #8b1e1e;
+  --albastra-bg: #f4f6fa;
+  --albastra-border: #c9d4e6;
+  --albastra-title: #1a365d;
+
+  /* §6 fasting badges, warmed */
+  --b-post-bg: #efe5ec;   --b-post-fg: #3b0764;
+  --b-fish-bg: #e2ecec;   --b-fish-fg: #1d5468;
+  --b-oil-bg: #ece8cf;    --b-oil-fg: #55500f;
+  --b-dairy-bg: #f4ebd6;  --b-dairy-fg: #6a4e17;
+  --b-strict-bg: #3b0764; --b-strict-fg: #fdfbf7;
+  --b-none-bg: #f5eacb;   --b-none-fg: #7a3b0c;
+
+  --on-red: #fdfbf7;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --parchment: #141211;
+    --surface: #1e1b18;
+    --ink: #ede6da;
+    --umber: #b5aa9c;
+    --oak: #322a22;
+
+    --gold: #d4af37;
+    --red: #e07b72;
+    --blue: #8eb1de;
+    --green: #7dbe8e;
+    --purple: #c2a3e8;
+
+    --rosie-bg: #2a1a18;
+    --rosie-border: #4a2a26;
+    --rosie-title: #f08c82;
+    --albastra-bg: #19202b;
+    --albastra-border: #2c3a50;
+    --albastra-title: #8eb1de;
+
+    --b-post-bg: #2a1e2c;   --b-post-fg: #d2b6e6;
+    --b-fish-bg: #17262a;   --b-fish-fg: #8ec3d2;
+    --b-oil-bg: #25241a;    --b-oil-fg: #cfc88a;
+    --b-dairy-bg: #29221a;  --b-dairy-fg: #e2c79a;
+    --b-strict-bg: #d2b6e6; --b-strict-fg: #141211;
+    --b-none-bg: #2c2314;   --b-none-fg: #e8c27e;
+
+    --on-red: #141211;
+  }
+}
+
+/* --------------------------------------------------- Tailwind theme names */
+
+@theme inline {
+  --color-parchment: var(--parchment);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-umber: var(--umber);
+  --color-oak: var(--oak);
+  --color-gold: var(--gold);
+  --color-red: var(--red);
+  --color-blue: var(--blue);
+  --color-green: var(--green);
+  --color-purple: var(--purple);
+  --color-on-red: var(--on-red);
+
+  --font-display: "Literata", "Alegreya", "Georgia", serif;
+  --font-ui: "Alegreya Sans", "Plus Jakarta Sans", sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* §5: 4px default, 8px maximum. Larger radii do not exist in this theme. */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 8px;
+  --radius-xl: 8px;
+  --radius-2xl: 8px;
+  --radius-3xl: 8px;
+
+  /* §5: one micro shadow, nothing else. */
+  --shadow-micro: 0px 1px 3px rgba(26, 24, 23, 0.06);
+}
+
+/* ------------------------------------------------------------------ base */
+
 html {
-  background: var(--color-paper);
-  scroll-behavior: smooth;
+  background: var(--parchment);
 }
 
 body {
-  background: var(--color-paper);
-  color: var(--color-ink);
+  background: var(--parchment);
+  color: var(--ink);
   font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Fraunces drawn the way the Figma file draws it: SOFT 0, WONK 1. */
-.font-display {
+h1, h2, h3 {
   font-family: var(--font-display);
-  font-variation-settings: "SOFT" 0, "WONK" 1;
+  text-wrap: balance;
 }
 
-/* A thin gold double rule, the ornament of a printed church calendar. */
-.rule-gold {
-  height: 4px;
-  border-top: 1px solid var(--color-gold);
-  border-bottom: 1px solid var(--color-gold);
-  opacity: 0.55;
+p { text-wrap: pretty; }
+
+/* §3 rubric: liturgical notes, fasting notes, small labels. */
+.rubric {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
 }
 
-/* Today's row in a month list, marked client-side so the page stays static. */
+/* Today's day in a month list, marked in the browser so the page stays static. */
 [data-today="true"] {
-  background: var(--color-accent-surface);
-  box-shadow: inset 4px 0 0 var(--color-burgundy);
+  background: var(--surface);
 }
 [data-today="true"] .today-label {
   display: inline-block;
 }
 
+/* Long-form text (privacy, about): one book-like column. */
+.prose-troita {
+  max-width: 68ch;
+}
 .prose-troita p {
   margin: 0 0 1rem;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 .prose-troita h2 {
-  font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 600;
-  margin: 2.25rem 0 0.75rem;
-  color: var(--color-ink);
+  margin: 2.5rem 0 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--oak);
 }
 .prose-troita h3 {
-  font-weight: 600;
-  margin: 1.5rem 0 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 1.5rem 0 0.4rem;
 }
 .prose-troita ul {
-  list-style: disc;
-  padding-left: 1.25rem;
+  list-style: none;
+  padding-left: 0;
   margin: 0 0 1rem;
 }
 .prose-troita li {
+  position: relative;
+  padding-left: 1.25rem;
   margin-bottom: 0.4rem;
-  line-height: 1.6;
+  line-height: 1.65;
+}
+.prose-troita li::before {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  top: 0.7em;
+  width: 6px;
+  height: 1px;
+  background: var(--red);
 }
 .prose-troita a {
-  color: var(--color-burgundy);
+  color: var(--red);
   text-decoration: underline;
+  text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-burgundy);
+  outline: 2px solid var(--red);
   outline-offset: 2px;
-  border-radius: 4px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+  border-radius: 2px;
 }

@@ -28,8 +28,11 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#5c1321",
-  colorScheme: "light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fdfbf7" },
+    { media: "(prefers-color-scheme: dark)", color: "#141211" },
+  ],
+  colorScheme: "light dark",
 };
 
 const jsonLd = {
@@ -53,8 +56,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="ro" className="h-full">
       <head>
-        <link rel="preload" href="/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossOrigin="" />
-        <link rel="preload" href="/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossOrigin="" />
+        {/* The two faces seen above the fold; the rest load on demand. */}
+        <link rel="preload" href="/fonts/literata-latin-wght-normal.woff2" as="font" type="font/woff2" crossOrigin="" />
+        <link rel="preload" href="/fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossOrigin="" />
         {ADS.client && (
           // A plain <script>, not next/script: AdSense rejects the extra
           // data-nscript attribute next/script adds. Google's consent banner
@@ -69,7 +73,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col">
         <a
           href="#continut"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-lg focus:bg-burgundy focus:px-4 focus:py-2 focus:text-paper"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-sm focus:bg-red focus:px-4 focus:py-2 focus:text-on-red"
         >
           Sari la conținut
         </a>
