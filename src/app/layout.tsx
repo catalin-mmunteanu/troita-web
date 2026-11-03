@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Footer, Header } from "@/components/chrome";
-import { SITE } from "@/lib/site";
+import { ADS, SITE } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -23,6 +23,8 @@ export const metadata: Metadata = {
   formatDetection: { telephone: false },
   // Paste the token from Google Search Console here if you verify with a meta
   // tag instead of DNS: verification: { google: "..." }
+  // AdSense site verification ("Meta tag" option in AdSense → Sites).
+  ...(ADS.client ? { other: { "google-adsense-account": ADS.client } } : {}),
 };
 
 export const viewport: Viewport = {
@@ -53,6 +55,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <link rel="preload" href="/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossOrigin="" />
         <link rel="preload" href="/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossOrigin="" />
+        {ADS.client && (
+          // A plain <script>, not next/script: AdSense rejects the extra
+          // data-nscript attribute next/script adds. Google's consent banner
+          // (Privacy & messaging) is loaded by this same script.
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADS.client}`}
+            crossOrigin="anonymous"
+          />
+        )}
       </head>
       <body className="flex min-h-full flex-col">
         <a

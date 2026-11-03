@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { NAV, SITE } from "@/lib/site";
+import { ADS, NAV, SITE } from "@/lib/site";
 import { CrossIcon, PhoneIcon } from "./icons";
+import { CookieSettingsButton } from "./ads";
 
 export function Logo({ className = "" }: { className?: string }) {
   return (
@@ -95,6 +96,7 @@ export function Footer() {
             <li><Link className="hover:text-burgundy" href="/despre">Despre aplicație</Link></li>
             <li><Link className="hover:text-burgundy" href="/confidentialitate">Politica de confidențialitate</Link></li>
             <li><a className="hover:text-burgundy" href={`mailto:${SITE.email}`}>Contact</a></li>
+            {ADS.client && <li><CookieSettingsButton className="hover:text-burgundy" /></li>}
           </ul>
         </div>
       </div>
