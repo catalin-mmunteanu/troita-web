@@ -1,67 +1,85 @@
 import Link from "next/link";
+import { PUBLISHED_YEARS } from "@/lib/calendar";
 import { ADS, NAV, SITE } from "@/lib/site";
-import { CrossIcon, PhoneIcon } from "./icons";
+import { ArrowIcon, RopeDivider, TroitaEmblem } from "./icons";
 import { CookieSettingsButton } from "./ads";
+import { DateJump } from "./date-jump";
 
-export function Logo({ className = "" }: { className?: string }) {
+export function Logo() {
   return (
-    <Link href="/" className={`inline-flex items-center gap-2 text-burgundy ${className}`} aria-label="Troița, acasă">
-      <span className="grid h-9 w-9 place-items-center rounded-[10px] bg-burgundy text-paper">
-        <CrossIcon width={20} height={20} strokeWidth={2} />
-      </span>
-      <span className="font-display text-[24px] font-bold leading-none tracking-tight">Troița</span>
+    <Link href="/" className="flex items-center gap-2 text-ink" aria-label="Troița, pagina principală">
+      <TroitaEmblem width={32} height={32} className="text-red" />
+      <span className="font-display text-[23px] font-bold leading-none tracking-[-0.01em]">Troița</span>
     </Link>
   );
 }
 
-/** "În curând pe Google Play" until launch; a real download link after. */
-export function StoreButton({ size = "md" }: { size?: "md" | "lg" }) {
-  const big = size === "lg";
+/** Rectangular buttons (DESIGN.MD ban 4: no pills, no heavy shadows). */
+export function ButtonLink({
+  href,
+  children,
+  variant = "primary",
+}: {
+  href: string;
+  children: React.ReactNode;
+  variant?: "primary" | "secondary";
+}) {
+  const base =
+    "inline-flex h-11 items-center gap-2 rounded-sm border px-5 font-ui text-[17px] font-medium transition-colors";
+  const look =
+    variant === "primary"
+      ? "border-red bg-red text-on-red hover:opacity-90"
+      : "border-oak bg-surface text-ink hover:border-umber";
+  return (
+    <Link href={href} className={`${base} ${look}`}>
+      {children}
+    </Link>
+  );
+}
+
+/** Where the app stands: a plain line until launch, a download link after. */
+export function StoreStatus() {
   if (SITE.playStoreUrl) {
     return (
       <a
         href={SITE.playStoreUrl}
-        className={`inline-flex items-center gap-2.5 rounded-full bg-burgundy font-semibold text-paper transition hover:bg-burgundy-deep ${
-          big ? "px-6 py-3.5 text-[16px]" : "px-4 py-2 text-[14px]"
-        }`}
+        className="inline-flex h-11 items-center gap-2 rounded-sm border border-red bg-red px-5 font-ui text-[17px] font-medium text-on-red hover:opacity-90"
       >
-        <PhoneIcon /> Descarcă din Google Play
+        Descarcă din Google Play <ArrowIcon width={16} height={16} />
       </a>
     );
   }
   return (
-    <span
-      className={`inline-flex items-center gap-2.5 rounded-full border border-gold/60 bg-accent-surface font-semibold text-burgundy ${
-        big ? "px-5 py-3 text-[15.5px]" : "px-3.5 py-1.5 text-[13.5px]"
-      }`}
-    >
-      <span className="relative flex h-2.5 w-2.5">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-60 motion-reduce:hidden" />
-        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold" />
-      </span>
-      În curând pe Google Play
-    </span>
+    <p className="rubric flex items-center gap-2 text-umber">
+      <span aria-hidden className="inline-block h-2 w-2 bg-gold" />
+      Android · în curând pe Google Play
+    </p>
   );
 }
 
 export function Header() {
+  const min = `${PUBLISHED_YEARS[0]}-01-01`;
+  const max = `${PUBLISHED_YEARS[PUBLISHED_YEARS.length - 1]}-12-31`;
   return (
-    <header className="sticky top-0 z-30 border-b border-border/80 bg-paper/90 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+    <header className="sticky top-0 z-30 border-b border-oak bg-parchment">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
         <Logo />
-        <nav aria-label="Navigare principală" className="flex items-center gap-0.5 sm:gap-1">
-          {NAV.map((n, i) => (
-            <Link
-              key={n.href}
-              href={n.href}
-              className={`rounded-full px-2.5 py-1.5 text-[14.5px] font-medium text-ink/80 transition hover:bg-surface hover:text-burgundy sm:px-3.5 ${
-                i === NAV.length - 1 ? "hidden sm:inline-block" : ""
-              }`}
-            >
-              {n.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="flex items-center gap-1 sm:gap-3">
+          <nav aria-label="Navigare principală" className="flex items-center">
+            {NAV.map((n, i) => (
+              <Link
+                key={n.href}
+                href={n.href}
+                className={`px-2 py-2 font-ui text-[17px] font-medium text-ink/85 underline-offset-[6px] hover:text-red hover:underline sm:px-3 ${
+                  i === NAV.length - 1 ? "hidden md:inline-block" : ""
+                }`}
+              >
+                {n.label}
+              </Link>
+            ))}
+          </nav>
+          <DateJump min={min} max={max} />
+        </div>
       </div>
     </header>
   );
@@ -69,39 +87,41 @@ export function Header() {
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-border bg-surface">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr]">
+    <footer className="mt-24 bg-surface">
+      <RopeDivider />
+      <div className="mx-auto grid max-w-6xl gap-10 border-t border-oak px-4 py-12 sm:px-6 md:grid-cols-[1.5fr_1fr_1fr]">
         <div>
           <Logo />
-          <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-muted">
-            Calendarul ortodox, zi de zi: sfântul zilei, posturile și dezlegările, bisericile și
-            troițele din toată țara.
+          <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-umber">
+            Calendarul ortodox, zi de zi: sfântul zilei, posturile și dezlegările, bisericile și troițele din
+            toată țara.
           </p>
           <div className="mt-5">
-            <StoreButton />
+            <StoreStatus />
           </div>
         </div>
         <div>
-          <h2 className="text-[13px] font-bold uppercase tracking-[0.1em] text-muted">Calendar</h2>
-          <ul className="mt-3 space-y-2 text-[15px]">
-            <li><Link className="hover:text-burgundy" href="/azi">Sfântul zilei</Link></li>
-            <li><Link className="hover:text-burgundy" href="/calendar-ortodox/2026">Calendar ortodox 2026</Link></li>
-            <li><Link className="hover:text-burgundy" href="/calendar-ortodox/2027">Calendar ortodox 2027</Link></li>
-            <li><Link className="hover:text-burgundy" href="/posturi">Posturile anului</Link></li>
+          <h2 className="rubric text-umber">Calendar</h2>
+          <ul className="mt-3 space-y-2 font-ui text-[17px]">
+            <li><Link className="hover:text-red" href="/azi">Sfântul zilei</Link></li>
+            {PUBLISHED_YEARS.map((y) => (
+              <li key={y}><Link className="hover:text-red" href={`/calendar-ortodox/${y}`}>Calendar ortodox {y}</Link></li>
+            ))}
+            <li><Link className="hover:text-red" href="/posturi">Posturile anului</Link></li>
           </ul>
         </div>
         <div>
-          <h2 className="text-[13px] font-bold uppercase tracking-[0.1em] text-muted">Troița</h2>
-          <ul className="mt-3 space-y-2 text-[15px]">
-            <li><Link className="hover:text-burgundy" href="/despre">Despre aplicație</Link></li>
-            <li><Link className="hover:text-burgundy" href="/confidentialitate">Politica de confidențialitate</Link></li>
-            <li><a className="hover:text-burgundy" href={`mailto:${SITE.email}`}>Contact</a></li>
-            {ADS.client && <li><CookieSettingsButton className="hover:text-burgundy" /></li>}
+          <h2 className="rubric text-umber">Troița</h2>
+          <ul className="mt-3 space-y-2 font-ui text-[17px]">
+            <li><Link className="hover:text-red" href="/despre">Despre aplicație</Link></li>
+            <li><Link className="hover:text-red" href="/confidentialitate">Confidențialitate</Link></li>
+            <li><a className="hover:text-red" href={`mailto:${SITE.email}`}>Contact</a></li>
+            {ADS.client && <li><CookieSettingsButton className="hover:text-red" /></li>}
           </ul>
         </div>
       </div>
-      <div className="border-t border-border">
-        <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-5 text-[13px] text-muted sm:flex-row sm:justify-between sm:px-6">
+      <div className="border-t border-oak">
+        <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-5 text-[13px] text-umber sm:flex-row sm:justify-between sm:px-6">
           <span>© {SITE.operator}. Troița nu este o publicație oficială a Bisericii Ortodoxe Române.</span>
           <span>Date despre biserici: © contributorii OpenStreetMap</span>
         </div>
@@ -110,28 +130,28 @@ export function Footer() {
   );
 }
 
+/** Left-aligned page title, like the head of a printed almanac page. */
 export function PageHeader({ eyebrow, title, children }: { eyebrow?: string; title: string; children?: React.ReactNode }) {
   return (
-    <div className="mx-auto max-w-3xl px-4 pt-12 pb-8 text-center sm:px-6 sm:pt-16">
-      {eyebrow && (
-        <p className="text-[13px] font-bold uppercase tracking-[0.14em] text-gold">{eyebrow}</p>
-      )}
-      <h1 className="font-display mt-3 text-[34px] font-bold leading-[1.1] text-burgundy sm:text-[46px]">{title}</h1>
-      {children && <div className="mx-auto mt-4 max-w-2xl text-[17px] leading-relaxed text-muted">{children}</div>}
-      <div className="rule-gold mx-auto mt-8 w-24" />
+    <div className="mx-auto max-w-6xl px-4 pt-10 pb-8 sm:px-6 sm:pt-14">
+      <div className="max-w-3xl">
+        {eyebrow && <p className="rubric text-red">{eyebrow}</p>}
+        <h1 className="mt-2 text-[36px] font-bold leading-[1.15] text-ink sm:text-[44px]">{title}</h1>
+        {children && <div className="mt-4 max-w-[62ch] text-[17px] leading-relaxed text-umber">{children}</div>}
+      </div>
     </div>
   );
 }
 
 export function Breadcrumbs({ items }: { items: { href?: string; label: string }[] }) {
   return (
-    <nav aria-label="Pesmet" className="mx-auto max-w-3xl px-4 pt-6 text-[13.5px] text-muted sm:px-6">
-      <ol className="flex flex-wrap items-center gap-1.5">
+    <nav aria-label="Pesmet" className="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
+      <ol className="rubric flex flex-wrap items-center gap-1.5 text-umber">
         {items.map((it, i) => (
           <li key={i} className="flex items-center gap-1.5">
-            {i > 0 && <span aria-hidden>›</span>}
+            {i > 0 && <span aria-hidden>/</span>}
             {it.href ? (
-              <Link href={it.href} className="hover:text-burgundy">{it.label}</Link>
+              <Link href={it.href} className="hover:text-red">{it.label}</Link>
             ) : (
               <span aria-current="page" className="text-ink">{it.label}</span>
             )}
@@ -142,22 +162,20 @@ export function Breadcrumbs({ items }: { items: { href?: string; label: string }
   );
 }
 
-/** Small, non-blocking app note under a content page. Never an interstitial. */
+/** A quiet note about the app at the end of a content page. Never a pop-up. */
 export function AppNote({ children }: { children?: React.ReactNode }) {
   return (
-    <aside className="mx-auto mt-12 max-w-3xl px-4 sm:px-6">
-      <div className="flex flex-col items-start gap-4 rounded-[20px] border border-border bg-surface p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
-        <p className="text-[15.5px] leading-relaxed text-ink/90">
+    <aside className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
+      <div className="max-w-3xl border-t border-oak pt-6">
+        <p className="rubric text-red">Aplicația Troița</p>
+        <p className="mt-2 max-w-[62ch] text-[16px] leading-relaxed text-ink">
           {children ?? (
             <>
-              <strong className="font-semibold">Pe telefon, cu notificări.</strong> Aplicația Troița vă anunță
-              sfântul zilei și începutul fiecărui post, fără cont.
+              Pe telefon, cu notificări: sfântul zilei și începutul fiecărui post, fără cont. Aplicația pentru
+              Android vine în curând pe Google Play.
             </>
           )}
         </p>
-        <div className="shrink-0">
-          <StoreButton />
-        </div>
       </div>
     </aside>
   );

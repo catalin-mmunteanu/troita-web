@@ -34,9 +34,9 @@ export function AdSlot({ slot = ADS.slots.inContent }: { slot?: string | null })
   if (!ADS.client || !slot) return null;
 
   return (
-    <aside aria-label="Publicitate" className="mx-auto my-10 max-w-3xl px-4 sm:px-6">
-      <p className="mb-1.5 text-center text-[11px] uppercase tracking-[0.14em] text-muted/80">Publicitate</p>
-      <div className="min-h-[280px] overflow-hidden rounded-[14px] bg-surface-subtle">
+    <aside aria-label="Publicitate" className="my-10 max-w-3xl">
+      <p className="rubric mb-1.5 text-umber">Publicitate</p>
+      <div className="min-h-[280px] overflow-hidden rounded-sm border border-oak bg-surface">
         <ins
           key={pathname}
           ref={ref}

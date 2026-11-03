@@ -1,86 +1,122 @@
-import { FAST_ICON } from "./icons";
-import { FAST_LABEL, FAST_SHORT, RANK_LABEL, type FastLevel, type FeastRank } from "@/lib/liturgical";
+import { FAST_ICON, OrthodoxCross } from "./icons";
+import type { FastLevel, FeastRank } from "@/lib/liturgical";
 import type { DayEntry } from "@/lib/calendar";
 import { MONTHS, WEEKDAY_SHORT, WEEKDAYS } from "@/lib/dates";
+import { LITURGICAL_VAR, liturgicalColour } from "@/lib/liturgical-colour";
 
-/** Semantic colour per fast level: a scale from relief to severity. */
-export const FAST_COLOR: Record<FastLevel, string> = {
-  none: "var(--color-muted)",
-  dairy: "var(--color-dairy-gold)",
-  fish: "var(--color-fish-blue)",
-  wineOil: "var(--color-gold)",
-  fast: "var(--color-burgundy)",
-  strict: "var(--color-burgundy-deep)",
+// ------------------------------------------------------------ fasting badge
+
+/** DESIGN.MD §6: 24px high, 2px radius, always icon and text. */
+const BADGE: Record<FastLevel, { label: string; short: string; key: string }> = {
+  fast: { label: "Zi de post", short: "Post", key: "post" },
+  fish: { label: "Dezlegare la pește", short: "Pește", key: "fish" },
+  wineOil: { label: "Dezlegare la ulei și vin", short: "Ulei și vin", key: "oil" },
+  dairy: { label: "Dezlegare la lactate", short: "Lactate", key: "dairy" },
+  strict: { label: "Ajunare", short: "Ajunare", key: "strict" },
+  none: { label: "Fără post", short: "Fără post", key: "none" },
 };
 
-export const RANK_COLOR: Record<FeastRank, string> = {
-  praznic: "var(--color-feast-red)",
-  cruce_rosie: "var(--color-feast-red)",
-  cruce_albastra: "var(--color-feast-blue)",
-  simplu: "var(--color-muted)",
-};
-
-/** Icon plus written label. Never the icon alone. */
-export function FastPill({ level, compact = false }: { level: FastLevel; compact?: boolean }) {
+export function FastBadge({
+  level,
+  harti = false,
+  compact = false,
+}: {
+  level: FastLevel;
+  harti?: boolean;
+  compact?: boolean;
+}) {
+  const b = BADGE[level];
   const Icon = FAST_ICON[level];
-  const c = FAST_COLOR[level];
+  const label = level === "none" && harti ? "Harți" : compact ? b.short : b.label;
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-lg border font-semibold ${
-        compact ? "px-2 py-0.5 text-[13px]" : "px-2.5 py-1 text-[14.5px]"
-      }`}
-      style={{
-        color: c,
-        borderColor: `color-mix(in srgb, ${c} 35%, transparent)`,
-        background: `color-mix(in srgb, ${c} 10%, transparent)`,
-      }}
+      className="inline-flex h-6 items-center gap-1.5 rounded-xs px-2 font-ui text-[14px] font-medium leading-none"
+      style={{ background: `var(--b-${b.key}-bg)`, color: `var(--b-${b.key}-fg)` }}
     >
-      <Icon width={compact ? 14 : 16} height={compact ? 14 : 16} />
-      {compact ? FAST_SHORT[level] : FAST_LABEL[level]}
+      <Icon width={14} height={14} strokeWidth={1.8} />
+      {label}
     </span>
   );
 }
 
-export function RankLabel({ rank }: { rank: FeastRank }) {
-  if (rank === "simplu") return null;
+export function FastLegend() {
+  const levels: FastLevel[] = ["fast", "fish", "wineOil", "dairy", "strict"];
   return (
-    <span
-      className="inline-flex items-center gap-1 text-[11.5px] font-bold uppercase tracking-[0.06em]"
-      style={{ color: RANK_COLOR[rank] }}
-    >
-      <span aria-hidden className="text-[14px] leading-none">✛</span>
-      {RANK_LABEL[rank]}
-    </span>
+    <ul className="flex flex-wrap gap-2" aria-label="Legenda zilelor de post">
+      {levels.map((l) => (
+        <li key={l}>
+          <FastBadge level={l} />
+        </li>
+      ))}
+    </ul>
   );
 }
 
-/** The commemorations of a day, each in serif, Romanian saints set apart. */
+// -------------------------------------------------------------- feast ranks
+
+const RANK_TEXT: Record<FeastRank, string> = {
+  praznic: "Praznic împărătesc",
+  cruce_rosie: "Cruce roșie",
+  cruce_albastra: "Cruce albastră",
+  simplu: "",
+};
+
+const isRed = (r: FeastRank) => r === "praznic" || r === "cruce_rosie";
+
+/** Card colours per DESIGN.MD §6: cruce roșie, cruce albastră, or plain. */
+function cardStyle(rank: FeastRank): React.CSSProperties {
+  if (isRed(rank)) return { background: "var(--rosie-bg)", borderColor: "var(--rosie-border)" };
+  if (rank === "cruce_albastra") return { background: "var(--albastra-bg)", borderColor: "var(--albastra-border)" };
+  return {};
+}
+
+const titleColour = (rank: FeastRank) =>
+  isRed(rank) ? "var(--rosie-title)" : rank === "cruce_albastra" ? "var(--albastra-title)" : "var(--ink)";
+
+/**
+ * The commemorations of a day. The first name of a feast with a cross is set
+ * as a Literata title in the rank's colour; everything else is the body face.
+ */
 export function Commemorations({ day, size = "md" }: { day: DayEntry; size?: "md" | "lg" }) {
+  const lg = size === "lg";
   if (day.feasts.length === 0) {
-    return <p className="font-display text-[17px]">Pomenirea zilei</p>;
+    return <p className="text-[17px] font-medium">Pomenirea zilei</p>;
   }
-  const text = size === "lg" ? "text-[19px] sm:text-[21px]" : "text-[16.5px]";
   return (
     <div className="space-y-2">
       {day.feasts.map((f, i) => (
         <div key={i}>
-          {f.rank !== "simplu" && (
-            <div className="mb-0.5">
-              <RankLabel rank={f.rank} />
-            </div>
-          )}
-          <ul className="space-y-0.5">
-            {f.parts.map((p, j) => (
-              <li
-                key={j}
-                className={`font-display leading-snug ${text} ${
-                  f.rank !== "simplu" && j === 0 ? "font-semibold" : "font-normal"
-                }`}
-                style={{ color: p.romanian ? "var(--color-romanian-saint)" : "var(--color-calendar-ink)" }}
-              >
-                {p.text}
-              </li>
-            ))}
+          <ul className={lg ? "space-y-1" : "space-y-0.5"}>
+            {f.parts.map((p, j) => {
+              const title = j === 0 && f.rank !== "simplu";
+              return (
+                <li key={j} className="flex items-start gap-2">
+                  {title && (
+                    <OrthodoxCross
+                      className="mt-[0.3em] shrink-0"
+                      width={lg ? 18 : 15}
+                      height={lg ? 18 : 15}
+                      style={{ color: titleColour(f.rank) }}
+                    />
+                  )}
+                  <span
+                    className={
+                      title
+                        ? `font-display font-semibold leading-snug ${lg ? "text-[24px]" : "text-[20px]"}`
+                        : `font-medium leading-snug text-ink ${lg ? "text-[18px]" : "text-[16px]"}`
+                    }
+                    style={title ? { color: titleColour(f.rank) } : undefined}
+                  >
+                    {p.romanian && !title && (
+                      <span className="mr-1 text-red" title="Sfânt român" aria-label="Sfânt român">
+                        †
+                      </span>
+                    )}
+                    {p.text}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         </div>
       ))}
@@ -88,56 +124,93 @@ export function Commemorations({ day, size = "md" }: { day: DayEntry; size?: "md
   );
 }
 
-/** One day, set like a line in a printed calendar. */
-export function DayRow({ day, showMonth = false }: { day: DayEntry; showMonth?: boolean }) {
-  const major = day.rank === "praznic" || day.rank === "cruce_rosie";
-  const red = major || day.weekday === 7;
-  const color = red ? "var(--color-feast-red)" : "var(--color-calendar-ink)";
+/** The rubric line above a day: what kind of day it is, in mono capitals. */
+function DayRubric({ day }: { day: DayEntry }) {
+  const lit = liturgicalColour(day);
+  const parts = [lit?.label, RANK_TEXT[day.rank]].filter(Boolean) as string[];
+  const unique = parts.filter((p, i) => parts.indexOf(p) === i);
+  return (
+    <p className="rubric flex flex-wrap items-center gap-x-2 text-umber">
+      <span className="today-label hidden font-semibold text-red">
+        Astăzi{unique.length > 0 && <span aria-hidden className="ml-2 font-normal text-umber">·</span>}
+      </span>
+      {unique.map((p, i) => (
+        <span key={p}>
+          {i > 0 && <span aria-hidden className="mr-2">·</span>}
+          {p}
+        </span>
+      ))}
+    </p>
+  );
+}
+
+/** Fasting, weddings and the liturgical notes of a day. */
+function DayFooter({ day }: { day: DayEntry }) {
+  const notes = [...day.notes, day.noWeddings ? "Nu se fac nunți" : null, day.glas ? `Glasul ${day.glas} · voscreasna ${day.voscreasna}` : null].filter(Boolean);
+  const showBadge = day.fastLevel !== "none" || day.periodKind === "harti";
+  if (!showBadge && notes.length === 0) return null;
+  return (
+    <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
+      {showBadge && <FastBadge level={day.fastLevel} harti={day.periodKind === "harti"} />}
+      {notes.length > 0 && <p className="rubric text-umber">{notes.join(" · ")}</p>}
+    </div>
+  );
+}
+
+/**
+ * One day as a card: 4px corners, 1px border, the 3px liturgical bar on the
+ * left edge (DESIGN.MD §5), feast colours per §6.
+ */
+export function DayCard({ day, showMonth = false }: { day: DayEntry; showMonth?: boolean }) {
+  const lit = liturgicalColour(day);
+  const red = isRed(day.rank) || day.weekday === 7;
   return (
     <li
       id={`ziua-${day.day}`}
       data-date={day.date}
-      className={`scroll-mt-24 border-b border-border px-3 py-4 sm:px-4 ${major ? "bg-surface-subtle" : ""}`}
+      className="relative scroll-mt-24 overflow-hidden rounded-sm border border-oak bg-parchment shadow-micro"
+      style={cardStyle(day.rank)}
     >
-      <div className="flex gap-3 sm:gap-4">
-        <div className="w-12 shrink-0 text-center sm:w-14" style={{ color }}>
-          <div className="font-display text-[30px] font-bold leading-none">{day.day}</div>
-          <div className="mt-1 text-[13px] font-semibold opacity-80">
-            {showMonth ? MONTHS[day.month - 1].slice(0, 3) : WEEKDAY_SHORT[day.weekday - 1]}
-          </div>
+      {lit && (
+        <span aria-hidden className="absolute inset-y-0 left-0 w-[3px]" style={{ background: LITURGICAL_VAR[lit.colour] }} />
+      )}
+      <div className="grid grid-cols-[3.25rem_1fr] gap-3 py-4 pr-4 pl-4 sm:grid-cols-[4rem_1fr] sm:gap-4 sm:pl-5">
+        <div className="text-center" style={{ color: red ? "var(--rosie-title)" : "var(--ink)" }}>
+          <div className="font-display text-[32px] font-bold leading-none sm:text-[36px]">{day.day}</div>
+          <div className="rubric mt-1.5 opacity-90">{WEEKDAY_SHORT[day.weekday - 1]}</div>
+          {showMonth && <div className="rubric text-[11px] text-umber">{MONTHS[day.month - 1].slice(0, 3)}</div>}
         </div>
-        <div className="min-w-0 flex-1">
-          <span className="today-label mb-1 hidden text-[11px] font-bold tracking-[0.12em] text-burgundy">
-            ASTĂZI
-          </span>
+        <div className="min-w-0">
           <span className="sr-only">{WEEKDAYS[day.weekday - 1]}, </span>
-          <Commemorations day={day} />
-          <div className="mt-2 flex flex-wrap items-center gap-2">
-            {day.fastLevel !== "none" && <FastPill level={day.fastLevel} compact />}
-            {day.noWeddings && (
-              <span className="text-[13px] text-muted">Nu se fac nunți</span>
-            )}
+          <DayRubric day={day} />
+          <div className="mt-1.5">
+            <Commemorations day={day} />
           </div>
-          {(day.notes.length > 0 || day.glas) && (
-            <p className="mt-1.5 text-[13.5px] leading-relaxed text-muted">
-              {[...day.notes, day.glas ? `Glasul ${day.glas}, voscreasna ${day.voscreasna}` : null]
-                .filter(Boolean)
-                .join(" · ")}
-            </p>
-          )}
+          <DayFooter day={day} />
         </div>
       </div>
     </li>
   );
 }
 
-export function FastLegend() {
-  const levels: FastLevel[] = ["fish", "wineOil", "dairy", "fast", "strict"];
+/** The large version of a day, for /azi and the landing page. */
+export function DayLeaf({ day, heading }: { day: DayEntry; heading: React.ReactNode }) {
+  const lit = liturgicalColour(day);
   return (
-    <div className="flex flex-wrap gap-2">
-      {levels.map((l) => (
-        <FastPill key={l} level={l} compact />
-      ))}
+    <div className="relative overflow-hidden rounded-sm border border-oak bg-parchment shadow-micro" style={cardStyle(day.rank)}>
+      {lit && (
+        <span aria-hidden className="absolute inset-y-0 left-0 w-[3px]" style={{ background: LITURGICAL_VAR[lit.colour] }} />
+      )}
+      <div className="p-5 sm:p-8">
+        {heading}
+        <div className="mt-2">
+          <DayRubric day={day} />
+        </div>
+        <div className="mt-4">
+          <Commemorations day={day} size="lg" />
+        </div>
+        <DayFooter day={day} />
+      </div>
     </div>
   );
 }
