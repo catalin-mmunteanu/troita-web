@@ -9,78 +9,54 @@ export const contentType = "image/png";
 const font = (f: string) => readFile(join(process.cwd(), "src/assets/og", f));
 
 // Read once at module load, so the image is generated at build time.
-const [b, bx, r, rx] = await Promise.all([
-  font("fraunces-latin-700-normal.woff"),
-  font("fraunces-latin-ext-700-normal.woff"),
-  font("fraunces-latin-400-normal.woff"),
-  font("fraunces-latin-ext-400-normal.woff"),
+const [lb, lbx, lr, lrx, m, mx] = await Promise.all([
+  font("literata-latin-700-normal.woff"),
+  font("literata-latin-ext-700-normal.woff"),
+  font("literata-latin-400-normal.woff"),
+  font("literata-latin-ext-400-normal.woff"),
+  font("jetbrains-mono-latin-500-normal.woff"),
+  font("jetbrains-mono-latin-ext-500-normal.woff"),
 ]);
 
+const PARCHMENT = "#FDFBF7";
+const INK = "#1A1817";
+const UMBER = "#574F4A";
+const OAK = "#E2D8C8";
+const RED = "#8B1E1E";
+const GOLD = "#D4AF37";
+
+/** Same rules as the site: parchment, oak hairlines, a 3px liturgical bar, no gradients. */
 export default async function Image() {
   return new ImageResponse(
     (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          background: "#FCFAF2",
-          padding: "72px 80px",
-          fontFamily: "Fraunces, FrauncesExt",
-          borderBottom: "18px solid #5C1321",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <div
-            style={{
-              width: 72,
-              height: 72,
-              borderRadius: 18,
-              background: "#5C1321",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#FCFAF2" strokeWidth="2" strokeLinecap="round">
-              <path d="M12 2.5v19" />
-              <path d="M9.5 5.5h5" />
-              <path d="M6.5 9.5h11" />
-              <path d="M9 17.5l6-2.4" />
+      <div style={{ width: "100%", height: "100%", display: "flex", background: PARCHMENT, padding: 44, fontFamily: "Literata, LiterataExt" }}>
+        <div style={{ display: "flex", flex: 1, border: `2px solid ${OAK}`, borderRadius: 4, position: "relative", padding: "44px 60px", flexDirection: "column", justifyContent: "space-between" }}>
+          <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 6, background: GOLD }} />
+          <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+            <svg width="60" height="60" viewBox="0 0 36 36" fill="none">
+              <path d="M6.5 11.5 18 3.5l11.5 8" stroke={RED} strokeWidth="2.2" />
+              <rect x="16.3" y="7" width="3.4" height="27" fill={RED} />
+              <rect x="13.8" y="9.6" width="8.4" height="2.2" fill={RED} />
+              <rect x="8" y="14" width="20" height="3.2" fill={RED} />
+              <path d="m12.3 26.4 11.6-4.2.9 2.3-11.6 4.2z" fill={RED} />
+              <path d="M10.5 34.2h15" stroke={RED} strokeWidth="1.4" />
             </svg>
+            <div style={{ fontSize: 48, fontWeight: 700, color: INK }}>Troița</div>
           </div>
-          <div style={{ fontSize: 52, fontWeight: 700, color: "#5C1321" }}>Troița</div>
-        </div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 92, fontWeight: 700, color: "#5C1321", lineHeight: 1.02, letterSpacing: -2 }}>
-            Calendarul ortodox,
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div style={{ fontFamily: "Mono, MonoExt", fontSize: 24, letterSpacing: 2, color: RED, textTransform: "uppercase" }}>
+              Calendar ortodox românesc
+            </div>
+            <div style={{ fontSize: 68, fontWeight: 700, color: INK, lineHeight: 1.1, marginTop: 12 }}>
+              Calendarul ortodox, zi de zi
+            </div>
+            <div style={{ fontSize: 30, color: UMBER, marginTop: 16 }}>
+              Sfântul zilei · posturi și dezlegări · harta bisericilor
+            </div>
           </div>
-          <div style={{ fontSize: 92, fontWeight: 700, color: "#5C1321", lineHeight: 1.02, letterSpacing: -2 }}>
-            zi de zi.
-          </div>
-          <div style={{ marginTop: 28, fontSize: 34, color: "#6B5E4F" }}>
-            Sfântul zilei · Posturi și dezlegări · Harta bisericilor
-          </div>
-        </div>
-        <div style={{ display: "flex" }}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 14,
-              padding: "14px 28px",
-              borderRadius: 999,
-              background: "#F5EFCF",
-              border: "2px solid #C59B27",
-              color: "#5C1321",
-              fontSize: 30,
-              fontWeight: 700,
-            }}
-          >
-            <div style={{ width: 14, height: 14, borderRadius: 7, background: "#C59B27" }} />
-            În curând pe Google Play
+          <div style={{ display: "flex", alignItems: "center", gap: 14, fontFamily: "Mono, MonoExt", fontSize: 24, letterSpacing: 2, color: UMBER, textTransform: "uppercase" }}>
+            <div style={{ width: 14, height: 14, background: GOLD }} />
+            Android · în curând pe Google Play
           </div>
         </div>
       </div>
@@ -88,10 +64,12 @@ export default async function Image() {
     {
       ...size,
       fonts: [
-        { name: "Fraunces", data: b, weight: 700, style: "normal" },
-        { name: "FrauncesExt", data: bx, weight: 700, style: "normal" },
-        { name: "Fraunces", data: r, weight: 400, style: "normal" },
-        { name: "FrauncesExt", data: rx, weight: 400, style: "normal" },
+        { name: "Literata", data: lb, weight: 700, style: "normal" },
+        { name: "LiterataExt", data: lbx, weight: 700, style: "normal" },
+        { name: "Literata", data: lr, weight: 400, style: "normal" },
+        { name: "LiterataExt", data: lrx, weight: 400, style: "normal" },
+        { name: "Mono", data: m, weight: 500, style: "normal" },
+        { name: "MonoExt", data: mx, weight: 500, style: "normal" },
       ],
     },
   );
