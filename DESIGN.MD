@@ -2,6 +2,8 @@
 
 Specification for the Troița app (Flutter, Android) and the website (www.troita.ro).
 
+> **Scope (decided 3 November 2026):** this spec is applied to the **website first**. The Flutter app keeps its current `theme.dart` until the website has been tested; it follows later.
+
 ---
 
 ## 1. Core brand and design philosophy
@@ -62,6 +64,8 @@ All fonts **MUST** support Romanian diacritics (ă, â, î, ș, ț), using the c
 | Text secondary (Muted Umber) | `#574F4A` | — |
 | Border (Carved Oak) | `#E2D8C8` | `#322A22` |
 
+Dark-mode text colors (added, not in the original spec): text primary `#EDE6DA`, text secondary `#B5AA9C`.
+
 ### Liturgical accent tokens
 
 These change dynamically with the calendar state.
@@ -73,6 +77,31 @@ These change dynamically with the calendar state.
 | Blue | Mother of God, Angels | `#1A365D` |
 | Green | Trinity, Pentecost, Palm Sunday | `#1E4D2B` |
 | Purple / violet | Great Lent, fasting | `#3B0764` |
+
+**Dark-mode accents (added).** The light accents almost disappear on `#141211` (red 2.1:1, blue 1.5:1, purple 1.25:1), so dark mode uses lighter variants:
+
+| Token | Dark mode |
+|---|---|
+| Gold | `#D4AF37` (unchanged, 8.9:1) |
+| Red | `#E07B72` |
+| Blue | `#8EB1DE` |
+| Green | `#7DBE8E` |
+| Purple | `#C2A3E8` |
+
+**Gold is never used for text** (2.0:1 on parchment). A gold bar is always paired with a written label, such as „Duminică” or „Praznic împărătesc”.
+
+### Which liturgical color a day gets
+
+In priority order (website, `src/lib/liturgical-colour.ts`):
+
+1. Trinity, Pentecost, Palm Sunday → green
+2. Holy Cross feasts and Pascha → red
+3. Feasts of the Lord → gold
+4. Feasts of the Mother of God and of the Archangels → blue
+5. Every other Sunday → gold
+6. A martyr as the day's main commemoration, with a cross (roșie or albastră) → red. Most days remember some martyr, so the bar is kept for the ones a calendar marks.
+7. Any other day of Great Lent → purple
+8. Otherwise → no bar
 
 ---
 
@@ -96,19 +125,39 @@ These change dynamically with the calendar state.
 | Variant | Background | Border | Icon | Title |
 |---|---|---|---|---|
 | Cruce roșie (red cross) | `#FFF8F8` | `#F0C8C8` | red Orthodox cross ☦ | Literata Bold, `#8B1E1E` |
+| Cruce albastră (blue cross) | `#F4F6FA` | `#C9D4E6` | blue Orthodox cross | Literata SemiBold, `#1A365D` |
 | Cruce neagră (black cross) | `#FDFBF7` | `#E2D8C8` | black Orthodox cross ☦ | Literata SemiBold, `#1A1817` |
+
+**Cruce albastră (added, decided 3 November 2026).** The calendar data marks the middle rank as *cruce albastră*, printed blue in some Romanian calendars and black in others. The website keeps it as its own rank, between cruce roșie and an ordinary day. On the website the cruce neagră style is used for ordinary days (no cross icon), since the data has no separate black rank.
+
+Dark-mode feast cards (added): cruce roșie `#2A1A18` / border `#4A2A26` / title `#F08C82`; cruce albastră `#19202B` / border `#2C3A50` / title `#8EB1DE`.
+
+**The ☦ cross is drawn as SVG, never typed as a character.** None of the four fonts contains U+2626, so browsers fall back to a system font, and on Android and Windows that renders a color emoji, which the ban list forbids.
 
 ### Fasting status badge (post / harți)
 
-Compact pill or rectangular badge, **24px high**, **2px radius**.
+Compact pill or rectangular badge, **24px high**, **2px radius**, always icon + text.
 
-| State | Label | Background | Text |
-|---|---|---|---|
-| Fasting day | „Zi de Post” | `#F3E8FF` | `#3B0764` |
-| Fish allowed | „Dezlegare la Pește” | `#E0F2FE` | `#0369A1` |
-| No fasting | „Harți” | `#FEF3C7` | `#92400E` |
+The original colors (`#F3E8FF`, `#E0F2FE`, `#FEF3C7`…) were Tailwind's stock palette. **Decided 3 November 2026: warmed** towards the parchment palette, same hues. The calendar has six fasting states, not three; the three extra ones follow the same family. All text passes 4.5:1.
+
+| State | Label | Background | Text | Dark bg | Dark text |
+|---|---|---|---|---|---|
+| Fasting day | „Zi de post” | `#EFE5EC` | `#3B0764` | `#2A1E2C` | `#D2B6E6` |
+| Fish allowed | „Dezlegare la pește” | `#E2ECEC` | `#1D5468` | `#17262A` | `#8EC3D2` |
+| Oil and wine (added) | „Dezlegare la ulei și vin” | `#ECE8CF` | `#55500F` | `#25241A` | `#CFC88A` |
+| Dairy, Săptămâna Brânzei (added) | „Dezlegare la lactate” | `#F4EBD6` | `#6A4E17` | `#29221A` | `#E2C79A` |
+| Strict fast (added) | „Ajunare” | `#3B0764` | `#FDFBF7` | `#D2B6E6` | `#141211` |
+| No fasting | „Harți” / „Fără post” | `#F5EACB` | `#7A3B0C` | `#2C2314` | `#E8C27E` |
+
+Ajunare is the only filled badge: the strictest day is the one that stands out.
 
 ### Navigation
 
 - **Mobile (Flutter):** parchment bottom-sheet navigation. The active icon is highlighted in Gold (`#D4AF37`) or in the active liturgical color.
 - **Web (www.troita.ro):** logo with a carved-wood emblem, left-aligned at the top; a date quick-jump picker on the right; a clean, uncrowded horizontal layout.
+
+---
+
+## 7. Imagery
+
+**Decided 3 November 2026: no photography for now.** The site uses only typography, the SVG emblem and ornaments, and app screenshots once they exist. No stock or AI-generated images in the meantime.
