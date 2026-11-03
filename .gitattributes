@@ -1,0 +1,5 @@
+# Store text with LF line endings; Git on Windows converts on checkout.
+* text=auto
+*.woff binary
+*.woff2 binary
+*.png binary
