@@ -77,7 +77,6 @@
   --b-post-bg: #efe5ec;   --b-post-fg: #3b0764;
   --b-fish-bg: #e2ecec;   --b-fish-fg: #1d5468;
   --b-oil-bg: #ece8cf;    --b-oil-fg: #55500f;
-  --b-dairy-bg: #f4ebd6;  --b-dairy-fg: #6a4e17;
   --b-strict-bg: #3b0764; --b-strict-fg: #fdfbf7;
   --b-none-bg: #f5eacb;   --b-none-fg: #7a3b0c;
 
@@ -108,7 +107,6 @@
     --b-post-bg: #2a1e2c;   --b-post-fg: #d2b6e6;
     --b-fish-bg: #17262a;   --b-fish-fg: #8ec3d2;
     --b-oil-bg: #25241a;    --b-oil-fg: #cfc88a;
-    --b-dairy-bg: #29221a;  --b-dairy-fg: #e2c79a;
     --b-strict-bg: #d2b6e6; --b-strict-fg: #141211;
     --b-none-bg: #2c2314;   --b-none-fg: #e8c27e;
 
@@ -184,6 +182,8 @@ p { text-wrap: pretty; }
 /* Today's day in a month list, marked in the browser so the page stays static. */
 [data-today="true"] {
   background: var(--surface);
+  outline: 2px solid var(--ink);
+  outline-offset: -2px;
 }
 [data-today="true"] .today-label {
   display: inline-block;

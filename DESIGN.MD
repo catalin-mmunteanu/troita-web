@@ -138,14 +138,13 @@ Dark-mode feast cards (added): cruce roșie `#2A1A18` / border `#4A2A26` / title
 
 Compact pill or rectangular badge, **24px high**, **2px radius**, always icon + text.
 
-The original colors (`#F3E8FF`, `#E0F2FE`, `#FEF3C7`…) were Tailwind's stock palette. **Decided 3 November 2026: warmed** towards the parchment palette, same hues. The calendar has six fasting states, not three; the three extra ones follow the same family. All text passes 4.5:1.
+The original colors (`#F3E8FF`, `#E0F2FE`, `#FEF3C7`…) were Tailwind's stock palette. **Decided 3 November 2026: warmed** towards the parchment palette, same hues. The calendar has five fasting states, not three; the two extra ones follow the same family. **There is no „dezlegare la lactate” state (decided 12 November 2026):** Săptămâna Brânzei is shown as a week without fast, like the other days outside a fast. All text passes 4.5:1.
 
 | State | Label | Background | Text | Dark bg | Dark text |
 |---|---|---|---|---|---|
 | Fasting day | „Zi de post” | `#EFE5EC` | `#3B0764` | `#2A1E2C` | `#D2B6E6` |
 | Fish allowed | „Dezlegare la pește” | `#E2ECEC` | `#1D5468` | `#17262A` | `#8EC3D2` |
 | Oil and wine (added) | „Dezlegare la ulei și vin” | `#ECE8CF` | `#55500F` | `#25241A` | `#CFC88A` |
-| Dairy, Săptămâna Brânzei (added) | „Dezlegare la lactate” | `#F4EBD6` | `#6A4E17` | `#29221A` | `#E2C79A` |
 | Strict fast (added) | „Ajunare” | `#3B0764` | `#FDFBF7` | `#D2B6E6` | `#141211` |
 | No fasting | „Harți” / „Fără post” | `#F5EACB` | `#7A3B0C` | `#2C2314` | `#E8C27E` |
 

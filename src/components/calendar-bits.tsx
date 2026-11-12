@@ -11,7 +11,6 @@ const BADGE: Record<FastLevel, { label: string; short: string; key: string }> = 
   fast: { label: "Zi de post", short: "Post", key: "post" },
   fish: { label: "Dezlegare la pește", short: "Pește", key: "fish" },
   wineOil: { label: "Dezlegare la ulei și vin", short: "Ulei și vin", key: "oil" },
-  dairy: { label: "Dezlegare la lactate", short: "Lactate", key: "dairy" },
   strict: { label: "Ajunare", short: "Ajunare", key: "strict" },
   none: { label: "Fără post", short: "Fără post", key: "none" },
 };
@@ -40,7 +39,7 @@ export function FastBadge({
 }
 
 export function FastLegend() {
-  const levels: FastLevel[] = ["fast", "fish", "wineOil", "dairy", "strict"];
+  const levels: FastLevel[] = ["fast", "fish", "wineOil", "strict"];
   return (
     <ul className="flex flex-wrap gap-2" aria-label="Legenda zilelor de post">
       {levels.map((l) => (
@@ -55,7 +54,7 @@ export function FastLegend() {
 // -------------------------------------------------------------- feast ranks
 
 const RANK_TEXT: Record<FeastRank, string> = {
-  praznic: "Praznic împărătesc",
+  praznic: "Cruce roșie",
   cruce_rosie: "Cruce roșie",
   cruce_albastra: "Cruce albastră",
   simplu: "",

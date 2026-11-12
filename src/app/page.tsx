@@ -129,7 +129,7 @@ const LITURGICAL = [
 ];
 
 function Colours() {
-  const fasts: FastLevel[] = ["fast", "fish", "wineOil", "dairy", "strict"];
+  const fasts: FastLevel[] = ["fast", "fish", "wineOil", "strict"];
   return (
     <Section id="culori" eyebrow="Cum se citește" title="Culorile calendarului">
       <p className="max-w-[62ch] text-[17px] leading-relaxed text-ink">

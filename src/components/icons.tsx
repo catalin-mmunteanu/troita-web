@@ -117,11 +117,6 @@ const DropIcon = (p: P) => (
     <path d="M12 3.5s-6 6.6-6 11a6 6 0 0 0 12 0c0-4.4-6-11-6-11z" />
   </svg>
 );
-const EggIcon = (p: P) => (
-  <svg {...line} {...p}>
-    <path d="M12 3c-3.6 0-6.5 5.8-6.5 10.5a6.5 6.5 0 0 0 13 0C18.5 8.8 15.6 3 12 3z" />
-  </svg>
-);
 const LeafIcon = (p: P) => (
   <svg {...line} {...p}>
     <path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15M5 19l7-7" />
@@ -141,7 +136,6 @@ const BreadIcon = (p: P) => (
 
 export const FAST_ICON: Record<FastLevel, (p: P) => React.ReactElement> = {
   none: BreadIcon,
-  dairy: EggIcon,
   fish: FishIcon,
   wineOil: DropIcon,
   fast: LeafIcon,

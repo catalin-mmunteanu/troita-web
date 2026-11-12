@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps<"/posturi/[an]/[pos
   };
 }
 
-const SUMMARY: FastLevel[] = ["fish", "wineOil", "dairy", "fast", "strict"];
+const SUMMARY: FastLevel[] = ["fish", "wineOil", "fast", "strict"];
 
 export default async function FastPage({ params }: PageProps<"/posturi/[an]/[post]">) {
   const { an, post } = await params;

@@ -21,7 +21,6 @@ const LEVELS: { level: FastLevel; text: string }[] = [
   { level: "fast", text: "Mâncare de post, fără untdelemn și vin." },
   { level: "fish", text: "Se dezleagă la pește, untdelemn și vin. Fără carne, lactate și ouă." },
   { level: "wineOil", text: "Se dezleagă la untdelemn și vin. Fără pește." },
-  { level: "dairy", text: "Doar în Săptămâna Brânzei: lactate și ouă, fără carne." },
   { level: "strict", text: "Ajunare: post negru sau, după putere, numai seara pâine și apă." },
 ];
 
