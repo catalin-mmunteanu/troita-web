@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Footer, Header } from "@/components/chrome";
+import { THEME_INIT_SCRIPT } from "@/components/theme-toggle";
 import { ADS, SITE } from "@/lib/site";
 import "./globals.css";
 
@@ -54,8 +55,10 @@ const jsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="ro" className="h-full">
+    // suppressHydrationWarning: the theme script sets data-theme before React loads.
+    <html lang="ro" className="h-full" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         {/* The two faces seen above the fold; the rest load on demand. */}
         <link rel="preload" href="/fonts/literata-latin-wght-normal.woff2" as="font" type="font/woff2" crossOrigin="" />
         <link rel="preload" href="/fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossOrigin="" />

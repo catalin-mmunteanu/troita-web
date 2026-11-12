@@ -4,12 +4,13 @@ import { ADS, NAV, SITE } from "@/lib/site";
 import { ArrowIcon, RopeDivider, TroitaEmblem } from "./icons";
 import { CookieSettingsButton } from "./ads";
 import { DateJump } from "./date-jump";
+import { ThemeToggle } from "./theme-toggle";
 
 export function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-2 text-ink" aria-label="Troița, pagina principală">
-      <TroitaEmblem width={32} height={32} className="text-red" />
-      <span className="font-display text-[23px] font-bold leading-none tracking-[-0.01em]">Troița</span>
+    <Link href="/" className="flex shrink-0 items-center gap-1.5 text-ink sm:gap-2" aria-label="Troița, pagina principală">
+      <TroitaEmblem width={32} height={32} className="h-7 w-7 text-red sm:h-8 sm:w-8" />
+      <span className="font-display text-[20px] font-bold max-[350px]:sr-only leading-none tracking-[-0.01em] sm:text-[23px]">Troița</span>
     </Link>
   );
 }
@@ -62,15 +63,15 @@ export function Header() {
   const max = `${PUBLISHED_YEARS[PUBLISHED_YEARS.length - 1]}-12-31`;
   return (
     <header className="sticky top-0 z-30 border-b border-oak bg-parchment">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-2 px-3 min-[400px]:px-4 sm:px-6">
         <Logo />
-        <div className="flex items-center gap-1 sm:gap-3">
+        <div className="flex items-center gap-0.5 sm:gap-3">
           <nav aria-label="Navigare principală" className="flex items-center">
             {NAV.map((n, i) => (
               <Link
                 key={n.href}
                 href={n.href}
-                className={`px-2 py-2 font-ui text-[17px] font-medium text-ink/85 underline-offset-[6px] hover:text-red hover:underline sm:px-3 ${
+                className={`px-1 py-2 font-ui text-[15px] min-[400px]:px-1.5 min-[400px]:text-[16px] sm:text-[17px] font-medium text-ink/85 underline-offset-[6px] hover:text-red hover:underline sm:px-3 ${
                   i === NAV.length - 1 ? "hidden md:inline-block" : ""
                 }`}
               >
@@ -78,7 +79,10 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <DateJump min={min} max={max} />
+          <div className="flex items-center gap-1 sm:gap-1.5">
+            <DateJump min={min} max={max} />
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </header>

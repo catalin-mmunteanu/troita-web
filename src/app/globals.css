@@ -83,8 +83,46 @@
   --on-red: #fdfbf7;
 }
 
+/*
+ * Dark mode: follows the device unless the visitor picked a theme with the
+ * header button, which sets data-theme on <html> (see theme-toggle.tsx).
+ */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --parchment: #141211;
+  --surface: #1e1b18;
+  --ink: #ede6da;
+  --umber: #b5aa9c;
+  --oak: #322a22;
+
+  --gold: #d4af37;
+  --red: #e07b72;
+  --blue: #8eb1de;
+  --green: #7dbe8e;
+  --purple: #c2a3e8;
+
+  --rosie-bg: #2a1a18;
+  --rosie-border: #4a2a26;
+  --rosie-title: #f08c82;
+  --albastra-bg: #19202b;
+  --albastra-border: #2c3a50;
+  --albastra-title: #8eb1de;
+
+  --b-post-bg: #2a1e2c;   --b-post-fg: #d2b6e6;
+  --b-fish-bg: #17262a;   --b-fish-fg: #8ec3d2;
+  --b-oil-bg: #25241a;    --b-oil-fg: #cfc88a;
+  --b-strict-bg: #d2b6e6; --b-strict-fg: #141211;
+  --b-none-bg: #2c2314;   --b-none-fg: #e8c27e;
+
+  --on-red: #141211;
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --parchment: #141211;
     --surface: #1e1b18;
     --ink: #ede6da;

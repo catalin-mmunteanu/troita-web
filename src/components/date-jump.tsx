@@ -32,7 +32,7 @@ export function DateJump({ min, max }: { min: string; max: string }) {
       <button
         type="button"
         onClick={open}
-        className="flex h-10 items-center gap-2 rounded-sm border border-oak bg-surface px-2.5 font-ui text-[16px] font-medium text-ink transition-colors hover:border-umber sm:px-3"
+        className="flex h-9 items-center gap-2 rounded-sm border border-oak bg-surface px-2 font-ui text-[16px] font-medium text-ink transition-colors hover:border-umber sm:h-10 sm:px-3"
       >
         <CalendarIcon width={18} height={18} />
         <span className="hidden md:inline">Mergi la o dată</span>

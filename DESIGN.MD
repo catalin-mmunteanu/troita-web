@@ -66,6 +66,8 @@ All fonts **MUST** support Romanian diacritics (ă, â, î, ș, ț), using the c
 
 Dark-mode text colors (added, not in the original spec): text primary `#EDE6DA`, text secondary `#B5AA9C`.
 
+**Theme switch (website, added 12 November 2026).** Dark mode follows the device setting by default. A light/dark button in the right corner of the header overrides it; the choice is kept in the browser. The button follows the header style: rectangular, 4px corners, 1px oak border.
+
 ### Liturgical accent tokens
 
 These change dynamically with the calendar state.
