@@ -7,7 +7,7 @@ import {
   addDays, daysInMonth, iso, monthDay, weekday, ymd, compare, type Ymd,
 } from "./dates";
 import {
-  dayFor, MOVABLE, parseRank, pascha, RANK_WEIGHT,
+  dayFor, MOVABLE, parseRank, pascha, RANK_WEIGHT, setPublishedApostlesStart,
   type FastLevel, type FeastRank, type PeriodKind,
 } from "./liturgical";
 
@@ -34,6 +34,15 @@ const FEASTS = (data.feasts as RawFeast[]).filter((f) => f.name.trim().length > 
 const OVERRIDES = new Map<string, RawOverride>(
   (data.overrides as RawOverride[]).map((o) => [`${o.year}-${o.monthDay}`, o]),
 );
+
+// The published calendar marks the first day of the Apostles' fast; that date
+// wins over the computed rule (it differs in late-Pascha years such as 2027).
+for (const o of OVERRIDES.values()) {
+  if (o.notes && /Începutul Postului Sf\. Ap/.test(o.notes)) {
+    const [m, d] = o.monthDay.split("-").map(Number);
+    setPublishedApostlesStart(o.year, ymd(o.year, m, d));
+  }
+}
 
 /** Years whose calendar is published in full (names, ranks and dezlegări). */
 export const PUBLISHED_YEARS: number[] = data.publishedYears;
@@ -66,9 +75,18 @@ export type DayEntry = {
   voscreasna: number | null;
 };
 
-const LEVELS: FastLevel[] = ["none", "dairy", "fish", "wineOil", "fast", "strict"];
+const LEVELS: FastLevel[] = ["none", "fish", "wineOil", "fast", "strict"];
 const parseLevel = (s: string | null | undefined): FastLevel | null =>
-  LEVELS.includes(s as FastLevel) ? (s as FastLevel) : s === "wine_oil" ? "wineOil" : null;
+  LEVELS.includes(s as FastLevel)
+    ? (s as FastLevel)
+    : s === "wine_oil"
+      ? "wineOil"
+      : s === "dairy" // Săptămâna Brânzei: shown as a day without fast
+        ? "none"
+        : null;
+
+/** "Post negru" / "Numai seara, pâine și apă" in the published notes mean ajunare. */
+const STRICT_NOTE = /Post negru|pâine și apă/;
 
 function feastDate(f: RawFeast, year: number): Ymd | null {
   if (f.movableKey) {
@@ -139,7 +157,8 @@ export function getDay(date: Ymd): DayEntry {
 
   const computed = dayFor(date, rank, dezlegare);
   const override = OVERRIDES.get(`${date.y}-${monthDay(date)}`);
-  const published = parseLevel(override?.fastLevel);
+  const published =
+    parseLevel(override?.fastLevel) ?? (override?.notes && STRICT_NOTE.test(override.notes) ? "strict" : null);
   const fastLevel = published ?? computed.fastLevel;
 
   // Notes on fixed-date feasts were scraped from one particular year ("Sâmbăta

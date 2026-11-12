@@ -6,7 +6,7 @@ import { FastBadge } from "@/components/calendar-bits";
 import { Section } from "@/components/section";
 import { isPublishedYear, PUBLISHED_YEARS } from "@/lib/calendar";
 import { count, formatLong, formatRange } from "@/lib/dates";
-import { harti, pascha, periodDays, saptamanaBranzei, type FastLevel } from "@/lib/liturgical";
+import { harti, pascha, periodDays, type FastLevel } from "@/lib/liturgical";
 import { countLevels, FAST_INFO, FAST_ORDERED, fastDays } from "@/lib/fasts";
 
 export function generateStaticParams() {
@@ -28,7 +28,6 @@ export default async function PosturiYear({ params }: PageProps<"/posturi/[an]">
   const { an } = await params;
   const year = Number(an);
   if (!isPublishedYear(year)) notFound();
-  const br = saptamanaBranzei(year);
 
   return (
     <>
@@ -79,10 +78,6 @@ export default async function PosturiYear({ params }: PageProps<"/posturi/[an]">
                 </li>
               ))}
           </ul>
-          <p>
-            Săptămâna Brânzei ({formatRange(br.start, br.end)}) are dezlegare la lactate și ouă în toate zilele,
-            dar nu la carne.
-          </p>
         </div>
       </Section>
       <AppNote />

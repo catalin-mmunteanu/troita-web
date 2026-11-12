@@ -31,7 +31,7 @@ export const FAST_INFO: Record<
     alsoKnown: "Postul Sânpetrului",
     get: postulApostolilor,
     intro:
-      "Începe în lunea de după Duminica Tuturor Sfinților și ține până la 28 iunie, în ajunul praznicului. Pentru că începutul depinde de Paști, durata lui variază de la an la an; în anii cu Paștele târziu, ajunge la o singură zi.",
+      "Începe în lunea de după Duminica Tuturor Sfinților și ține până la 28 iunie, în ajunul praznicului. Pentru că începutul depinde de Paști, durata lui variază de la an la an. În anii cu Paștele târziu, când ar rămâne doar câteva zile, postul începe mai devreme, în săptămâna de după Rusalii.",
   },
   "postul-sfintei-marii": {
     title: "Postul Adormirii Maicii Domnului",

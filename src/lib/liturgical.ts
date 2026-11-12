@@ -6,12 +6,12 @@
  */
 import { addDays, between, daysBetween, same, weekday, ymd, type Ymd } from "./dates";
 
-export type FastLevel = "none" | "dairy" | "fish" | "wineOil" | "fast" | "strict";
-export const FAST_ORDER: FastLevel[] = ["none", "dairy", "fish", "wineOil", "fast", "strict"];
+// Săptămâna Brânzei is not a fasting level: it is shown as a week without fast.
+export type FastLevel = "none" | "fish" | "wineOil" | "fast" | "strict";
+export const FAST_ORDER: FastLevel[] = ["none", "fish", "wineOil", "fast", "strict"];
 
 export const FAST_LABEL: Record<FastLevel, string> = {
   none: "Zi fără post",
-  dairy: "Dezlegare la lactate",
   fish: "Dezlegare la pește",
   wineOil: "Dezlegare la untdelemn și vin",
   fast: "Post",
@@ -20,7 +20,6 @@ export const FAST_LABEL: Record<FastLevel, string> = {
 
 export const FAST_SHORT: Record<FastLevel, string> = {
   none: "Fără post",
-  dairy: "Lactate",
   fish: "Pește",
   wineOil: "Ulei și vin",
   fast: "Post",
@@ -111,9 +110,31 @@ export function postulMare(year: number): Period {
   return { kind: "postulMare", start: addDays(p, -48), end: addDays(p, -1), note: "Cel mai aspru post din an." };
 }
 
+/**
+ * Start dates of Postul Sfinților Apostoli as published by the Romanian
+ * Patriarchate, per year. Filled in by calendar.ts from the published data.
+ * The published date always wins over the rule below.
+ */
+const PUBLISHED_APOSTLES_START = new Map<number, Ymd>();
+export function setPublishedApostlesStart(year: number, start: Ymd) {
+  PUBLISHED_APOSTLES_START.set(year, start);
+}
+
+/** Shorter than this, the Romanian Church starts the fast the week after Rusalii. */
+const MIN_APOSTLES_DAYS = 7;
+
 export function postulApostolilor(year: number): Period | null {
-  const start = addDays(pascha(year), 57);
+  const p = pascha(year);
   const end = ymd(year, 6, 28);
+  let start = PUBLISHED_APOSTLES_START.get(year) ?? addDays(p, 57);
+  // In years with a late Pascha the Monday after All Saints falls on or after
+  // 28 June, which would leave a fast of one day or none at all. The Romanian
+  // Orthodox Church then starts it on the Tuesday after Rusalii, after the
+  // Monday of the Holy Trinity (2027: 22–28 June). Approximation for years the
+  // calendar has not been published yet.
+  if (!PUBLISHED_APOSTLES_START.has(year) && daysBetween(start, end) + 1 < MIN_APOSTLES_DAYS) {
+    start = addDays(p, 51);
+  }
   if (daysBetween(start, end) < 0) return null;
   return { kind: "postulApostolilor", start, end, note: "Durata variază în funcție de data Paștelui." };
 }
@@ -137,13 +158,22 @@ export function greatFasts(year: number): Period[] {
   return [postulMare(year), ...(ap ? [ap] : []), postulAdormirii(year), postulCraciunului(year)];
 }
 
+/** The week after Rusalii, cut short when the Apostles' fast starts inside it. */
+function hartiAfterRusalii(year: number): Period {
+  const p = pascha(year);
+  let end = addDays(p, 56);
+  const ap = postulApostolilor(year);
+  if (ap && daysBetween(ap.start, end) >= 0) end = addDays(ap.start, -1);
+  return { kind: "harti", start: addDays(p, 50), end, note: "Săptămâna de după Rusalii." };
+}
+
 export function harti(year: number): Period[] {
   const p = pascha(year);
   return [
     { kind: "harti", start: ymd(year, 12, 25), end: ymd(year + 1, 1, 4), note: "De la Nașterea Domnului până la Bobotează." },
     { kind: "harti", start: addDays(p, -69), end: addDays(p, -64), note: "Săptămâna de după Duminica Vameșului și a Fariseului." },
     { kind: "harti", start: p, end: addDays(p, 6), note: "Săptămâna Luminată." },
-    { kind: "harti", start: addDays(p, 50), end: addDays(p, 56), note: "Săptămâna de după Rusalii." },
+    hartiAfterRusalii(year),
   ];
 }
 
@@ -153,7 +183,7 @@ export function saptamanaBranzei(year: number): Period {
     kind: "saptamanaBranzei",
     start: addDays(p, -55),
     end: addDays(p, -49),
-    note: "Se dezleagă la lactate și ouă în toate zilele.",
+    note: "Săptămâna Albă, înaintea Postului Mare.",
   };
 }
 
@@ -269,7 +299,7 @@ export function dayFor(d: Ymd, rank: FeastRank = "simplu", dezlegare: FastLevel 
     note = harta.note ?? null;
   } else if (contains(branza, d)) {
     period = branza;
-    level = "dairy";
+    level = "none";
     note = branza.note ?? null;
   } else if (great) {
     period = great;
