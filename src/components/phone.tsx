@@ -34,7 +34,7 @@ export function AppScreen({
   const src = screenshot(screen);
   return (
     <figure className="w-full">
-      <div className="relative aspect-[9/17] overflow-hidden rounded-md border border-oak bg-parchment shadow-micro">
+      <div className="relative aspect-[12/25] overflow-hidden rounded-md border border-oak bg-parchment shadow-micro">
         {src ? (
           <Image src={src} alt={alt} fill sizes="(min-width: 768px) 25vw, 80vw" className="object-cover object-top" priority={priority} />
         ) : (
