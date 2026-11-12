@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AppNote, Breadcrumbs, PageHeader } from "@/components/chrome";
@@ -15,11 +16,11 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<"/posturi/[an]">): Promise<Metadata> {
   const { an } = await params;
-  return {
+  return pageMeta({
     title: `Posturi ${an}: calendarul de post ortodox`,
-    description: `Când încep posturile în ${an}: Postul Mare, Postul Sfinților Petru și Pavel, Postul Sfintei Marii și Postul Crăciunului, cu zilele de dezlegare și săptămânile fără post.`,
-    alternates: { canonical: `/posturi/${an}` },
-  };
+    description: `Când încep posturile în ${an}: Postul Mare, al Sfinților Apostoli, al Sfintei Marii și al Crăciunului, cu dezlegările și săptămânile fără post.`,
+    path: `/posturi/${an}`,
+  });
 }
 
 const SHOWN: FastLevel[] = ["fish", "wineOil", "fast", "strict"];

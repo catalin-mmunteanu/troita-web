@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { cacheLife } from "next/cache";
 import { AdSlot } from "@/components/ads";
@@ -11,12 +12,12 @@ import { addDays, capitalize, formatWithWeekday, monthSlug, todayInRomania } fro
 import { PERIOD_LABEL } from "@/lib/liturgical";
 import { currentOrNextFast, FAST_INFO } from "@/lib/fasts";
 
-export const metadata: Metadata = {
-  title: "Sfântul zilei: ce sfânt este azi în calendarul ortodox",
+export const metadata: Metadata = pageMeta({
+  title: "Sfântul zilei: ce sfânt este azi",
   description:
-    "Sfântul zilei de azi în calendarul ortodox românesc: pomenirile, crucea roșie sau albastră, postul și dezlegarea zilei, plus sărbătorile care urmează.",
-  alternates: { canonical: "/azi" },
-};
+    "Ce sfânt pomenim azi în calendarul ortodox: sfinții zilei, crucea roșie sau albastră, postul și dezlegarea, plus sărbătorile care urmează.",
+  path: "/azi",
+});
 
 export default async function AziPage() {
   "use cache";

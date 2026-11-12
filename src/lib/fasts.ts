@@ -17,10 +17,11 @@ export type FastSlug = keyof typeof FAST_SLUGS;
 
 export const FAST_INFO: Record<
   FastSlug,
-  { title: string; alsoKnown: string; get: (y: number) => Period | null; intro: string }
+  { title: string; short: string; alsoKnown: string; get: (y: number) => Period | null; intro: string }
 > = {
   "postul-mare": {
     title: "Postul Mare",
+    short: "Postul Mare",
     alsoKnown: "Postul Sfintelor Paști, Păresimile",
     get: postulMare,
     intro:
@@ -28,6 +29,7 @@ export const FAST_INFO: Record<
   },
   "postul-sfintilor-petru-si-pavel": {
     title: "Postul Sfinților Apostoli Petru și Pavel",
+    short: "Postul Sfinților Petru și Pavel",
     alsoKnown: "Postul Sânpetrului",
     get: postulApostolilor,
     intro:
@@ -35,6 +37,7 @@ export const FAST_INFO: Record<
   },
   "postul-sfintei-marii": {
     title: "Postul Adormirii Maicii Domnului",
+    short: "Postul Sfintei Marii",
     alsoKnown: "Postul Sfintei Marii",
     get: postulAdormirii,
     intro:
@@ -42,6 +45,7 @@ export const FAST_INFO: Record<
   },
   "postul-craciunului": {
     title: "Postul Nașterii Domnului",
+    short: "Postul Crăciunului",
     alsoKnown: "Postul Crăciunului",
     get: postulCraciunului,
     intro:

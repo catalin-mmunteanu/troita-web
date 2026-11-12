@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { AdSlot } from "@/components/ads";
 import { notFound } from "next/navigation";
@@ -16,12 +17,11 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<"/calendar-ortodox/[an]/[luna]">): Promise<Metadata> {
   const { an, luna } = await params;
-  const L = capitalize(luna);
-  return {
+  return pageMeta({
     title: `Calendar ortodox ${luna} ${an}`,
-    description: `Calendarul ortodox pe ${luna} ${an}, zi cu zi: sfinții pomeniți, sărbătorile cu cruce roșie, zilele de post și dezlegările la pește, untdelemn și vin. ${L} ${an} în calendarul creștin ortodox.`,
-    alternates: { canonical: `/calendar-ortodox/${an}/${luna}` },
-  };
+    description: `Calendarul ortodox pe ${luna} ${an}, zi cu zi: sfinții pomeniți, sărbătorile cu cruce roșie, zilele de post și dezlegările la pește.`,
+    path: `/calendar-ortodox/${an}/${luna}`,
+  });
 }
 
 export default async function MonthPage({ params }: PageProps<"/calendar-ortodox/[an]/[luna]">) {

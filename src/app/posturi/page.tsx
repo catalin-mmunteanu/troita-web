@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { cacheLife } from "next/cache";
 import { AdSlot } from "@/components/ads";
@@ -10,12 +11,12 @@ import { count, daysBetween, formatRange, todayInRomania } from "@/lib/dates";
 import { periodDays, type FastLevel } from "@/lib/liturgical";
 import { currentOrNextFast, FAST_INFO, FAST_ORDERED } from "@/lib/fasts";
 
-export const metadata: Metadata = {
-  title: "Posturile ortodoxe: când începe postul, dezlegări și reguli",
+export const metadata: Metadata = pageMeta({
+  title: "Posturile ortodoxe: date, dezlegări, reguli",
   description:
-    "Cele patru posturi mari din calendarul ortodox, cu datele pentru 2026 și 2027, zilele cu dezlegare la pește, la untdelemn și vin, ajunările și săptămânile fără post (harți).",
-  alternates: { canonical: "/posturi" },
-};
+    "Cele patru posturi mari din calendarul ortodox, pe 2026 și 2027: când încep, zilele cu dezlegare la pește, ajunările și săptămânile fără post.",
+  path: "/posturi",
+});
 
 const LEVELS: { level: FastLevel; text: string }[] = [
   { level: "fast", text: "Mâncare de post, fără untdelemn și vin." },

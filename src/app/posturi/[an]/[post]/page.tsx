@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { AdSlot } from "@/components/ads";
 import { notFound } from "next/navigation";
@@ -6,7 +7,7 @@ import { AppNote, Breadcrumbs } from "@/components/chrome";
 import { DayCard, FastBadge } from "@/components/calendar-bits";
 import { TodayMarker } from "@/components/today-marker";
 import { isPublishedYear, PUBLISHED_YEARS } from "@/lib/calendar";
-import { count, formatLong, formatRange, MONTHS } from "@/lib/dates";
+import { count, formatRange, MONTHS } from "@/lib/dates";
 import { periodDays, type FastLevel } from "@/lib/liturgical";
 import { countLevels, FAST_INFO, FAST_ORDERED, FAST_SLUGS, fastDays, type FastSlug } from "@/lib/fasts";
 
@@ -23,13 +24,13 @@ export async function generateMetadata({ params }: PageProps<"/posturi/[an]/[pos
   if (!isSlug(post)) return {};
   const info = FAST_INFO[post];
   const p = info.get(Number(an));
-  return {
-    title: `${info.title} ${an}: când începe și zilele cu dezlegare`,
+  return pageMeta({
+    title: `${info.short} ${an}: date și dezlegări`,
     description: p
-      ? `${info.title} (${info.alsoKnown}) în ${an}: de la ${formatLong(p.start, false)} la ${formatLong(p.end, false)}. Toate zilele, cu dezlegările la pește, la untdelemn și vin și zilele de ajunare.`
-      : undefined,
-    alternates: { canonical: `/posturi/${an}/${post}` },
-  };
+      ? `${info.title} în ${an}: ${formatRange(p.start, p.end)}, ${count(periodDays(p), "zi", "zile")}. Toate zilele, cu dezlegările la pește, untdelemn și vin și ajunările.`
+      : `${info.title} în ${an}.`,
+    path: `/posturi/${an}/${post}`,
+  });
 }
 
 const SUMMARY: FastLevel[] = ["fish", "wineOil", "fast", "strict"];

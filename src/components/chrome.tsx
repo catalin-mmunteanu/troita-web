@@ -148,8 +148,21 @@ export function PageHeader({ eyebrow, title, children }: { eyebrow?: string; tit
 }
 
 export function Breadcrumbs({ items }: { items: { href?: string; label: string }[] }) {
+  // BreadcrumbList structured data, which Google can show in place of the URL
+  // in search results. The current page (last item) needs no URL.
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((it, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: it.label,
+      ...(it.href ? { item: `${SITE.url}${it.href === "/" ? "" : it.href}` } : {}),
+    })),
+  };
   return (
     <nav aria-label="Pesmet" className="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <ol className="rubric flex flex-wrap items-center gap-1.5 text-umber">
         {items.map((it, i) => (
           <li key={i} className="flex items-center gap-1.5">

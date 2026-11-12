@@ -22,10 +22,15 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   formatDetection: { telephone: false },
-  // Paste the token from Google Search Console here if you verify with a meta
-  // tag instead of DNS: verification: { google: "..." }
-  // AdSense site verification ("Meta tag" option in AdSense → Sites).
-  ...(ADS.client ? { other: { "google-adsense-account": ADS.client } } : {}),
+  // Search engine and AdSense verification meta tags, each only when its code
+  // is set in src/lib/site.ts (DNS verification needs none of them).
+  verification: {
+    ...(SITE.verification.google ? { google: SITE.verification.google } : {}),
+    other: {
+      ...(SITE.verification.bing ? { "msvalidate.01": SITE.verification.bing } : {}),
+      ...(ADS.client ? { "google-adsense-account": ADS.client } : {}),
+    },
+  },
 };
 
 export const viewport: Viewport = {

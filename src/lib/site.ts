@@ -3,12 +3,22 @@ export const SITE = {
   url: "https://www.troita.ro",
   tagline: "Calendarul ortodox, zi de zi",
   description:
-    "Troița: calendarul ortodox românesc pe telefon. Sfântul zilei, posturile și dezlegările, bisericile, mănăstirile și troițele de pe hartă. Aplicația vine în curând pe Google Play.",
+    "Calendarul ortodox românesc: sfântul zilei, posturile și dezlegările, bisericile și troițele din toată țara. Aplicația Troița vine pe Google Play.",
   operator: "Munteanu Catalin",
   email: "catalinmunteanudev@gmail.com",
   /** Set to the Play Store URL on launch day; the site switches to "Descarcă". */
   playStoreUrl: null as string | null,
   androidPackage: "ro.troita",
+  /**
+   * Search engine verification codes, only needed if you verify with a meta
+   * tag instead of DNS. Google: the content of google-site-verification.
+   * Bing: the content of msvalidate.01 (or import the site from Search
+   * Console in Bing Webmaster Tools, which needs no code at all).
+   */
+  verification: {
+    google: null as string | null,
+    bing: null as string | null,
+  },
 };
 
 /**

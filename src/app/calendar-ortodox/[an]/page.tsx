@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { AdSlot } from "@/components/ads";
 import { notFound } from "next/navigation";
@@ -16,11 +17,11 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<"/calendar-ortodox/[an]">): Promise<Metadata> {
   const { an } = await params;
-  return {
-    title: `Calendar ortodox ${an}: sărbători, posturi și dezlegări`,
-    description: `Calendarul ortodox românesc pe ${an}: data Paștelui, toate sărbătorile cu cruce roșie, cele patru posturi mari și calendarul lună cu lună.`,
-    alternates: { canonical: `/calendar-ortodox/${an}` },
-  };
+  return pageMeta({
+    title: `Calendar ortodox ${an}: sărbători și posturi`,
+    description: `Calendarul ortodox românesc pe ${an}: data Paștelui, sărbătorile cu cruce roșie, cele patru posturi mari și toate lunile anului.`,
+    path: `/calendar-ortodox/${an}`,
+  });
 }
 
 export default async function YearPage({ params }: PageProps<"/calendar-ortodox/[an]">) {

@@ -1,28 +1,37 @@
 import type { MetadataRoute } from "next";
-import { PUBLISHED_YEARS } from "@/lib/calendar";
+import { PUBLISHED_YEARS, SEED_VERSION } from "@/lib/calendar";
 import { MONTHS } from "@/lib/dates";
 import { FAST_INFO, FAST_ORDERED } from "@/lib/fasts";
 import { SITE } from "@/lib/site";
 
+// The calendar pages change only when the app's data is re-exported, so their
+// lastmod is the data version ("202610161318" → 16 Oct 2026). Search engines
+// trust lastmod only while it is honest, so it is never "now".
+const DATA_DATE = SEED_VERSION
+  ? new Date(`${SEED_VERSION.slice(0, 4)}-${SEED_VERSION.slice(4, 6)}-${SEED_VERSION.slice(6, 8)}T00:00:00Z`)
+  : undefined;
+const TEXT_DATE = new Date("2026-11-12T00:00:00Z"); // last edit of the text pages
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const u = (path: string, priority: number, changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"]) => ({
+  const u = (path: string, lastModified: Date | undefined, priority: number) => ({
     url: `${SITE.url}${path}`,
+    ...(lastModified ? { lastModified } : {}),
     priority,
-    changeFrequency,
   });
 
   return [
-    u("", 1, "daily"),
-    u("/azi", 0.9, "daily"),
-    u("/calendar-ortodox", 0.8, "monthly"),
-    u("/posturi", 0.8, "monthly"),
+    // The home page and /azi change every day; no lastmod rather than a false one.
+    u("", undefined, 1),
+    u("/azi", undefined, 0.9),
+    u("/calendar-ortodox", DATA_DATE, 0.8),
+    u("/posturi", DATA_DATE, 0.8),
     ...PUBLISHED_YEARS.flatMap((y) => [
-      u(`/calendar-ortodox/${y}`, 0.8, "monthly"),
-      ...MONTHS.map((m) => u(`/calendar-ortodox/${y}/${m}`, 0.7, "monthly")),
-      u(`/posturi/${y}`, 0.7, "monthly"),
-      ...FAST_ORDERED.filter((s) => FAST_INFO[s].get(y)).map((s) => u(`/posturi/${y}/${s}`, 0.7, "monthly")),
+      u(`/calendar-ortodox/${y}`, DATA_DATE, 0.8),
+      ...MONTHS.map((m) => u(`/calendar-ortodox/${y}/${m}`, DATA_DATE, 0.7)),
+      u(`/posturi/${y}`, DATA_DATE, 0.7),
+      ...FAST_ORDERED.filter((s) => FAST_INFO[s].get(y)).map((s) => u(`/posturi/${y}/${s}`, DATA_DATE, 0.7)),
     ]),
-    u("/despre", 0.4, "yearly"),
-    u("/confidentialitate", 0.3, "yearly"),
+    u("/despre", TEXT_DATE, 0.4),
+    u("/confidentialitate", TEXT_DATE, 0.3),
   ];
 }

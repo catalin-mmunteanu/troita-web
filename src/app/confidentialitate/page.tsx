@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { Breadcrumbs, PageHeader } from "@/components/chrome";
 import { SITE } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Politica de confidențialitate și cookie-uri",
+export const metadata: Metadata = pageMeta({
+  title: "Confidențialitate și cookie-uri",
   description:
     "Ce date folosesc aplicația Troița și site-ul troita.ro, ce cookie-uri și reclame Google sunt afișate și cum vă puteți retrage acordul.",
-  alternates: { canonical: "/confidentialitate" },
-};
+  path: "/confidentialitate",
+});
 
 const UPDATED = "25 octombrie 2026";
 

@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { AppNote, Breadcrumbs, PageHeader } from "@/components/chrome";
 import { SITE } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Despre aplicația Troița",
   description:
-    "Troița este un calendar ortodox românesc pentru Android: sfântul zilei, posturile, dezlegările și harta bisericilor. De unde vin datele și cum ne puteți scrie.",
-  alternates: { canonical: "/despre" },
-};
+    "Troița este un calendar ortodox românesc pentru Android: sfântul zilei, posturile, dezlegările și harta bisericilor. De unde vin datele.",
+  path: "/despre",
+});
 
 export default function Despre() {
   return (

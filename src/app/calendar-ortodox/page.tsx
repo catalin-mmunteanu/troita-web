@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { AppNote, Breadcrumbs, PageHeader } from "@/components/chrome";
 import { Section } from "@/components/section";
@@ -6,12 +7,12 @@ import { PUBLISHED_YEARS } from "@/lib/calendar";
 import { capitalize, formatLong, MONTHS } from "@/lib/dates";
 import { pascha } from "@/lib/liturgical";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Calendar ortodox 2026 și 2027",
   description:
     "Calendarul ortodox românesc pe 2026 și 2027, lună cu lună: sfinții zilei, sărbătorile cu cruce roșie, posturile și zilele cu dezlegare.",
-  alternates: { canonical: "/calendar-ortodox" },
-};
+  path: "/calendar-ortodox",
+});
 
 export default function CalendarIndex() {
   return (
