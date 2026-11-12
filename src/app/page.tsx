@@ -89,18 +89,22 @@ function Week({ today }: { today: Ymd }) {
 const TABS = [
   {
     screen: "calendar" as const,
+    alt: "Calendarul lunii în aplicația Troița, cu sfinții și dezlegările fiecărei zile",
     text: "Fiecare zi a anului, cu toți sfinții pomeniți, crucea zilei și dezlegarea, scrise în întregime. Căutați un sfânt după nume și trimiteți ziua cuiva drag.",
   },
   {
     screen: "posturi" as const,
+    alt: "Ghidul de post din aplicația Troița, cu posturile care urmează",
     text: "Cele patru posturi mari, cu ziua în care vă aflați și toate dezlegările. Dacă doriți, notați zilele în care ați ținut postul.",
   },
   {
     screen: "harta" as const,
+    alt: "Harta bisericilor din aplicația Troița, cu filtre pe tipuri de locașuri",
     text: "Peste 13.000 de biserici, mănăstiri, catedrale, paraclise și troițe din România, cu hramul și drumul până acolo.",
   },
   {
     screen: "profil" as const,
+    alt: "Setările de notificări din aplicația Troița",
     text: "Un anunț pe zi, la ora aleasă de voi. Sunet doar la sărbătorile mari și o seară înainte de hramul bisericilor favorite.",
   },
 ];
@@ -111,7 +115,7 @@ function Tabs({ today }: { today: Ymd }) {
       <ul className="grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-4">
         {TABS.map((t) => (
           <li key={t.screen}>
-            <AppScreen screen={t.screen} today={today} alt={`Fila ${t.screen} din aplicația Troița`} />
+            <AppScreen screen={t.screen} today={today} alt={t.alt} />
             <p className="mt-2 text-[15px] leading-relaxed text-ink">{t.text}</p>
           </li>
         ))}

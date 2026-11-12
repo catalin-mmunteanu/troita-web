@@ -14,6 +14,13 @@ const LABEL: Record<ScreenName, string> = {
   profil: "Profil",
 };
 
+const CAPTION: Record<ScreenName, string> = {
+  calendar: "Fila Calendar",
+  posturi: "Fila Posturi",
+  harta: "Fila Hartă",
+  profil: "Profil · Setări",
+};
+
 /**
  * One app screen, shown flat like a plate in a book: 8px corners, a 1px oak
  * border, the micro shadow and a caption. No device bezel, no glow.
@@ -49,7 +56,7 @@ export function AppScreen({
           </div>
         )}
       </div>
-      <figcaption className="rubric mt-3 text-umber">Fila {LABEL[screen]}</figcaption>
+      <figcaption className="rubric mt-3 text-umber">{CAPTION[screen]}</figcaption>
     </figure>
   );
 }
