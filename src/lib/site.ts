@@ -40,6 +40,13 @@ export const ADS = {
   slots: {
     inContent: null as string | null,
   },
+  /**
+   * True only from the app release that actually ships Google AdMob. The
+   * privacy policy's AdMob section is shown only then: Google Play checks that
+   * the policy and the Data safety form describe what the app really does, and
+   * today the app has no ads.
+   */
+  inApp: false,
 };
 
 export const NAV = [

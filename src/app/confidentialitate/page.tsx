@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo";
 import { Breadcrumbs, PageHeader } from "@/components/chrome";
-import { SITE } from "@/lib/site";
+import { ADS, SITE } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
   title: "Confidențialitate și cookie-uri",
@@ -10,7 +10,16 @@ export const metadata: Metadata = pageMeta({
   path: "/confidentialitate",
 });
 
-const UPDATED = "25 octombrie 2026";
+const UPDATED = "19 noiembrie 2026";
+
+/** Who shows Google ads today, for the summary at the top. */
+function adsSummary() {
+  const site = Boolean(ADS.client);
+  if (site && ADS.inApp) return "Atât site-ul, cât și aplicația afișează reclame prin Google";
+  if (site) return "Site-ul afișează reclame prin Google; aplicația nu are reclame";
+  if (ADS.inApp) return "Aplicația afișează reclame prin Google; site-ul nu are reclame";
+  return "Nici site-ul, nici aplicația nu afișează reclame";
+}
 
 export default function Confidentialitate() {
   return (
@@ -21,8 +30,8 @@ export default function Confidentialitate() {
       <article className="prose-troita text-[16.5px]">
         <p>
           Această politică descrie ce date folosesc aplicația pentru Android <strong>Troița</strong> și site-ul{" "}
-          <strong>troita.ro</strong>. Pe scurt: nu avem conturi și nu vă cerem locația. Atât site-ul, cât și
-          aplicația afișează reclame prin Google, iar reclamele personalizate apar doar dacă vă dați acordul.
+          <strong>troita.ro</strong>. Pe scurt: nu avem conturi și nu vă cerem locația. {adsSummary()}
+          {ADS.client || ADS.inApp ? ", iar reclamele personalizate apar doar dacă vă dați acordul." : "."}
         </p>
 
         <h2>Cine răspunde de date</h2>
@@ -33,6 +42,8 @@ export default function Confidentialitate() {
 
         <h2>Site-ul troita.ro</h2>
 
+        {ADS.client ? (
+          <>
         <h3>Reclame și cookie-uri Google</h3>
         <p>
           Site-ul afișează reclame prin <strong>Google AdSense</strong>. Furnizori terți, inclusiv Google, folosesc
@@ -69,6 +80,17 @@ export default function Confidentialitate() {
           </a>
           .
         </p>
+          </>
+        ) : (
+          <>
+            <h3>Reclame și cookie-uri</h3>
+            <p>
+              Site-ul nu afișează reclame și nu folosește cookie-uri de publicitate. Dacă vom adăuga reclame,
+              această pagină va fi actualizată înainte, iar la prima vizită veți fi întrebați dacă sunteți de
+              acord cu ele.
+            </p>
+          </>
+        )}
 
         <h3>Statistici de vizitare</h3>
         <p>
@@ -96,6 +118,8 @@ export default function Confidentialitate() {
           dezinstalați aplicația, ele se șterg odată cu ea.
         </p>
 
+        {ADS.inApp ? (
+          <>
         <h3>Reclame în aplicație</h3>
         <p>
           Aplicația afișează reclame prin <strong>Google AdMob</strong>. Pentru aceasta, AdMob primește de la
@@ -112,6 +136,16 @@ export default function Confidentialitate() {
           </a>
           .
         </p>
+          </>
+        ) : (
+          <>
+            <h3>Reclame în aplicație</h3>
+            <p>
+              Aplicația nu afișează reclame și nu folosește identificatorul de publicitate al telefonului. Dacă
+              vom adăuga reclame, această pagină va fi actualizată odată cu versiunea aplicației care le aduce.
+            </p>
+          </>
+        )}
 
         <h3>Notificări</h3>
         <p>
