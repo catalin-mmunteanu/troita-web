@@ -4,15 +4,15 @@ import Link from "next/link";
 import { AdSlot } from "@/components/ads";
 import { notFound } from "next/navigation";
 import { AppNote, Breadcrumbs } from "@/components/chrome";
-import { DayCard, FastBadge } from "@/components/calendar-bits";
+import { ComputedYearNote, DayCard, FastBadge } from "@/components/calendar-bits";
 import { TodayMarker } from "@/components/today-marker";
-import { isPublishedYear, PUBLISHED_YEARS } from "@/lib/calendar";
+import { CALENDAR_YEARS, isCalendarYear, isComputedYear } from "@/lib/calendar";
 import { count, formatRange, MONTHS } from "@/lib/dates";
 import { periodDays, type FastLevel } from "@/lib/liturgical";
 import { countLevels, FAST_INFO, FAST_ORDERED, FAST_SLUGS, fastDays, type FastSlug } from "@/lib/fasts";
 
 export function generateStaticParams() {
-  return PUBLISHED_YEARS.flatMap((y) =>
+  return CALENDAR_YEARS.flatMap((y) =>
     FAST_ORDERED.filter((s) => FAST_INFO[s].get(y)).map((s) => ({ an: String(y), post: s })),
   );
 }
@@ -38,13 +38,13 @@ const SUMMARY: FastLevel[] = ["fish", "wineOil", "fast", "strict"];
 export default async function FastPage({ params }: PageProps<"/posturi/[an]/[post]">) {
   const { an, post } = await params;
   const year = Number(an);
-  if (!isPublishedYear(year) || !isSlug(post)) notFound();
+  if (!isCalendarYear(year) || !isSlug(post)) notFound();
   const f = fastDays(post, year);
   if (!f) notFound();
   const info = FAST_INFO[post];
   const c = countLevels(f.days);
   const fishDays = f.days.filter((d) => d.fastLevel === "fish");
-  const otherYears = PUBLISHED_YEARS.filter((y) => y !== year && info.get(y));
+  const otherYears = CALENDAR_YEARS.filter((y) => y !== year && info.get(y));
 
   return (
     <>
@@ -68,6 +68,7 @@ export default async function FastPage({ params }: PageProps<"/posturi/[an]/[pos
                 {formatRange(f.period.start, f.period.end, true)} · {count(periodDays(f.period), "zi", "zile")}
               </p>
               <p className="mt-4 text-[16px] leading-relaxed text-ink">{info.intro}</p>
+              {isComputedYear(year) && <ComputedYearNote year={year} className="mt-4" />}
               <dl className="mt-6 divide-y divide-oak border-y border-oak">
                 {SUMMARY.filter((l) => c[l]).map((l) => (
                   <div key={l} className="flex items-center justify-between gap-3 py-2">

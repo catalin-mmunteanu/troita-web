@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "tsx scripts/test-liturgical-colour.ts",
+    "test": "tsx scripts/test-engine-golden.ts && tsx scripts/test-liturgical-colour.ts",
     "lint:design": "node scripts/check-design.mjs",
     "prebuild": "node scripts/check-design.mjs"
   },

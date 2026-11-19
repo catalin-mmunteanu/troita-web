@@ -3,15 +3,15 @@ import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AppNote, Breadcrumbs, PageHeader } from "@/components/chrome";
-import { FastBadge } from "@/components/calendar-bits";
+import { ComputedYearNote, FastBadge } from "@/components/calendar-bits";
 import { Section } from "@/components/section";
-import { isPublishedYear, PUBLISHED_YEARS } from "@/lib/calendar";
+import { CALENDAR_YEARS, isCalendarYear, isComputedYear } from "@/lib/calendar";
 import { count, formatLong, formatRange } from "@/lib/dates";
 import { harti, pascha, periodDays, type FastLevel } from "@/lib/liturgical";
 import { countLevels, FAST_INFO, FAST_ORDERED, fastDays } from "@/lib/fasts";
 
 export function generateStaticParams() {
-  return PUBLISHED_YEARS.map((y) => ({ an: String(y) }));
+  return CALENDAR_YEARS.map((y) => ({ an: String(y) }));
 }
 
 export async function generateMetadata({ params }: PageProps<"/posturi/[an]">): Promise<Metadata> {
@@ -28,13 +28,14 @@ const SHOWN: FastLevel[] = ["fish", "wineOil", "fast", "strict"];
 export default async function PosturiYear({ params }: PageProps<"/posturi/[an]">) {
   const { an } = await params;
   const year = Number(an);
-  if (!isPublishedYear(year)) notFound();
+  if (!isCalendarYear(year)) notFound();
 
   return (
     <>
       <Breadcrumbs items={[{ href: "/", label: "Acasă" }, { href: "/posturi", label: "Posturi" }, { label: an }]} />
       <PageHeader eyebrow="Calendar de post" title={`Posturile din ${year}`}>
         Paștele este în {formatLong(pascha(year))}, iar de data lui depind Postul Mare și Postul Sfinților Apostoli.
+        {isComputedYear(year) && <ComputedYearNote year={year} className="mt-4" />}
       </PageHeader>
       <Section id="posturile" eyebrow={`Anul ${year}`} title="Cele patru posturi mari" rope={false}>
         <ul className="space-y-2">

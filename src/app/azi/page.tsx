@@ -7,7 +7,7 @@ import { AppNote, Breadcrumbs } from "@/components/chrome";
 import { DayCard, DayLeaf } from "@/components/calendar-bits";
 import { ArrowIcon } from "@/components/icons";
 import { Section } from "@/components/section";
-import { getDay, getRange, isPublishedYear, upcomingMajor } from "@/lib/calendar";
+import { getDay, getRange, isCalendarYear, upcomingMajor } from "@/lib/calendar";
 import { addDays, capitalize, formatWithWeekday, monthSlug, todayInRomania } from "@/lib/dates";
 import { PERIOD_LABEL } from "@/lib/liturgical";
 import { currentOrNextFast, FAST_INFO } from "@/lib/fasts";
@@ -28,7 +28,7 @@ export default async function AziPage() {
   const next = upcomingMajor(today, 4);
   const fast = currentOrNextFast(today);
   const inFast = fast && day.periodKind === FAST_INFO[fast.slug].get(fast.year)?.kind;
-  const monthHref = isPublishedYear(today.y) ? `/calendar-ortodox/${today.y}/${monthSlug(today.m)}` : null;
+  const monthHref = isCalendarYear(today.y) ? `/calendar-ortodox/${today.y}/${monthSlug(today.m)}` : null;
 
   const facts = [
     day.periodKind ? { t: "Perioada", d: PERIOD_LABEL[day.periodKind] } : null,

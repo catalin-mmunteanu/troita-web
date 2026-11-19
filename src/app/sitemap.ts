@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { PUBLISHED_YEARS, SEED_VERSION } from "@/lib/calendar";
+import { CALENDAR_YEARS, SEED_VERSION } from "@/lib/calendar";
 import { MONTHS } from "@/lib/dates";
 import { FAST_INFO, FAST_ORDERED } from "@/lib/fasts";
 import { SITE } from "@/lib/site";
@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     u("/azi", undefined, 0.9),
     u("/calendar-ortodox", DATA_DATE, 0.8),
     u("/posturi", DATA_DATE, 0.8),
-    ...PUBLISHED_YEARS.flatMap((y) => [
+    ...CALENDAR_YEARS.flatMap((y) => [
       u(`/calendar-ortodox/${y}`, DATA_DATE, 0.8),
       ...MONTHS.map((m) => u(`/calendar-ortodox/${y}/${m}`, DATA_DATE, 0.7)),
       u(`/posturi/${y}`, DATA_DATE, 0.7),

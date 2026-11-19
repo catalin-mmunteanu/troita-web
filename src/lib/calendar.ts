@@ -7,7 +7,7 @@ import {
   addDays, daysInMonth, iso, monthDay, weekday, ymd, compare, type Ymd,
 } from "./dates";
 import {
-  dayFor, MOVABLE, parseRank, pascha, RANK_WEIGHT, setPublishedApostlesStart,
+  dayFor, MOVABLE, parseRank, pascha, RANK_WEIGHT,
   type FastLevel, type FeastRank, type PeriodKind,
 } from "./liturgical";
 
@@ -35,17 +35,20 @@ const OVERRIDES = new Map<string, RawOverride>(
   (data.overrides as RawOverride[]).map((o) => [`${o.year}-${o.monthDay}`, o]),
 );
 
-// The published calendar marks the first day of the Apostles' fast; that date
-// wins over the computed rule (it differs in late-Pascha years such as 2027).
-for (const o of OVERRIDES.values()) {
-  if (o.notes && /Începutul Postului Sf\. Ap/.test(o.notes)) {
-    const [m, d] = o.monthDay.split("-").map(Number);
-    setPublishedApostlesStart(o.year, ymd(o.year, m, d));
-  }
-}
-
 /** Years whose calendar is published in full (names, ranks and dezlegări). */
 export const PUBLISHED_YEARS: number[] = data.publishedYears;
+
+/**
+ * Years after the published ones, through 2030, computed by the engine from
+ * the fixed saints and Pascha. The pages say so; when the official calendar
+ * for one appears, the app's pipeline scrapes it and it becomes published.
+ */
+export const COMPUTED_YEARS: number[] = (data as { computedYears?: number[] }).computedYears ?? [];
+
+/** Every year the site has pages for, in order. */
+export const CALENDAR_YEARS: number[] = [...new Set([...PUBLISHED_YEARS, ...COMPUTED_YEARS])].sort(
+  (a, b) => a - b,
+);
 export const SEED_VERSION: string = data.seedVersion ?? "";
 
 export type Feast = {
@@ -95,7 +98,21 @@ function feastDate(f: RawFeast, year: number): Ymd | null {
   }
   if (!f.monthDay) return null;
   const [m, d] = f.monthDay.split("-").map(Number);
-  return ymd(year, m, d);
+  return transferred(ymd(year, m, d));
+}
+
+/**
+ * Where a fixed feast is kept that year. Sf. Gheorghe (23 April) is not
+ * celebrated in Holy Week or on Pascha: from Florii to Pascha it moves to
+ * Bright Monday (2030: 29 April). Same rule as FeastCalendar.transferred in
+ * the app.
+ */
+function transferred(date: Ymd): Ymd {
+  if (date.m === 4 && date.d === 23) {
+    const p = pascha(date.y);
+    if (compare(date, addDays(p, -7)) >= 0 && compare(date, p) <= 0) return addDays(p, 1);
+  }
+  return date;
 }
 
 const byYear = new Map<number, Map<string, RawFeast[]>>();
@@ -217,6 +234,8 @@ export function upcomingMajor(from: Ymd, limit = 5): DayEntry[] {
 }
 
 export const isPublishedYear = (y: number) => PUBLISHED_YEARS.includes(y);
+export const isComputedYear = (y: number) => COMPUTED_YEARS.includes(y) && !isPublishedYear(y);
+export const isCalendarYear = (y: number) => CALENDAR_YEARS.includes(y);
 
 /** Shortest readable title for a day: the first commemoration. */
 export function shortTitle(d: DayEntry) {

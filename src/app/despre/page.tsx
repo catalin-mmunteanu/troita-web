@@ -1,3 +1,4 @@
+import { COMPUTED_YEARS, PUBLISHED_YEARS } from "@/lib/calendar";
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
@@ -34,7 +35,8 @@ export default function Despre() {
         <ul>
           <li>
             <strong>Pomenirile, rangurile și dezlegările</strong> urmează calendarul ortodox românesc publicat
-            pentru fiecare an. Pe site sunt publicați anii 2026 și 2027.
+            pentru fiecare an, acolo unde a apărut: {PUBLISHED_YEARS.join(" și ")}. Anii{" "}
+            {COMPUTED_YEARS.join(", ")} sunt calculați după aceleași reguli până la apariția calendarului oficial.
           </li>
           <li>
             <strong>Perioadele de post</strong>, glasul și voscreasna se calculează din data Paștelui, după
