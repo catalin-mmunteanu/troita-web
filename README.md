@@ -45,6 +45,7 @@ Drop real screenshots into `public/screenshots/` as `calendar.png`, `posturi.png
 1. In `src/lib/site.ts`, set `playStoreUrl` to the Play Store link. Every "În curând" label becomes a "Descarcă" button.
 2. Optionally swap that button for the official "Get it on Google Play" badge (Romanian version, unaltered, at least 28px tall). Before launch, Google's brand rules only allow the "Pre-register" badge, which is why there's no badge now.
 3. Add a `MobileApplication` node to the JSON-LD in `src/app/layout.tsx` (see the comment there).
+4. **App Links.** Put the app signing key's SHA-256 (Play Console → App integrity → App signing key certificate) in `SITE.appSigningSha256`. `/.well-known/assetlinks.json` then lets troita.ro links to a day, a month or a fast open straight in the app; the app's manifest already asks for it (`autoVerify`). Shares from the app carry these links.
 
 ## Ads (Google AdSense) and cookies
 

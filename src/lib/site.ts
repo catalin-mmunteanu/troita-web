@@ -10,6 +10,14 @@ export const SITE = {
   playStoreUrl: null as string | null,
   androidPackage: "ro.troita",
   /**
+   * SHA-256 fingerprint(s) of the key that signs the released app, for
+   * /.well-known/assetlinks.json (Android App Links). With Play App Signing,
+   * copy it from Play Console → Test and release → App integrity → App signing
+   * key certificate, written "AB:CD:…". Add the upload key's too if you test
+   * locally signed builds.
+   */
+  appSigningSha256: [] as string[],
+  /**
    * Search engine verification codes, only needed if you verify with a meta
    * tag instead of DNS. Google: the content of google-site-verification.
    * Bing: the content of msvalidate.01 (or import the site from Search
