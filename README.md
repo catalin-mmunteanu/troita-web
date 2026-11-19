@@ -10,7 +10,7 @@ Next.js 16 (App Router, Cache Components) · TypeScript · Tailwind 4 · deploye
 |---|---|---|
 | `/` | Landing page: app tabs, today's saint, "În curând pe Google Play" | static, re-rendered every 15 min |
 | `/azi` | Today's saint, fast and the next 7 days | static, re-rendered every 15 min |
-| `/calendar-ortodox`, `/[an]`, `/[an]/[luna]` | Calendar per year and month (2026, 2027) | fully static |
+| `/calendar-ortodox`, `/[an]`, `/[an]/[luna]` | Calendar per year and month (2026–2030) | fully static |
 | `/posturi`, `/[an]`, `/[an]/[post]` | The four great fasts, day by day | fully static |
 | `/despre`, `/confidentialitate` | About, privacy policy (also the URL for Play Console) | fully static |
 
@@ -21,11 +21,18 @@ Next.js 16 (App Router, Cache Components) · TypeScript · Tailwind 4 · deploye
 `data/seed-export.json` is exported from the **app's own seed database**, so the site and the app can never disagree.
 `src/lib/liturgical.ts` is a port of the app's Dart engine (`lib/core/liturgical/`). If a fasting rule changes in the app, change it here too.
 
-After rebuilding the app seed (`tool/update_data.py` in the `troita` repo):
+**This is automatic.** `.github/workflows/sync-app-data.yml` checks the app repo's `master` every day. When its seed version changes (that is, when you merge the app's monthly data PR), it runs the export below, runs `npm test` and opens a pull request here ("Date din aplicație: seed …"). Merging it deploys. One-time setting: *Settings → Actions → General → Workflow permissions → Allow GitHub Actions to create and approve pull requests.*
+
+By hand, the same thing:
 
 ```bash
-python3 scripts/export-calendar.py ../troita/android/app/src/main/assets/seed/churches.db
+python3 scripts/export-calendar.py ../troita/android/app/src/main/assets/seed/churches.db \
+  --golden ../troita/test/golden/engine-2026-2030.json
 ```
+
+`npm test` checks `src/lib/liturgical.ts` against `data/engine-golden.json` on every day of 2026–2030. The app's Dart engine is tested against the same file, so a fasting rule changed in one and not the other fails the build. Every pull request also runs `.github/workflows/test.yml` (tests, lint, design guard, build).
+
+**Years.** The site has pages for the published years (2026, 2027) and for the computed ones up to 2030, which carry a note that they are calculated until the official calendar appears.
 
 Only names, ranks, fasting levels and notes are exported. The sinaxar texts and saint images stay in the app: they belong to the sites they came from. A new year (e.g. 2028) appears on the site automatically once it is in the seed's `published_years`.
 

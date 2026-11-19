@@ -1,0 +1,116 @@
+# Brings the app's data to the site.
+#
+# The app repo (catalin-mmunteanu/troita) rebuilds its seed database every
+# month and proposes it as a pull request there. Once that is merged into the
+# app's master, this job notices the new seed version, runs the same export
+# you would run by hand, checks the result, and opens one pull request here.
+# Merging it deploys the site with exactly the data the app ships.
+#
+# Pull, not push: the app repo is public, so no token or secret crosses
+# between the two repositories. Only master is followed, never the app's
+# data/auto-update branch: the site must not show data the app has not
+# accepted.
+#
+# One-time repository setting this needs:
+#   Settings → Actions → General → Workflow permissions →
+#   "Allow GitHub Actions to create and approve pull requests"
+
+name: Sync app data
+
+on:
+  schedule:
+    - cron: "17 5 * * *"   # daily, 05:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-app-data
+  cancel-in-progress: false
+
+env:
+  APP_REPO: catalin-mmunteanu/troita
+  APP_REF: master
+  SEED: android/app/src/main/assets/seed
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compare seed versions
+        id: version
+        run: |
+          base="https://raw.githubusercontent.com/$APP_REPO/$APP_REF"
+          app=$(curl -fsSL "$base/$SEED/version.txt" | tr -d '[:space:]')
+          site=$(python3 -c "import json;print(json.load(open('data/seed-export.json'))['seedVersion'])")
+          echo "app=$app site=$site"
+          echo "app=$app" >> "$GITHUB_OUTPUT"
+          if [ "$app" = "$site" ]; then echo "changed=false" >> "$GITHUB_OUTPUT"; else echo "changed=true" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Download the app's seed and golden vectors
+        if: steps.version.outputs.changed == 'true'
+        run: |
+          base="https://raw.githubusercontent.com/$APP_REPO/$APP_REF"
+          mkdir -p "$RUNNER_TEMP/app"
+          curl -fsSL -o "$RUNNER_TEMP/app/churches.db" "$base/$SEED/churches.db"
+          # Older app commits have no golden file; keep ours then.
+          curl -fsSL -o "$RUNNER_TEMP/app/engine-golden.json" "$base/test/golden/engine-2026-2030.json" \
+            || cp data/engine-golden.json "$RUNNER_TEMP/app/engine-golden.json"
+          # The commit the data came from, for the pull request text.
+          curl -fsSL "https://api.github.com/repos/$APP_REPO/commits/$APP_REF" \
+            | python3 -c "import json,sys;c=json.load(sys.stdin);print(c['sha'][:7], c['commit']['message'].splitlines()[0])" \
+            > "$RUNNER_TEMP/app/commit.txt"
+
+      - name: Export
+        if: steps.version.outputs.changed == 'true'
+        run: |
+          python3 scripts/export-calendar.py "$RUNNER_TEMP/app/churches.db" \
+            --golden "$RUNNER_TEMP/app/engine-golden.json" | tee "$RUNNER_TEMP/export.txt"
+
+      - uses: actions/setup-node@v4
+        if: steps.version.outputs.changed == 'true'
+        with:
+          node-version: 22
+          cache: npm
+
+      # A red job here means the app changed a fasting rule that this site's
+      # engine (src/lib/liturgical.ts) does not have yet. No pull request is
+      # opened; port the rule, then run this workflow again by hand.
+      - name: Test the site against the new data
+        if: steps.version.outputs.changed == 'true'
+        run: |
+          npm ci
+          npm test
+
+      - name: Pull request text
+        if: steps.version.outputs.changed == 'true'
+        run: |
+          {
+            echo "## Date din aplicație: seed ${{ steps.version.outputs.app }}"
+            echo
+            echo "Din \`$APP_REPO@$APP_REF\`, commit $(cat "$RUNNER_TEMP/app/commit.txt")."
+            echo
+            echo '```'
+            cat "$RUNNER_TEMP/export.txt"
+            echo '```'
+            echo
+            echo "\`npm test\` a trecut: motorul site-ului dă aceleași rezultate ca aplicația pe toate zilele 2026–2030."
+          } > "$RUNNER_TEMP/body.md"
+
+      - uses: peter-evans/create-pull-request@v7
+        if: steps.version.outputs.changed == 'true'
+        with:
+          branch: data/app-sync
+          delete-branch: true
+          commit-message: "data: seed ${{ steps.version.outputs.app }} from the app"
+          title: "Date din aplicație: seed ${{ steps.version.outputs.app }}"
+          body-path: ${{ runner.temp }}/body.md
+          labels: data
+          add-paths: |
+            data/seed-export.json
+            data/engine-golden.json
