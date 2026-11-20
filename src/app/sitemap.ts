@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { CALENDAR_YEARS, SEED_VERSION } from "@/lib/calendar";
 import { MONTHS } from "@/lib/dates";
 import { FAST_INFO, FAST_ORDERED } from "@/lib/fasts";
+import { NAMES } from "@/lib/name-days";
 import { SITE } from "@/lib/site";
 
 // The calendar pages change only when the app's data is re-exported, so their
@@ -10,6 +11,7 @@ import { SITE } from "@/lib/site";
 const DATA_DATE = SEED_VERSION
   ? new Date(`${SEED_VERSION.slice(0, 4)}-${SEED_VERSION.slice(4, 6)}-${SEED_VERSION.slice(6, 8)}T00:00:00Z`)
   : undefined;
+const NAMES_DATE = new Date("2026-11-20T00:00:00Z"); // last edit of data/name-days.json
 const TEXT_DATE = new Date("2026-11-12T00:00:00Z"); // last edit of the text pages
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -31,6 +33,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       u(`/posturi/${y}`, DATA_DATE, 0.7),
       ...FAST_ORDERED.filter((s) => FAST_INFO[s].get(y)).map((s) => u(`/posturi/${y}/${s}`, DATA_DATE, 0.7)),
     ]),
+    u("/nunti", DATA_DATE, 0.8),
+    u("/botez", DATA_DATE, 0.8),
+    ...CALENDAR_YEARS.flatMap((y) => [u(`/nunti/${y}`, DATA_DATE, 0.7), u(`/botez/${y}`, DATA_DATE, 0.7)]),
+    u("/zile-de-nume", NAMES_DATE, 0.8),
+    ...NAMES.map((n) => u(`/zile-de-nume/${n.slug}`, NAMES_DATE, 0.6)),
     u("/despre", TEXT_DATE, 0.4),
     u("/confidentialitate", TEXT_DATE, 0.3),
   ];

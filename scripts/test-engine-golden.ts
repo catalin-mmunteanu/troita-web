@@ -4,7 +4,7 @@
 // against the same file, so the two engines cannot drift apart unnoticed.
 // Run: npm test
 import golden from "../data/engine-golden.json";
-import { dayFor, parseRank, pascha, type FastLevel } from "../src/lib/liturgical";
+import { cununie, dayFor, parseRank, pascha, type FastLevel } from "../src/lib/liturgical";
 import { iso } from "../src/lib/dates";
 
 const LEVELS = new Set(["none", "fish", "wineOil", "fast", "strict"]);
@@ -19,12 +19,12 @@ for (const [year, want] of Object.entries(golden.pascha)) {
 }
 
 for (const row of golden.days as (string | number | null)[][]) {
-  const [date, rank, dz, level, period, glas, vos] = row;
+  const [date, rank, dz, level, period, glas, vos, wedding] = row;
   const [y, m, d] = String(date).split("-").map(Number);
   const dezlegare = LEVELS.has(String(dz)) ? (dz as FastLevel) : null;
   const r = dayFor({ y, m, d }, parseRank(rank as string), dezlegare);
-  const got = [r.fastLevel, r.period?.kind ?? null, r.glas, r.voscreasna].join("|");
-  const want = [level, period, glas, vos].join("|");
+  const got = [r.fastLevel, r.period?.kind ?? null, r.glas, r.voscreasna, cununie({ y, m, d })].join("|");
+  const want = [level, period, glas, vos, wedding].join("|");
   if (got !== want) {
     bad++;
     if (bad <= 20) console.log("BAD", date, "got", got, "want", want);

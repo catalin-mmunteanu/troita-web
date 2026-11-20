@@ -90,6 +90,27 @@ say what the app needs (or check troita).
   with attribution and share-alike, plus original summaries; images only from
   Wikimedia Commons. Only then can lives appear on the site.
 
+## Zile de nume, nunți, botez
+
+- `data/name-days.json` is a copy of the app's `assets/data/name_days.json`;
+  never edit it here. The daily sync copies it (also when only the names
+  changed). By hand: `cp ../troita/assets/data/name_days.json data/name-days.json`.
+  Sources: DGEP (MAI) lists per great feast (`sourceUrl`) and saints whose own
+  name is the first name (`calendar`). A name with several days shows all of
+  them, the `primary` one first, with its `notes`. Slugs fold diacritics and
+  merge spellings (`Vasilică` / `Vasilica` → `/zile-de-nume/vasilica`).
+- Weddings: `cununie()` in `liturgical.ts` (third copy of the engine rule,
+  golden column `cununie`). `getDay().noWeddings` comes from it, not from the
+  scraped note, so app and site agree on every day. 2027 backtest 363/365.
+- Baptism has no forbidden days (Church practice); `/botez` says so and only
+  marks weekends in a fast (party with fasting food) plus Holy/Bright Week
+  ("întrebați la parohie"). Don't invent "zile fără botez".
+- SEO: one page per year answers both questions (`Faq` emits FAQPage JSON-LD
+  with the positive and negative wording). The other phrasings
+  (`/cand-nu-se-fac-nunti-2027`, `/cand-se-face-botez`, `/onomastica`…) are
+  301s in `next.config.ts`. `src/proxy.ts` 404s unknown years and names.
+- Month and day cards show "Zile de nume: …" (`NameDays` in calendar-bits).
+
 ## App links and launch switches (`src/lib/site.ts`)
 
 - `playStoreUrl` — set on launch day; every "În curând" becomes "Descarcă".
@@ -115,8 +136,7 @@ say what the app needs (or check troita).
 ## Next content (from the plan, in value order)
 
 Per-day pages (`calendar ortodox 21 noiembrie`) · church directory from the
-app's ~13.5k OSM places (ODbL attribution + share-alike) · feast and name-day
-pages · "Când e Paștele 2027–2030" · glossary · .ics subscription and printable
+app's ~13.5k OSM places (ODbL attribution + share-alike) · feast pages · "Când e Paștele 2027–2030" · glossary · .ics subscription and printable
 month · 2028 published by autumn 2027.
 
 The full plan and status are in the claude.ai project "Troita-platform"

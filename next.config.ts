@@ -18,6 +18,19 @@ const nextConfig: NextConfig = {
       { source: "/sfantul-zilei", destination: "/azi", permanent: true },
       { source: "/confidentialitate.html", destination: "/confidentialitate", permanent: true },
       { source: "/privacy", destination: "/confidentialitate", permanent: true },
+      // The ways people ask about weddings and baptisms, positive and negative,
+      // all land on the one page that answers both.
+      ...["cand-se-fac-nunti", "cand-nu-se-fac-nunti", "nunta", "zile-nunti"].flatMap((p) => [
+        { source: `/${p}`, destination: "/nunti", permanent: true },
+        { source: `/${p}-:an(\\d{4})`, destination: "/nunti/:an", permanent: true },
+      ]),
+      ...["cand-se-face-botez", "cand-nu-se-face-botez", "cand-se-fac-botezuri", "cand-nu-se-fac-botezuri", "botezuri"].flatMap((p) => [
+        { source: `/${p}`, destination: "/botez", permanent: true },
+        { source: `/${p}-:an(\\d{4})`, destination: "/botez/:an", permanent: true },
+      ]),
+      { source: "/onomastica", destination: "/zile-de-nume", permanent: true },
+      { source: "/zile-onomastice", destination: "/zile-de-nume", permanent: true },
+      { source: "/ziua-numelui/:nume", destination: "/zile-de-nume/:nume", permanent: true },
     ];
   },
   turbopack: {

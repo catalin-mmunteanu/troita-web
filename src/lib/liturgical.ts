@@ -7,7 +7,7 @@
  * writes (tool/engine_golden.py) and the data sync copies here, so a rule
  * changed in one engine and not the other fails the build.
  */
-import { addDays, between, daysBetween, same, weekday, ymd, type Ymd } from "./dates";
+import { addDays, between, compare, daysBetween, same, weekday, ymd, type Ymd } from "./dates";
 
 // Săptămâna Brânzei is not a fasting level: it is shown as a week without fast.
 export type FastLevel = "none" | "fish" | "wineOil" | "fast" | "strict";
@@ -318,4 +318,56 @@ export function dayFor(d: Ymd, rank: FeastRank = "simplu", dezlegare: FastLevel 
   }
 
   return { fastLevel: level, period, glas: glasFor(d), voscreasna: voscreasnaFor(d), note };
+}
+
+// ----------------------------------------------------------------- weddings
+
+/**
+ * Why the Church does not celebrate weddings on a day. Same rules as the app's
+ * LiturgicalCalendar.cununie and tool/engine_port.py, all three tested against
+ * data/engine-golden.json. Checked against the published 2027 calendar ("Nu se
+ * fac nunți"): 363 of 365 days identical; the two others are source errors.
+ */
+export type WeddingBar =
+  | "post"
+  | "saptamanaBranzei"
+  | "craciunBoboteaza"
+  | "saptamanaLuminata"
+  | "praznic"
+  | "miercuriVineri";
+
+export const WEDDING_BAR_LABEL: Record<WeddingBar, string> = {
+  post: "unul dintre cele patru posturi",
+  saptamanaBranzei: "Săptămâna Brânzei, înaintea Postului Mare",
+  craciunBoboteaza: "între Crăciun și Bobotează",
+  saptamanaLuminata: "Săptămâna Luminată, după Paști",
+  praznic: "un praznic împărătesc sau ajunul lui",
+  miercuriVineri: "zi de post (miercuri sau vineri)",
+};
+
+/** Fixed feasts whose eve and day have no weddings, as month * 100 + day. */
+const NO_WEDDING_DAYS = new Set([
+  201, 202, // Întâmpinarea Domnului
+  324, 325, // Buna Vestire
+  815, // Adormirea (its eve is in the Dormition fast)
+  829, // Tăierea capului Sf. Ioan
+  907, 908, // Nașterea Maicii Domnului
+  914, // Înălțarea Sfintei Cruci
+  1120, 1121, // Intrarea în Biserică (inside the Nativity fast)
+]);
+
+/** Null when weddings are celebrated on [d], else why they are not. */
+export function cununie(d: Ymd): WeddingBar | null {
+  const y = d.y;
+  const p = pascha(y);
+  if (greatFasts(y).some((f) => contains(f, d))) return "post";
+  if (contains(saptamanaBranzei(y), d)) return "saptamanaBranzei";
+  if (compare(d, ymd(y, 1, 6)) <= 0 || compare(d, ymd(y, 12, 25)) >= 0) return "craciunBoboteaza";
+  if (between(d, p, addDays(p, 6))) return "saptamanaLuminata";
+  if (NO_WEDDING_DAYS.has(d.m * 100 + d.d)) return "praznic";
+  // Înălțarea and Rusaliile with their eves, and the Monday of Rusalii.
+  if ([38, 39, 48, 49, 50].some((n) => same(d, addDays(p, n)))) return "praznic";
+  const wd = weekday(d);
+  if ((wd === 3 || wd === 5) && !findHarti(d)) return "miercuriVineri";
+  return null;
 }
