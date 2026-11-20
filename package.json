@@ -9,7 +9,8 @@
     "lint": "eslint",
     "test": "tsx scripts/test-engine-golden.ts && tsx scripts/test-liturgical-colour.ts",
     "lint:design": "node scripts/check-design.mjs",
-    "prebuild": "node scripts/check-design.mjs && node scripts/tokens.mjs --check"
+    "prebuild": "node scripts/check-design.mjs && node scripts/tokens.mjs --check",
+    "test:a11y": "node scripts/test-a11y.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -18,12 +19,14 @@
     "react-dom": "19.3.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
+    "playwright-core": "1.65.1",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
     "typescript": "^5"

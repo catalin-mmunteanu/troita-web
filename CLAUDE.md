@@ -34,7 +34,10 @@ say what the app needs (or check troita).
 - The owner pushes from their own terminal; Claude's sandbox may not be able to
   push. If a push fails, give the exact commands instead of retrying.
 - Before saying something works: `npm test`, `npm run lint`, `npm run build`
-  (prebuild runs the design guard and the token check).
+  (prebuild runs the design guard and the token check), and for markup or style
+  changes `npm start` + `npm run test:a11y` (axe WCAG 2.2 AA + 320px reflow).
+  `ACCESSIBILITY.md` is the public accessibility statement GitHub shows on the
+  repo page; keep it true when something changes.
 - Romanian text with correct diacritics (ș ț with comma below). The owner is
   rewriting the site copy in `TEXTE.md` (not in git, `.git/info/exclude`);
   don't overwrite it.
