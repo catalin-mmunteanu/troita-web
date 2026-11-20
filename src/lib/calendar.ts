@@ -7,7 +7,7 @@ import {
   addDays, daysInMonth, iso, monthDay, weekday, ymd, compare, type Ymd,
 } from "./dates";
 import {
-  dayFor, MOVABLE, parseRank, pascha, RANK_WEIGHT,
+  cununie, dayFor, MOVABLE, parseRank, pascha, RANK_WEIGHT,
   type FastLevel, type FeastRank, type PeriodKind,
 } from "./liturgical";
 
@@ -73,6 +73,7 @@ export type DayEntry = {
   explanation: string | null;
   /** Liturgical notes: Tedeum, Pomenirea morților, Zi aliturgică… */
   notes: string[];
+  /** No weddings that day (the engine's rule, same as the app). */
   noWeddings: boolean;
   glas: number | null;
   voscreasna: number | null;
@@ -107,7 +108,7 @@ function feastDate(f: RawFeast, year: number): Ymd | null {
  * Bright Monday (2030: 29 April). Same rule as FeastCalendar.transferred in
  * the app.
  */
-function transferred(date: Ymd): Ymd {
+export function transferred(date: Ymd): Ymd {
   if (date.m === 4 && date.d === 23) {
     const p = pascha(date.y);
     if (compare(date, addDays(p, -7)) >= 0 && compare(date, p) <= 0) return addDays(p, 1);
@@ -181,7 +182,7 @@ export function getDay(date: Ymd): DayEntry {
   // Notes on fixed-date feasts were scraped from one particular year ("Sâmbăta
   // a IV-a din Post") and would be wrong in another, so only the per-year
   // published notes and the notes of movable feasts are used.
-  const { notes, noWeddings } = collectNotes([
+  const { notes } = collectNotes([
     override?.notes,
     ...raw.filter((f) => f.movableKey).map((f) => f.note),
   ]);
@@ -204,7 +205,10 @@ export function getDay(date: Ymd): DayEntry {
     periodKind: computed.period?.kind ?? null,
     explanation: fastLevel === computed.fastLevel ? computed.note : null,
     notes,
-    noWeddings,
+    // The engine, not the scraped note, as in the app: it covers the computed
+    // years too, and on the published 2027 calendar it differs only on two
+    // source errors.
+    noWeddings: cununie(date) !== null,
     glas: isSunday ? (override?.glas ?? computed.glas) : null,
     voscreasna: isSunday ? (override?.voscreasna ?? computed.voscreasna) : null,
   };

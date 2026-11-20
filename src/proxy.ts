@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import data from "../data/seed-export.json";
+import { NAMES } from "./lib/name-days";
 
 /**
  * Real 404s for calendar and fast URLs that don't exist (/calendar-ortodox/2031,
@@ -17,10 +18,17 @@ const FASTS = new Set([
   "postul-mare", "postul-sfintilor-petru-si-pavel", "postul-sfintei-marii", "postul-craciunului",
 ]);
 
+const NAME_SLUGS = new Set(NAMES.map((n) => n.slug));
+
 export function proxy(request: NextRequest) {
   const [section, year, sub, ...rest] = request.nextUrl.pathname.split("/").filter(Boolean);
+  // /nunti/2027, /botez/2027: a year and nothing after it. /zile-de-nume/andrei: a known name.
   const valid =
-    rest.length === 0 &&
+    section === "zile-de-nume"
+      ? sub === undefined && NAME_SLUGS.has(year)
+      : section === "nunti" || section === "botez"
+        ? sub === undefined && YEARS.has(year)
+        : rest.length === 0 &&
     (year === undefined || YEARS.has(year)) &&
     (sub === undefined || (section === "calendar-ortodox" ? MONTHS.has(sub) : FASTS.has(sub)));
   if (valid) return NextResponse.next();
@@ -29,5 +37,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/calendar-ortodox/:path+", "/posturi/:path+"],
+  matcher: ["/calendar-ortodox/:path+", "/posturi/:path+", "/nunti/:path+", "/botez/:path+", "/zile-de-nume/:path+"],
 };

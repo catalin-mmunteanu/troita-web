@@ -1,7 +1,9 @@
+import Link from "next/link";
 import { FAST_ICON, OrthodoxCross } from "./icons";
 import type { FastLevel, FeastRank } from "@/lib/liturgical";
 import type { DayEntry } from "@/lib/calendar";
-import { MONTHS, WEEKDAY_SHORT, WEEKDAYS } from "@/lib/dates";
+import { count, fromIso, MONTHS, WEEKDAY_SHORT, WEEKDAYS } from "@/lib/dates";
+import { nameSlug, namesOn } from "@/lib/name-days";
 import { LITURGICAL_VAR, liturgicalColour } from "@/lib/liturgical-colour";
 
 // ------------------------------------------------------------ fasting badge
@@ -147,12 +149,35 @@ function DayRubric({ day }: { day: DayEntry }) {
 function DayFooter({ day }: { day: DayEntry }) {
   const notes = [...day.notes, day.noWeddings ? "Nu se fac nunți" : null, day.glas ? `Glasul ${day.glas} · voscreasna ${day.voscreasna}` : null].filter(Boolean);
   const showBadge = day.fastLevel !== "none" || day.periodKind === "harti";
-  if (!showBadge && notes.length === 0) return null;
+  if (!showBadge && notes.length === 0) return <NameDays day={day} />;
   return (
-    <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
-      {showBadge && <FastBadge level={day.fastLevel} harti={day.periodKind === "harti"} />}
-      {notes.length > 0 && <p className="rubric text-umber">{notes.join(" · ")}</p>}
-    </div>
+    <>
+      <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
+        {showBadge && <FastBadge level={day.fastLevel} harti={day.periodKind === "harti"} />}
+        {notes.length > 0 && <p className="rubric text-umber">{notes.join(" · ")}</p>}
+      </div>
+      <NameDays day={day} />
+    </>
+  );
+}
+
+/** "Zile de nume: Andrei, Andreea, Andra și încă 4", each name a link. */
+export function NameDays({ day }: { day: DayEntry }) {
+  const { names, more } = namesOn(fromIso(day.date));
+  if (names.length === 0) return null;
+  return (
+    <p className="mt-2 text-[15px] leading-relaxed text-umber">
+      <span className="font-medium text-ink">Zile de nume:</span>{" "}
+      {names.map((n, i) => (
+        <span key={n}>
+          {i > 0 && ", "}
+          <Link href={`/zile-de-nume/${nameSlug(n)}`} className="underline-offset-4 hover:text-red hover:underline">
+            {n}
+          </Link>
+        </span>
+      ))}
+      {more > 0 && <> și încă {count(more, "nume", "nume")}</>}
+    </p>
   );
 }
 
