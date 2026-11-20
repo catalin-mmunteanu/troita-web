@@ -1,0 +1,29 @@
+# Checks every pull request and every push to main before Vercel deploys it:
+# the engine against the app's golden vectors (npm test), ESLint, the
+# DESIGN.MD guard, and a full production build.
+name: Test
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run lint
+      - run: npm run build   # prebuild runs the design guard
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"

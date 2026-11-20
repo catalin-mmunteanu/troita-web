@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PUBLISHED_YEARS } from "@/lib/calendar";
+import { CALENDAR_YEARS } from "@/lib/calendar";
 import { ADS, NAV, SITE } from "@/lib/site";
 import { ArrowIcon, RopeDivider, TroitaEmblem } from "./icons";
 import { CookieSettingsButton } from "./ads";
@@ -59,8 +59,8 @@ export function StoreStatus() {
 }
 
 export function Header() {
-  const min = `${PUBLISHED_YEARS[0]}-01-01`;
-  const max = `${PUBLISHED_YEARS[PUBLISHED_YEARS.length - 1]}-12-31`;
+  const min = `${CALENDAR_YEARS[0]}-01-01`;
+  const max = `${CALENDAR_YEARS[CALENDAR_YEARS.length - 1]}-12-31`;
   return (
     <header className="sticky top-0 z-30 border-b border-oak bg-parchment">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-2 px-3 min-[400px]:px-4 sm:px-6">
@@ -108,7 +108,7 @@ export function Footer() {
           <h2 className="rubric text-umber">Calendar</h2>
           <ul className="mt-3 space-y-2 font-ui text-[17px]">
             <li><Link className="hover:text-red" href="/azi">Sfântul zilei</Link></li>
-            {PUBLISHED_YEARS.map((y) => (
+            {CALENDAR_YEARS.map((y) => (
               <li key={y}><Link className="hover:text-red" href={`/calendar-ortodox/${y}`}>Calendar ortodox {y}</Link></li>
             ))}
             <li><Link className="hover:text-red" href="/posturi">Posturile anului</Link></li>

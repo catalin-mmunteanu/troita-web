@@ -2,7 +2,10 @@
  * Port of the app's liturgical engine (lib/core/liturgical/ in the troita repo).
  *
  * Pure functions of a date. Keep this file in step with the Dart source:
- * if a rule changes in the app, change it here too.
+ * if a rule changes in the app, change it here too. `npm test` checks every
+ * day of 2026–2030 against data/engine-golden.json, which the troita repo
+ * writes (tool/engine_golden.py) and the data sync copies here, so a rule
+ * changed in one engine and not the other fails the build.
  */
 import { addDays, between, daysBetween, same, weekday, ymd, type Ymd } from "./dates";
 
@@ -110,31 +113,18 @@ export function postulMare(year: number): Period {
   return { kind: "postulMare", start: addDays(p, -48), end: addDays(p, -1), note: "Cel mai aspru post din an." };
 }
 
-/**
- * Start dates of Postul Sfinților Apostoli as published by the Romanian
- * Patriarchate, per year. Filled in by calendar.ts from the published data.
- * The published date always wins over the rule below.
- */
-const PUBLISHED_APOSTLES_START = new Map<number, Ymd>();
-export function setPublishedApostlesStart(year: number, start: Ymd) {
-  PUBLISHED_APOSTLES_START.set(year, start);
-}
-
 /** Shorter than this, the Romanian Church starts the fast the week after Rusalii. */
 const MIN_APOSTLES_DAYS = 7;
 
 export function postulApostolilor(year: number): Period | null {
   const p = pascha(year);
   const end = ymd(year, 6, 28);
-  let start = PUBLISHED_APOSTLES_START.get(year) ?? addDays(p, 57);
+  let start = addDays(p, 57);
   // In years with a late Pascha the Monday after All Saints falls on or after
   // 28 June, which would leave a fast of one day or none at all. The Romanian
   // Orthodox Church then starts it on the Tuesday after Rusalii, after the
-  // Monday of the Holy Trinity (2027: 22–28 June). Approximation for years the
-  // calendar has not been published yet.
-  if (!PUBLISHED_APOSTLES_START.has(year) && daysBetween(start, end) + 1 < MIN_APOSTLES_DAYS) {
-    start = addDays(p, 51);
-  }
+  // Monday of the Holy Trinity (2027: 22–28 June, as published).
+  if (daysBetween(start, end) + 1 < MIN_APOSTLES_DAYS) start = addDays(p, 51);
   if (daysBetween(start, end) < 0) return null;
   return { kind: "postulApostolilor", start, end, note: "Durata variază în funcție de data Paștelui." };
 }
@@ -208,16 +198,24 @@ function levelInGreatFast(d: Ymd, period: Period, rank: FeastRank): [FastLevel, 
   const p = pascha(d.y);
   const wd = weekday(d);
   const weekend = wd === 6 || wd === 7;
+  const wedFri = wd === 3 || wd === 5;
+  const tueThu = wd === 2 || wd === 4;
+  // A saint marked with a cross (red or blue) relaxes the fast a step.
+  const cross = rank === "cruce_rosie" || rank === "cruce_albastra";
 
   switch (period.kind) {
     case "postulMare":
-      if (same(d, addDays(p, -48))) return ["strict", "Prima zi a Postului Mare."];
+      if (same(d, addDays(p, -48)) || same(d, addDays(p, -47)))
+        return ["strict", "Primele zile ale Postului Mare."];
       if (same(d, addDays(p, -2))) return ["strict", "Vinerea Mare."];
+      if (between(d, addDays(p, -6), addDays(p, -4))) return ["strict", "Săptămâna Patimilor."];
       if (d.m === 3 && d.d === 25) return ["fish", "Buna Vestire."];
       if (same(d, addDays(p, -7))) return ["fish", "Duminica Floriilor."];
       if (same(d, addDays(p, -8))) return ["wineOil", "Sâmbăta lui Lazăr — dezlegare la icre."];
       if (same(d, addDays(p, -3))) return ["wineOil", "Joia Mare."];
-      if (d.m === 3 && (d.d === 24 || d.d === 26) && !weekend) return ["wineOil", null];
+      if (same(d, addDays(p, -17))) return ["wineOil", "Joia Canonului cel Mare."];
+      if (d.m === 3 && (d.d === 24 || d.d === 26) && !weekend && !wedFri) return ["wineOil", null];
+      if (cross && !weekend) return ["wineOil", null];
       return weekend ? ["wineOil", null] : ["fast", null];
 
     case "postulAdormirii":
@@ -225,12 +223,12 @@ function levelInGreatFast(d: Ymd, period: Period, rank: FeastRank): [FastLevel, 
       return weekend ? ["wineOil", null] : ["fast", null];
 
     case "postulApostolilor":
-      if (wd === 3 || wd === 5) {
+      if (wedFri) {
         if (rank === "praznic") return ["fish", null];
-        if (rank === "cruce_rosie") return ["wineOil", null];
-        return ["fast", null];
+        return cross ? ["wineOil", null] : ["fast", null];
       }
-      if (wd === 2 || wd === 4) return ["wineOil", null];
+      if (cross || rank === "praznic") return ["fish", null];
+      if (tueThu) return ["wineOil", null];
       return ["fish", null];
 
     case "postulCraciunului": {
@@ -242,7 +240,9 @@ function levelInGreatFast(d: Ymd, period: Period, rank: FeastRank): [FastLevel, 
       const lastDays = d.m === 12 && d.d > 20;
       if (beforeIntrarea || lastDays) return weekend ? ["wineOil", null] : ["fast", null];
       if (weekend) return ["fish", null];
-      if (wd === 2 || wd === 4) return ["wineOil", null];
+      if (wedFri) return cross ? ["wineOil", null] : ["fast", null];
+      if (cross) return ["fish", null];
+      if (tueThu) return ["wineOil", null];
       return ["fast", null];
     }
     default:
@@ -262,6 +262,7 @@ function levelOutsideFasts(d: Ymd, rank: FeastRank): FastLevel {
 
 function fixedDay(d: Ymd): [FastLevel, string] | null {
   if (d.m === 1 && d.d === 5) return ["strict", "Ajunul Bobotezei."];
+  if (d.m === 1 && d.d === 6) return ["none", "Botezul Domnului."];
   if (d.m === 8 && d.d === 29) return ["wineOil", "Tăierea Capului Sfântului Ioan Botezătorul."];
   if (d.m === 9 && d.d === 14) return ["wineOil", "Înălțarea Sfintei Cruci."];
   return null;

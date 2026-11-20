@@ -6,7 +6,9 @@ import data from "../data/seed-export.json";
  * /posturi/2026/foo). Without this, an unknown param can be answered 200 with
  * the not-found page inside, which Search Console reports as a "soft 404".
  */
-const YEARS = new Set(data.publishedYears.map(String));
+const YEARS = new Set(
+  [...data.publishedYears, ...((data as { computedYears?: number[] }).computedYears ?? [])].map(String),
+);
 const MONTHS = new Set([
   "ianuarie", "februarie", "martie", "aprilie", "mai", "iunie",
   "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie",

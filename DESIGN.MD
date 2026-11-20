@@ -2,7 +2,7 @@
 
 Specification for the Troița app (Flutter, Android) and the website (www.troita.ro).
 
-> **Scope (decided 3 November 2026):** this spec is applied to the **website first**. The Flutter app keeps its current `theme.dart` until the website has been tested; it follows later.
+> **Scope:** decided 3 November 2026 to apply this spec to the website first. **Since 19 November 2026 it applies to both.** The values live in [`design/tokens.json`](design/tokens.json): `npm run build` (prebuild) fails if `src/app/globals.css` drifts from it, and the app's `lib/app/design_tokens.dart` is generated from it with `node scripts/tokens.mjs --dart ../troita/lib/app/design_tokens.dart`. Change a value in tokens.json, then regenerate both.
 
 ---
 

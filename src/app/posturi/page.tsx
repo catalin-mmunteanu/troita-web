@@ -6,7 +6,7 @@ import { AdSlot } from "@/components/ads";
 import { AppNote, Breadcrumbs, PageHeader } from "@/components/chrome";
 import { FastBadge } from "@/components/calendar-bits";
 import { Section } from "@/components/section";
-import { PUBLISHED_YEARS } from "@/lib/calendar";
+import { CALENDAR_YEARS } from "@/lib/calendar";
 import { count, daysBetween, formatRange, todayInRomania } from "@/lib/dates";
 import { periodDays, type FastLevel } from "@/lib/liturgical";
 import { currentOrNextFast, FAST_INFO, FAST_ORDERED } from "@/lib/fasts";
@@ -14,7 +14,7 @@ import { currentOrNextFast, FAST_INFO, FAST_ORDERED } from "@/lib/fasts";
 export const metadata: Metadata = pageMeta({
   title: "Posturile ortodoxe: date, dezlegări, reguli",
   description:
-    "Cele patru posturi mari din calendarul ortodox, pe 2026 și 2027: când încep, zilele cu dezlegare la pește, ajunările și săptămânile fără post.",
+    `Cele patru posturi mari din calendarul ortodox, pe ${CALENDAR_YEARS[0]}–${CALENDAR_YEARS[CALENDAR_YEARS.length - 1]}: când încep, zilele cu dezlegare la pește, ajunările și săptămânile fără post.`,
   path: "/posturi",
 });
 
@@ -75,11 +75,11 @@ export default function PosturiPage() {
 
       <Section id="mari" eyebrow="Pe ani" title="Cele patru posturi mari">
         <div className="overflow-x-auto border-y border-oak">
-          <table className="w-full min-w-[520px] border-collapse text-left">
+          <table className="w-full min-w-[760px] border-collapse text-left">
             <thead>
               <tr className="rubric text-umber">
                 <th className="py-3 pr-4 font-medium">Postul</th>
-                {PUBLISHED_YEARS.map((y) => (
+                {CALENDAR_YEARS.map((y) => (
                   <th key={y} className="px-4 py-3 font-medium">
                     <Link href={`/posturi/${y}`} className="hover:text-red">{y}</Link>
                   </th>
@@ -93,7 +93,7 @@ export default function PosturiPage() {
                     <span className="block font-display text-[17px] font-semibold">{FAST_INFO[slug].title}</span>
                     <span className="block text-[14px] text-umber">{FAST_INFO[slug].alsoKnown}</span>
                   </th>
-                  {PUBLISHED_YEARS.map((y) => {
+                  {CALENDAR_YEARS.map((y) => {
                     const p = FAST_INFO[slug].get(y);
                     return (
                       <td key={y} className="px-4 py-3.5 text-[15.5px]">

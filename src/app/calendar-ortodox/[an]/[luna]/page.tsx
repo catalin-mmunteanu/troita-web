@@ -4,15 +4,15 @@ import Link from "next/link";
 import { AdSlot } from "@/components/ads";
 import { notFound } from "next/navigation";
 import { AppNote, Breadcrumbs } from "@/components/chrome";
-import { DayCard, FastLegend } from "@/components/calendar-bits";
+import { ComputedYearNote, DayCard, FastLegend } from "@/components/calendar-bits";
 import type { DayEntry } from "@/lib/calendar";
 import { ChevronLeft, ChevronRight } from "@/components/icons";
 import { TodayMarker } from "@/components/today-marker";
-import { getMonth, isPublishedYear, PUBLISHED_YEARS } from "@/lib/calendar";
+import { CALENDAR_YEARS, getMonth, isCalendarYear, isComputedYear } from "@/lib/calendar";
 import { capitalize, count, monthFromSlug, MONTHS } from "@/lib/dates";
 
 export function generateStaticParams() {
-  return PUBLISHED_YEARS.flatMap((y) => MONTHS.map((m) => ({ an: String(y), luna: m })));
+  return CALENDAR_YEARS.flatMap((y) => MONTHS.map((m) => ({ an: String(y), luna: m })));
 }
 
 export async function generateMetadata({ params }: PageProps<"/calendar-ortodox/[an]/[luna]">): Promise<Metadata> {
@@ -28,7 +28,7 @@ export default async function MonthPage({ params }: PageProps<"/calendar-ortodox
   const { an, luna } = await params;
   const year = Number(an);
   const month = monthFromSlug(luna);
-  if (!isPublishedYear(year) || !month) notFound();
+  if (!isCalendarYear(year) || !month) notFound();
 
   const days = getMonth(year, month);
   const red = days.filter((d) => d.rank === "praznic" || d.rank === "cruce_rosie");
@@ -38,7 +38,7 @@ export default async function MonthPage({ params }: PageProps<"/calendar-ortodox
   const prev = month === 1 ? { y: year - 1, m: 12 } : { y: year, m: month - 1 };
   const next = month === 12 ? { y: year + 1, m: 1 } : { y: year, m: month + 1 };
   const link = (x: { y: number; m: number }) =>
-    isPublishedYear(x.y) ? `/calendar-ortodox/${x.y}/${MONTHS[x.m - 1]}` : null;
+    isCalendarYear(x.y) ? `/calendar-ortodox/${x.y}/${MONTHS[x.m - 1]}` : null;
   const prevHref = link(prev);
   const nextHref = link(next);
 
@@ -90,6 +90,7 @@ export default async function MonthPage({ params }: PageProps<"/calendar-ortodox
                 și {count(fasting, "zi", "zile")} de post
                 {fish > 0 ? `, dintre care ${fish} cu dezlegare la pește` : ""}.
               </p>
+              {isComputedYear(year) && <ComputedYearNote year={year} className="mt-4" />}
               <MonthGrid days={days} />
               <div className="mt-6">
                 <FastLegend />

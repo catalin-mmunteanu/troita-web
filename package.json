@@ -7,13 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "tsx scripts/test-liturgical-colour.ts",
+    "test": "tsx scripts/test-engine-golden.ts && tsx scripts/test-liturgical-colour.ts",
     "lint:design": "node scripts/check-design.mjs",
-    "prebuild": "node scripts/check-design.mjs"
+    "prebuild": "node scripts/check-design.mjs && node scripts/tokens.mjs --check"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
-    "next": "16.4.3",
+    "next": "16.4.6",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
@@ -23,7 +23,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.4.3",
+    "eslint-config-next": "16.4.6",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
     "typescript": "^5"
