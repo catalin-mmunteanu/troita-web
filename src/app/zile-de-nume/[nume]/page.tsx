@@ -51,7 +51,11 @@ export default async function NamePage({ params }: PageProps<"/zile-de-nume/[num
     (e.feasts.length > 1
       ? ` Se mai sărbătorește ${e.feasts
           .filter((f) => f !== main)
-          .map((f) => (f.date ? `pe ${whenText(f)} (${f.saint})` : `de ${f.saint}`))
+          .map((f) =>
+            f.date
+              ? `pe ${whenText(f)} (${f.saint})`
+              : `în ${f.saint} (în ${thisYear}: ${formatLong(feastDateIn(f, thisYear), false)})`,
+          )
           .join(" și ")}.`
       : "");
 
