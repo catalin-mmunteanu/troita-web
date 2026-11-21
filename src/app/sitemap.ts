@@ -11,7 +11,7 @@ import { SITE } from "@/lib/site";
 const DATA_DATE = SEED_VERSION
   ? new Date(`${SEED_VERSION.slice(0, 4)}-${SEED_VERSION.slice(4, 6)}-${SEED_VERSION.slice(6, 8)}T00:00:00Z`)
   : undefined;
-const NAMES_DATE = new Date("2026-11-20T00:00:00Z"); // last edit of data/name-days.json
+const NAMES_DATE = new Date("2026-11-21T00:00:00Z"); // last edit of data/name-days.json
 const TEXT_DATE = new Date("2026-11-12T00:00:00Z"); // last edit of the text pages
 
 export default function sitemap(): MetadataRoute.Sitemap {
