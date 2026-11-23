@@ -29,6 +29,9 @@ const nextConfig: NextConfig = {
         { source: `/${p}-:an(\\d{4})`, destination: "/botez/:an", permanent: true },
       ]),
       { source: "/onomastica", destination: "/zile-de-nume", permanent: true },
+      ...["evanghelia-de-azi", "evanghelia", "apostolul-zilei", "evanghelia-duminicii"].map((p) => ({
+        source: `/${p}`, destination: "/evanghelia-zilei", permanent: true,
+      })),
       { source: "/zile-onomastice", destination: "/zile-de-nume", permanent: true },
       { source: "/ziua-numelui/:nume", destination: "/zile-de-nume/:nume", permanent: true },
     ];

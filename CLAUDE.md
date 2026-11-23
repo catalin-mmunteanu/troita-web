@@ -111,6 +111,20 @@ say what the app needs (or check troita).
   301s in `next.config.ts`. `src/proxy.ts` 404s unknown years and names.
 - Month and day cards show "Zile de nume: …" (`NameDays` in calendar-bits).
 
+## Evanghelia zilei
+
+- `data/lecturi.json` and `data/biblia-nt.json` are copies of the app's
+  `assets/data/lecturi.json` (from troita `tool/lectionary.py`) and
+  `assets/data/biblia_nt.json` (NT, Biblia Sinodală 1988, IBMBOR); never edit
+  them here. The daily sync copies both. By hand:
+  `cp ../troita/assets/data/lecturi.json data/ && cp ../troita/assets/data/biblia_nt.json data/biblia-nt.json`.
+- We have the right to use the 1988 text; `Readings` always prints its source.
+- Pages: `/evanghelia-zilei` (today, cached "today", next 7 days) and
+  `/evanghelia-zilei/YYYY-MM-DD` (every day 2026-2030, static). Days without
+  Liturgy (Great Lent weekdays, Holy Friday) say so. Month cards show
+  "Ap. … · Ev. …" linking to the day. The proxy 404s non-dates without
+  importing the readings (keeps its bundle small).
+
 ## App links and launch switches (`src/lib/site.ts`)
 
 - `playStoreUrl` — set on launch day; every "În curând" becomes "Descarcă".

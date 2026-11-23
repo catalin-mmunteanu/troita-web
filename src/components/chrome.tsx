@@ -112,6 +112,7 @@ export function Footer() {
               <li key={y}><Link className="hover:text-red" href={`/calendar-ortodox/${y}`}>Calendar ortodox {y}</Link></li>
             ))}
             <li><Link className="hover:text-red" href="/posturi">Posturile anului</Link></li>
+            <li><Link className="hover:text-red" href="/evanghelia-zilei">Evanghelia zilei</Link></li>
             <li><Link className="hover:text-red" href="/zile-de-nume">Zile de nume</Link></li>
             <li><Link className="hover:text-red" href="/nunti">Când se fac nunți</Link></li>
             <li><Link className="hover:text-red" href="/botez">Când se face botezul</Link></li>

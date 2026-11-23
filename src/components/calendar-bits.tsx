@@ -3,7 +3,9 @@ import { FAST_ICON, OrthodoxCross } from "./icons";
 import type { FastLevel, FeastRank } from "@/lib/liturgical";
 import type { DayEntry } from "@/lib/calendar";
 import { count, fromIso, MONTHS, WEEKDAY_SHORT, WEEKDAYS } from "@/lib/dates";
+import { lecturaOn } from "@/lib/lecturi";
 import { nameSlug, namesOn } from "@/lib/name-days";
+import { ReadingsLine } from "./lecturi";
 import { LITURGICAL_VAR, liturgicalColour } from "@/lib/liturgical-colour";
 
 // ------------------------------------------------------------ fasting badge
@@ -149,13 +151,15 @@ function DayRubric({ day }: { day: DayEntry }) {
 function DayFooter({ day }: { day: DayEntry }) {
   const notes = [...day.notes, day.noWeddings ? "Nu se fac nunți" : null, day.glas ? `Glasul ${day.glas} · voscreasna ${day.voscreasna}` : null].filter(Boolean);
   const showBadge = day.fastLevel !== "none" || day.periodKind === "harti";
-  if (!showBadge && notes.length === 0) return <NameDays day={day} />;
+  const readings = <ReadingsLine date={fromIso(day.date)} lectura={lecturaOn(fromIso(day.date))} />;
+  if (!showBadge && notes.length === 0) return <>{readings}<NameDays day={day} /></>;
   return (
     <>
       <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
         {showBadge && <FastBadge level={day.fastLevel} harti={day.periodKind === "harti"} />}
         {notes.length > 0 && <p className="rubric text-umber">{notes.join(" · ")}</p>}
       </div>
+      {readings}
       <NameDays day={day} />
     </>
   );
