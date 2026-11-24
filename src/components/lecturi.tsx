@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { capitalize, formatWithWeekday, iso, type Ymd } from "@/lib/dates";
-import { BIBLE_SOURCE, textOf, type Lectura } from "@/lib/lecturi";
+import { textOf, type Lectura } from "@/lib/lecturi";
 
 /** One reading in full: "Evanghelia · Luca 8, 41-56", then the text with verse numbers. */
 function Reading({ label, cite, pericope }: { label: string; cite: string; pericope: Lectura["evanghelie"] }) {
@@ -35,7 +35,6 @@ export function Readings({ lectura, gospelFirst = false }: { lectura: Lectura; g
   return (
     <div>
       {gospelFirst ? [ev, ap] : [ap, ev]}
-      <p className="mt-6 text-[14px] text-umber">Text: {BIBLE_SOURCE}.</p>
     </div>
   );
 }

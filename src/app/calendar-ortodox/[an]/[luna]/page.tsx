@@ -4,11 +4,11 @@ import Link from "next/link";
 import { AdSlot } from "@/components/ads";
 import { notFound } from "next/navigation";
 import { AppNote, Breadcrumbs } from "@/components/chrome";
-import { ComputedYearNote, DayCard, FastLegend } from "@/components/calendar-bits";
+import { DayCard, FastLegend } from "@/components/calendar-bits";
 import type { DayEntry } from "@/lib/calendar";
 import { ChevronLeft, ChevronRight } from "@/components/icons";
 import { TodayMarker } from "@/components/today-marker";
-import { CALENDAR_YEARS, getMonth, isCalendarYear, isComputedYear } from "@/lib/calendar";
+import { CALENDAR_YEARS, getMonth, isCalendarYear } from "@/lib/calendar";
 import { capitalize, count, monthFromSlug, MONTHS } from "@/lib/dates";
 
 export function generateStaticParams() {
@@ -90,7 +90,6 @@ export default async function MonthPage({ params }: PageProps<"/calendar-ortodox
                 și {count(fasting, "zi", "zile")} de post
                 {fish > 0 ? `, dintre care ${fish} cu dezlegare la pește` : ""}.
               </p>
-              {isComputedYear(year) && <ComputedYearNote year={year} className="mt-4" />}
               <MonthGrid days={days} />
               <div className="mt-6">
                 <FastLegend />

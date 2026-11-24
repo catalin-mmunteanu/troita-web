@@ -3,9 +3,9 @@ import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AppNote, Breadcrumbs, PageHeader } from "@/components/chrome";
-import { ComputedYearNote, FastBadge } from "@/components/calendar-bits";
+import { FastBadge } from "@/components/calendar-bits";
 import { Section } from "@/components/section";
-import { CALENDAR_YEARS, isCalendarYear, isComputedYear } from "@/lib/calendar";
+import { CALENDAR_YEARS, isCalendarYear } from "@/lib/calendar";
 import { count, formatLong, formatRange } from "@/lib/dates";
 import { harti, pascha, periodDays, type FastLevel } from "@/lib/liturgical";
 import { countLevels, FAST_INFO, FAST_ORDERED, fastDays } from "@/lib/fasts";
@@ -35,7 +35,6 @@ export default async function PosturiYear({ params }: PageProps<"/posturi/[an]">
       <Breadcrumbs items={[{ href: "/", label: "Acasă" }, { href: "/posturi", label: "Posturi" }, { label: an }]} />
       <PageHeader eyebrow="Calendar de post" title={`Posturile din ${year}`}>
         Paștele este în {formatLong(pascha(year))}, iar de data lui depind Postul Mare și Postul Sfinților Apostoli.
-        {isComputedYear(year) && <ComputedYearNote year={year} className="mt-4" />}
       </PageHeader>
       <Section id="posturile" eyebrow={`Anul ${year}`} title="Cele patru posturi mari" rope={false}>
         <ul className="space-y-2">

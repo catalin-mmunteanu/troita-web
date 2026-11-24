@@ -42,7 +42,7 @@ function Hero({ today }: { today: Ymd }) {
             Calendarul ortodox, zi de zi
           </h1>
           <p className="mt-5 max-w-[46ch] text-[17px] leading-relaxed text-umber">
-            Sfântul zilei, posturile, Evanghelia și dezlegările.
+            Sfântul zilei, posturile, Evanghelia și mai multe.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <ButtonLink href="/azi">

@@ -242,17 +242,3 @@ export function DayLeaf({ day, heading }: { day: DayEntry; heading: React.ReactN
     </div>
   );
 }
-
-/**
- * Shown on every page of a year without a published calendar (2028–2030 for
- * now). The days are computed from the fixed saints and Pascha; the official
- * calendar replaces them when it appears.
- */
-export function ComputedYearNote({ year, className = "" }: { year: number; className?: string }) {
-  return (
-    <p className={`border-l-[3px] border-oak bg-surface px-3 py-2 text-[15px] leading-relaxed text-umber ${className}`}>
-      Calendarul pe {year} este calculat după rânduiala Bisericii: data Paștelui, sărbătorile cu dată fixă și regulile
-      postului. Dezlegările se confirmă când apare calendarul oficial pe {year}; atunci pagina se actualizează.
-    </p>
-  );
-}

@@ -1,3 +1,4 @@
+import { BIBLE_SOURCE } from "@/lib/lecturi";
 import { COMPUTED_YEARS, PUBLISHED_YEARS } from "@/lib/calendar";
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo";
@@ -65,6 +66,8 @@ export default function Despre() {
           <a href={`mailto:${SITE.email}?subject=Troi%C8%9Ba%3A%20gre%C8%99eal%C4%83%20%C3%AEn%20calendar`}>{SITE.email}</a>.
           Corectăm repede.
         </p>
+
+        <p className="text-[15px] text-umber">Textul Apostolului și al Evangheliei: {BIBLE_SOURCE}.</p>
       </article>
       </div>
       <AppNote />

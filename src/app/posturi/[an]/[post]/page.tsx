@@ -4,9 +4,9 @@ import Link from "next/link";
 import { AdSlot } from "@/components/ads";
 import { notFound } from "next/navigation";
 import { AppNote, Breadcrumbs } from "@/components/chrome";
-import { ComputedYearNote, DayCard, FastBadge } from "@/components/calendar-bits";
+import { DayCard, FastBadge } from "@/components/calendar-bits";
 import { TodayMarker } from "@/components/today-marker";
-import { CALENDAR_YEARS, isCalendarYear, isComputedYear } from "@/lib/calendar";
+import { CALENDAR_YEARS, isCalendarYear } from "@/lib/calendar";
 import { count, formatRange, MONTHS } from "@/lib/dates";
 import { periodDays, type FastLevel } from "@/lib/liturgical";
 import { countLevels, FAST_INFO, FAST_ORDERED, FAST_SLUGS, fastDays, type FastSlug } from "@/lib/fasts";
@@ -68,7 +68,6 @@ export default async function FastPage({ params }: PageProps<"/posturi/[an]/[pos
                 {formatRange(f.period.start, f.period.end, true)} · {count(periodDays(f.period), "zi", "zile")}
               </p>
               <p className="mt-4 text-[16px] leading-relaxed text-ink">{info.intro}</p>
-              {isComputedYear(year) && <ComputedYearNote year={year} className="mt-4" />}
               <dl className="mt-6 divide-y divide-oak border-y border-oak">
                 {SUMMARY.filter((l) => c[l]).map((l) => (
                   <div key={l} className="flex items-center justify-between gap-3 py-2">

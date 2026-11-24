@@ -4,9 +4,9 @@ import Link from "next/link";
 import { AdSlot } from "@/components/ads";
 import { notFound } from "next/navigation";
 import { AppNote, Breadcrumbs, PageHeader } from "@/components/chrome";
-import { ComputedYearNote, DayCard } from "@/components/calendar-bits";
+import { DayCard } from "@/components/calendar-bits";
 import { Section } from "@/components/section";
-import { CALENDAR_YEARS, isCalendarYear, isComputedYear, majorFeasts } from "@/lib/calendar";
+import { CALENDAR_YEARS, isCalendarYear, majorFeasts } from "@/lib/calendar";
 import { capitalize, count, formatLong, formatRange, MONTHS } from "@/lib/dates";
 import { pascha, periodDays } from "@/lib/liturgical";
 import { FAST_INFO, FAST_ORDERED } from "@/lib/fasts";
@@ -39,7 +39,6 @@ export default async function YearPage({ params }: PageProps<"/calendar-ortodox/
       />
       <PageHeader eyebrow="Calendar creștin ortodox" title={`Calendar ortodox ${year}`}>
         Paștele cade în {formatLong(pascha(year))}. Mai jos găsiți lunile anului, sărbătorile mari și posturile.
-        {isComputedYear(year) && <ComputedYearNote year={year} className="mt-4" />}
       </PageHeader>
 
       <Section id="luni" eyebrow={`Anul ${year}`} title="Lunile anului" rope={false}>

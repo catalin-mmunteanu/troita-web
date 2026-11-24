@@ -173,8 +173,8 @@ function LecturiScreen({ today }: { today: Ymd }) {
     <div>
       <ScreenTitle>Lecturi</ScreenTitle>
       <div className="grid grid-cols-2 border-b border-oak px-3 text-center font-ui text-[10px] font-semibold">
-        <span className="pb-1.5 text-umber">Sinaxar</span>
         <span className="border-b-2 border-red pb-1.5 text-ink">Evanghelie</span>
+        <span className="pb-1.5 text-umber">Sinaxar</span>
       </div>
       <div className="px-3 pt-2">
         <div className="font-mono text-[7.5px] uppercase tracking-wider text-umber">
