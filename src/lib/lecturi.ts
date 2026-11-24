@@ -6,7 +6,7 @@
  * assets/data/biblia_nt.json (the New Testament of the 1988 Synodal Bible,
  * IBMBOR). The daily sync brings both over, so the site and the app read the
  * same pericope on the same day. We have the right to use the 1988 text; its
- * source is shown under it.
+ * source is shown once, on /despre.
  */
 import bible from "../../data/biblia-nt.json";
 import data from "../../data/lecturi.json";

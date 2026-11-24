@@ -3,10 +3,9 @@ import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AppNote, Breadcrumbs, PageHeader } from "@/components/chrome";
-import { ComputedYearNote } from "@/components/calendar-bits";
 import { DateLinks, Faq } from "@/components/faq";
 import { Section } from "@/components/section";
-import { CALENDAR_YEARS, isCalendarYear, isComputedYear } from "@/lib/calendar";
+import { CALENDAR_YEARS, isCalendarYear } from "@/lib/calendar";
 import { addDays, capitalize, count, formatLong, formatRange, MONTHS } from "@/lib/dates";
 import { greatFasts, pascha, PERIOD_LABEL } from "@/lib/liturgical";
 import { isWeekend, yearDays } from "@/lib/events";
@@ -42,7 +41,6 @@ export default async function BotezYear({ params }: PageProps<"/botez/[an]">) {
       <PageHeader eyebrow="Taina Botezului" title={`Botez ${year}: când se face`}>
         Botezul se poate face în orice zi a anului: Biserica nu are zile în care să nu boteze. Ce se schimbă în post
         este petrecerea, care se face cu mâncare de post.
-        {isComputedYear(year) && <ComputedYearNote year={year} className="mt-4" />}
       </PageHeader>
 
       <Section id="weekenduri" eyebrow={`Anul ${year}`} title="Weekendurile anului" rope={false}>

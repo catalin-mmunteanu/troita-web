@@ -78,9 +78,10 @@ say what the app needs (or check troita).
 - **Five fast states, no "dezlegare la lactate"** (owner's decision: there is
   no dairy dezlegare in Orthodoxy). Săptămâna Brânzei = a week without fast.
 - **Years 2026–2030.** `CALENDAR_YEARS` = published (2026, 2027) + computed
-  (2028–2030, from `computedYears` in the export). Computed years show
-  `ComputedYearNote`. Use `CALENDAR_YEARS` / `isCalendarYear` for pages,
-  `isComputedYear` for the note; `src/proxy.ts` 404s every other year.
+  (2028–2030, from `computedYears` in the export). Computed years carry
+  no note on the page (the owner removed it as clutter). Use
+  `CALENDAR_YEARS` / `isCalendarYear` for pages; `src/proxy.ts` 404s every
+  other year.
 - Notable rules: Postul Sf. Apostoli from the Tuesday after Rusalii when it
   would be < 7 days (2030 computed as 18–28 June, to confirm); Sf. Gheorghe
   moves to Bright Monday from Florii to Pascha (2030 → 29 April).

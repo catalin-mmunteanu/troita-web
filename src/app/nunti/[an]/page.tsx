@@ -3,10 +3,9 @@ import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AppNote, Breadcrumbs, PageHeader } from "@/components/chrome";
-import { ComputedYearNote } from "@/components/calendar-bits";
 import { DateLinks, Faq } from "@/components/faq";
 import { Section } from "@/components/section";
-import { CALENDAR_YEARS, isCalendarYear, isComputedYear } from "@/lib/calendar";
+import { CALENDAR_YEARS, isCalendarYear } from "@/lib/calendar";
 import { capitalize, count, formatLong, formatRange, MONTHS } from "@/lib/dates";
 import { WEDDING_BAR_LABEL } from "@/lib/liturgical";
 import { barRuns, yearDays } from "@/lib/events";
@@ -42,7 +41,6 @@ export default async function NuntiYear({ params }: PageProps<"/nunti/[an]">) {
       <PageHeader eyebrow="Cununia religioasă" title={`Nunți ${year}: când se fac și când nu`}>
         În {year} se pot face nunți în {count(free.length, "zi", "zile")}, dintre care {count(sat.length, "sâmbătă", "sâmbete")} și{" "}
         {count(sun.length, "duminică", "duminici")}. Mai jos sunt perioadele fără nunți și zilele libere, lună cu lună.
-        {isComputedYear(year) && <ComputedYearNote year={year} className="mt-4" />}
       </PageHeader>
 
       <Section id="nu" eyebrow={`Anul ${year}`} title="Când nu se fac nunți" rope={false}>
