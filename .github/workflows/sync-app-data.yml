@@ -54,6 +54,11 @@ jobs:
           names=same
           if curl -fsSL -o "$RUNNER_TEMP/name-days.json" "$base/assets/data/name_days.json" \
             && ! cmp -s "$RUNNER_TEMP/name-days.json" data/name-days.json; then names=changed; fi
+          # Lecturi and the NT text change with the app too (new years, fixes).
+          for f in lecturi:lecturi biblia_nt:biblia-nt; do
+            if curl -fsSL -o "$RUNNER_TEMP/${f#*:}.json" "$base/assets/data/${f%%:*}.json" \
+              && ! cmp -s "$RUNNER_TEMP/${f#*:}.json" "data/${f#*:}.json"; then names=changed; fi
+          done
           echo "names=$names"
           if [ "$app" = "$site" ] && [ "$names" = same ]; then echo "changed=false" >> "$GITHUB_OUTPUT"; else echo "changed=true" >> "$GITHUB_OUTPUT"; fi
 
@@ -69,6 +74,8 @@ jobs:
           # The name days ship with the app too; same file, same day.
           curl -fsSL -o "$RUNNER_TEMP/app/name-days.json" "$base/assets/data/name_days.json" \
             && cp "$RUNNER_TEMP/app/name-days.json" data/name-days.json || true
+          curl -fsSL -o data/lecturi.json "$base/assets/data/lecturi.json" || true
+          curl -fsSL -o data/biblia-nt.json "$base/assets/data/biblia_nt.json" || true
           # The commit the data came from, for the pull request text.
           curl -fsSL "https://api.github.com/repos/$APP_REPO/commits/$APP_REF" \
             | python3 -c "import json,sys;c=json.load(sys.stdin);print(c['sha'][:7], c['commit']['message'].splitlines()[0])" \
@@ -123,3 +130,5 @@ jobs:
             data/seed-export.json
             data/engine-golden.json
             data/name-days.json
+            data/lecturi.json
+            data/biblia-nt.json

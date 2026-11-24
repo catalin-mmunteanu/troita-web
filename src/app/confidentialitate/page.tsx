@@ -36,7 +36,7 @@ export default function Confidentialitate() {
 
         <h2>Cine răspunde de date</h2>
         <p>
-          Operatorul este {SITE.operator}, persoană fizică, cu adresa de contact{" "}
+          Operatorul este o persoană fizică, cu adresa de contact{" "}
           <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
         </p>
 

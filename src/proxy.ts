@@ -19,12 +19,22 @@ const FASTS = new Set([
 ]);
 
 const NAME_SLUGS = new Set(NAMES.map((n) => n.slug));
+// A real date in the calendar years, checked without loading the readings
+// (the proxy bundle stays small).
+const isReadingDate = (s: string | undefined) => {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s ?? "");
+  if (!m || !YEARS.has(m[1])) return false;
+  const d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+  return d.getUTCMonth() === +m[2] - 1 && d.getUTCDate() === +m[3];
+};
 
 export function proxy(request: NextRequest) {
   const [section, year, sub, ...rest] = request.nextUrl.pathname.split("/").filter(Boolean);
   // /nunti/2027, /botez/2027: a year and nothing after it. /zile-de-nume/andrei: a known name.
   const valid =
-    section === "zile-de-nume"
+    section === "evanghelia-zilei"
+      ? sub === undefined && isReadingDate(year)
+      : section === "zile-de-nume"
       ? sub === undefined && NAME_SLUGS.has(year)
       : section === "nunti" || section === "botez"
         ? sub === undefined && YEARS.has(year)
@@ -37,5 +47,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/calendar-ortodox/:path+", "/posturi/:path+", "/nunti/:path+", "/botez/:path+", "/zile-de-nume/:path+"],
+  matcher: ["/calendar-ortodox/:path+", "/posturi/:path+", "/nunti/:path+", "/botez/:path+", "/zile-de-nume/:path+", "/evanghelia-zilei/:path+"],
 };

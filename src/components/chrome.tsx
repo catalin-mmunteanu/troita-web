@@ -112,6 +112,7 @@ export function Footer() {
               <li key={y}><Link className="hover:text-red" href={`/calendar-ortodox/${y}`}>Calendar ortodox {y}</Link></li>
             ))}
             <li><Link className="hover:text-red" href="/posturi">Posturile anului</Link></li>
+            <li><Link className="hover:text-red" href="/evanghelia-zilei">Evanghelia zilei</Link></li>
             <li><Link className="hover:text-red" href="/zile-de-nume">Zile de nume</Link></li>
             <li><Link className="hover:text-red" href="/nunti">Când se fac nunți</Link></li>
             <li><Link className="hover:text-red" href="/botez">Când se face botezul</Link></li>
@@ -129,7 +130,7 @@ export function Footer() {
       </div>
       <div className="border-t border-oak">
         <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-5 text-[13px] text-umber sm:flex-row sm:justify-between sm:px-6">
-          <span>© {SITE.operator}. Troița nu este o publicație oficială a Bisericii Ortodoxe Române.</span>
+          <span>© {SITE.author}. Troița nu este o publicație oficială a Bisericii Ortodoxe Române.</span>
           <span>Date despre biserici: © contributorii OpenStreetMap</span>
         </div>
       </div>

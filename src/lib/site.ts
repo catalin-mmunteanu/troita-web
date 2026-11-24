@@ -4,8 +4,9 @@ export const SITE = {
   tagline: "Calendarul ortodox, zi de zi",
   description:
     "Calendarul ortodox românesc: sfântul zilei, posturile și dezlegările, bisericile și troițele din toată țara. Aplicația Troița vine pe Google Play.",
-  operator: "Munteanu Catalin",
-  email: "catalinmunteanudev@gmail.com",
+  /** Shown only in the footer's © line. */
+  author: "Munteanu Catalin",
+  email: "troita.contact@gmail.com",
   /** Set to the Play Store URL on launch day; the site switches to "Descarcă". */
   playStoreUrl: null as string | null,
   androidPackage: "ro.troita",

@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { CALENDAR_YEARS, SEED_VERSION } from "@/lib/calendar";
 import { MONTHS } from "@/lib/dates";
 import { FAST_INFO, FAST_ORDERED } from "@/lib/fasts";
+import { LECTURI_DATES } from "@/lib/lecturi";
 import { NAMES } from "@/lib/name-days";
 import { SITE } from "@/lib/site";
 
@@ -11,6 +12,7 @@ import { SITE } from "@/lib/site";
 const DATA_DATE = SEED_VERSION
   ? new Date(`${SEED_VERSION.slice(0, 4)}-${SEED_VERSION.slice(4, 6)}-${SEED_VERSION.slice(6, 8)}T00:00:00Z`)
   : undefined;
+const READINGS_DATE = new Date("2026-11-23T00:00:00Z"); // last edit of data/lecturi.json
 const NAMES_DATE = new Date("2026-11-21T00:00:00Z"); // last edit of data/name-days.json
 const TEXT_DATE = new Date("2026-11-12T00:00:00Z"); // last edit of the text pages
 
@@ -38,6 +40,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...CALENDAR_YEARS.flatMap((y) => [u(`/nunti/${y}`, DATA_DATE, 0.7), u(`/botez/${y}`, DATA_DATE, 0.7)]),
     u("/zile-de-nume", NAMES_DATE, 0.8),
     ...NAMES.map((n) => u(`/zile-de-nume/${n.slug}`, NAMES_DATE, 0.6)),
+    u("/evanghelia-zilei", new Date(), 0.9),
+    ...LECTURI_DATES.map((d) => u(`/evanghelia-zilei/${d}`, READINGS_DATE, 0.5)),
     u("/despre", TEXT_DATE, 0.4),
     u("/confidentialitate", TEXT_DATE, 0.3),
   ];
