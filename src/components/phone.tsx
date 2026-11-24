@@ -1,23 +1,24 @@
 import Image from "next/image";
 import { screenshot, type ScreenName } from "@/lib/screenshots";
 import { getRange, type DayEntry } from "@/lib/calendar";
-import { addDays, capitalize, count, daysBetween, formatRange, MONTHS, WEEKDAY_SHORT, type Ymd } from "@/lib/dates";
+import { addDays, capitalize, count, daysBetween, formatRange, MONTHS, weekday, WEEKDAYS, WEEKDAY_SHORT, type Ymd } from "@/lib/dates";
 import { FAST_INFO, FAST_ORDERED } from "@/lib/fasts";
 import { LITURGICAL_VAR, liturgicalColour } from "@/lib/liturgical-colour";
 import { FastBadge } from "./calendar-bits";
-import { CalendarIcon, MapPinIcon, OrthodoxCross, UserIcon } from "./icons";
+import { lecturaOn, textOf } from "@/lib/lecturi";
+import { BookIcon, CalendarIcon, OrthodoxCross, UserIcon } from "./icons";
 
 const LABEL: Record<ScreenName, string> = {
   calendar: "Calendar",
   posturi: "Posturi",
-  harta: "Hartă",
+  lecturi: "Lecturi",
   profil: "Profil",
 };
 
 const CAPTION: Record<ScreenName, string> = {
   calendar: "Fila Calendar",
   posturi: "Fila Posturi",
-  harta: "Fila Hartă",
+  lecturi: "Fila Lecturi",
   profil: "Profil · Setări",
 };
 
@@ -49,7 +50,7 @@ export function AppScreen({
             <div className="min-h-0 flex-1 overflow-hidden">
               {screen === "calendar" && <CalendarScreen today={today} />}
               {screen === "posturi" && <PosturiScreen today={today} />}
-              {screen === "harta" && <HartaScreen />}
+              {screen === "lecturi" && <LecturiScreen today={today} />}
               {screen === "profil" && <ProfilScreen />}
             </div>
             <TabBar active={screen} />
@@ -65,7 +66,7 @@ function TabBar({ active }: { active: ScreenName }) {
   const tabs: { id: ScreenName; Icon: (p: React.SVGProps<SVGSVGElement>) => React.ReactElement }[] = [
     { id: "calendar", Icon: CalendarIcon },
     { id: "posturi", Icon: OrthodoxCross },
-    { id: "harta", Icon: MapPinIcon },
+    { id: "lecturi", Icon: BookIcon },
     { id: "profil", Icon: UserIcon },
   ];
   return (
@@ -159,45 +160,39 @@ function PosturiScreen({ today }: { today: Ymd }) {
   );
 }
 
-const PLACES = [
-  { label: "Biserici", color: "#C62828" },
-  { label: "Mănăstiri", color: "#7B1FA2" },
-  { label: "Catedrale", color: "#F9A825" },
-  { label: "Paraclise", color: "#1565C0" },
-  { label: "Troițe", color: "#37474F" },
-];
-
-// Fixed pseudo-random pins, so the drawing is identical on every build.
-const PINS = Array.from({ length: 40 }, (_, i) => ({
-  x: ((i * 37 + 11) % 90) + 5,
-  y: ((i * 53 + 7) % 62) + 12,
-  k: i % 9 === 0 ? 1 : i % 13 === 0 ? 2 : i % 7 === 0 ? 4 : i % 11 === 0 ? 3 : 0,
-}));
-
-function HartaScreen() {
+/** Today's Gospel, or the next day's when today has no Liturgy. */
+function LecturiScreen({ today }: { today: Ymd }) {
+  let day = today;
+  let l = lecturaOn(day);
+  for (let i = 0; i < 7 && !l?.evanghelieCite; i++) {
+    day = addDays(day, 1);
+    l = lecturaOn(day);
+  }
+  const verses = l ? textOf(l.evanghelie).slice(0, 6) : [];
   return (
-    <div className="relative h-full bg-surface">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 h-full w-full" aria-hidden>
-        <path d="M-5 70 C 20 60, 35 78, 55 64 S 90 50, 105 58" stroke="var(--b-fish-fg)" strokeOpacity="0.35" strokeWidth="2" fill="none" />
-        <path d="M10 -5 L 30 40 L 25 105M-5 30 L 50 35 L 105 22M60 -5 L 70 50 L 95 105" stroke="var(--oak)" strokeWidth="1" fill="none" />
-      </svg>
-      {PINS.map((p, i) => (
-        <span
-          key={i}
-          className="absolute h-2 w-2 -translate-x-1/2 -translate-y-1/2 border border-parchment"
-          style={{ left: `${p.x}%`, top: `${p.y}%`, background: PLACES[p.k].color }}
-        />
-      ))}
-      <div className="absolute inset-x-2 top-2 rounded-sm border border-oak bg-parchment px-2 py-1.5 text-[9.5px] text-umber">
-        Caută o biserică sau o localitate
+    <div>
+      <ScreenTitle>Lecturi</ScreenTitle>
+      <div className="grid grid-cols-2 border-b border-oak px-3 text-center font-ui text-[10px] font-semibold">
+        <span className="pb-1.5 text-umber">Sinaxar</span>
+        <span className="border-b-2 border-red pb-1.5 text-ink">Evanghelie</span>
       </div>
-      <div className="absolute inset-x-2 bottom-2 flex flex-wrap gap-1 rounded-sm border border-oak bg-parchment p-1.5">
-        {PLACES.map((pl) => (
-          <span key={pl.label} className="inline-flex items-center gap-1 text-[8.5px] font-medium text-ink">
-            <span className="h-1.5 w-1.5" style={{ background: pl.color }} />
-            {pl.label}
-          </span>
-        ))}
+      <div className="px-3 pt-2">
+        <div className="font-mono text-[7.5px] uppercase tracking-wider text-umber">
+          {WEEKDAYS[weekday(day) - 1]} · {day.d} {MONTHS[day.m - 1]}
+        </div>
+        {l?.evanghelieCite && (
+          <div className="mt-0.5 font-display text-[12px] font-semibold leading-tight text-ink">
+            Evanghelia · {l.evanghelieCite}
+          </div>
+        )}
+        <p className="mt-1.5 text-[9.5px] leading-relaxed text-ink">
+          {verses.map((v) => (
+            <span key={`${v.chapter}:${v.number}`}>
+              <sup className="mr-0.5 font-mono text-[6.5px] text-red">{v.number}</sup>
+              {v.text}{" "}
+            </span>
+          ))}
+        </p>
       </div>
     </div>
   );
@@ -206,6 +201,7 @@ function HartaScreen() {
 function ProfilScreen() {
   const rows = [
     ["Notificarea zilnică", true],
+    ["Evanghelia zilei, la 7:00", true],
     ["Sunet la sărbătorile mari", true],
     ["Anunț cu o zi înainte", true],
     ["Hramul bisericilor favorite", true],
@@ -214,6 +210,9 @@ function ProfilScreen() {
   return (
     <div>
       <ScreenTitle>Profil</ScreenTitle>
+      <div className="mx-3 mb-1.5 rounded-sm border border-oak bg-surface p-2 text-[10px] font-semibold text-ink">
+        Biserici și hartă
+      </div>
       <div className="grid grid-cols-2 gap-1.5 px-3">
         {["Favorite · 12", "Vizitate · 7"].map((t) => (
           <div key={t} className="rounded-sm border border-oak bg-surface p-2 text-[10px] font-semibold text-ink">

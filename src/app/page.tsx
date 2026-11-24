@@ -97,14 +97,14 @@ const TABS = [
     text: "Cele patru posturi mari, cu ziua în care vă aflați și toate dezlegările. Dacă doriți, notați zilele în care ați ținut postul.",
   },
   {
-    screen: "harta" as const,
-    alt: "Harta bisericilor din aplicația Troița, cu filtre pe tipuri de locașuri",
-    text: "Peste 13.000 de biserici, mănăstiri, catedrale, paraclise și troițe din România, cu hramul și drumul până acolo.",
+    screen: "lecturi" as const,
+    alt: "Fila Lecturi din aplicația Troița, cu Evanghelia zilei",
+    text: "Sinaxarul și Evanghelia fiecărei zile, din Biblia Sinodală, cu litera cât de mare vă trebuie.",
   },
   {
     screen: "profil" as const,
     alt: "Setările de notificări din aplicația Troița",
-    text: "Un anunț pe zi, la ora aleasă de voi. Sunet doar la sărbătorile mari și o seară înainte de hramul bisericilor favorite.",
+    text: "Harta celor peste 13.000 de biserici, mănăstiri și troițe din țară. Un anunț pe zi, la ora aleasă de voi, și, dacă doriți, Evanghelia dimineața.",
   },
 ];
 

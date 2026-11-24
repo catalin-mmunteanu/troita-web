@@ -130,7 +130,7 @@ export function Footer() {
       </div>
       <div className="border-t border-oak">
         <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-5 text-[13px] text-umber sm:flex-row sm:justify-between sm:px-6">
-          <span>© {SITE.operator}. Troița nu este o publicație oficială a Bisericii Ortodoxe Române.</span>
+          <span>© {SITE.author}. Troița nu este o publicație oficială a Bisericii Ortodoxe Române.</span>
           <span>Date despre biserici: © contributorii OpenStreetMap</span>
         </div>
       </div>

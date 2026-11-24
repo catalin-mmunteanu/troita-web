@@ -3,10 +3,10 @@ import path from "node:path";
 
 /**
  * Real app screenshots, dropped into public/screenshots/ as
- * calendar.png, posturi.png, harta.png, profil.png (or .webp / .jpg).
+ * calendar.png, posturi.png, lecturi.png, profil.png (or .webp / .jpg).
  * Until a file exists, the page draws that screen from live calendar data.
  */
-export type ScreenName = "calendar" | "posturi" | "harta" | "profil";
+export type ScreenName = "calendar" | "posturi" | "lecturi" | "profil";
 
 export function screenshot(name: ScreenName): string | null {
   for (const ext of ["webp", "png", "jpg"]) {
