@@ -20,7 +20,6 @@ export default async function Home() {
       <Week today={today} />
       <Tabs today={today} />
       <Colours />
-      <Privacy />
       <Faq />
       <AppNote>
         Troița vine în curând pe Google Play, pentru Android. Până atunci, găsiți aici{" "}
@@ -182,33 +181,6 @@ function Colours() {
           <FastBadge level="none" harti />
         </li>
       </ul>
-    </Section>
-  );
-}
-
-function Privacy() {
-  const rows = [
-    { t: "Fără cont", d: "Nu vă cerem nume, e-mail sau parolă. Deschideți aplicația și o folosiți." },
-    { t: "Notificări de pe telefon", d: "Sunt programate pe telefonul vostru; niciun server nu vă trimite mesaje." },
-    { t: "Fără acces la locație", d: "Aplicația nici nu cere permisiunea. Favoritele și vizitele rămân pe telefon." },
-  ];
-  return (
-    <Section id="intimitate" eyebrow="Confidențialitate" title="Ce faceți în aplicație rămâne la voi">
-      <dl className="divide-y divide-oak border-y border-oak">
-        {rows.map((r) => (
-          <div key={r.t} className="grid gap-1 py-4 sm:grid-cols-[14rem_1fr] sm:gap-6">
-            <dt className="font-display text-[18px] font-semibold text-ink">{r.t}</dt>
-            <dd className="text-[16px] leading-relaxed text-umber">{r.d}</dd>
-          </div>
-        ))}
-      </dl>
-      <p className="mt-4 text-[15px] text-umber">
-        Detaliile, inclusiv despre reclame și cookie-uri, sunt în{" "}
-        <Link href="/confidentialitate" className="text-red underline underline-offset-4">
-          politica de confidențialitate
-        </Link>
-        .
-      </p>
     </Section>
   );
 }

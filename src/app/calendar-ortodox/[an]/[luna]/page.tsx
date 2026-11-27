@@ -6,7 +6,8 @@ import { notFound } from "next/navigation";
 import { AppNote, Breadcrumbs } from "@/components/chrome";
 import { DayCard, FastLegend } from "@/components/calendar-bits";
 import type { DayEntry } from "@/lib/calendar";
-import { ChevronLeft, ChevronRight } from "@/components/icons";
+import { ChevronLeft, ChevronRight, FAST_ICON } from "@/components/icons";
+import type { FastLevel } from "@/lib/liturgical";
 import { TodayMarker } from "@/components/today-marker";
 import { CALENDAR_YEARS, getMonth, isCalendarYear } from "@/lib/calendar";
 import { capitalize, count, monthFromSlug, MONTHS } from "@/lib/dates";
@@ -116,35 +117,61 @@ export default async function MonthPage({ params }: PageProps<"/calendar-ortodox
   );
 }
 
-/** A small month grid in the margin, like the index of a wall calendar. */
+const TILE: Record<FastLevel, { key: string; label: string } | null> = {
+  none: null,
+  fish: { key: "fish", label: "dezlegare la pește" },
+  wineOil: { key: "oil", label: "dezlegare la ulei și vin" },
+  fast: { key: "post", label: "post" },
+  strict: { key: "strict", label: "ajunare" },
+};
+
+/**
+ * A month grid in the margin, like the index of a wall calendar. Same as the
+ * app's: every day a tile with its own border; a fast day tinted in the
+ * fast's colour and carrying its icon under the numeral, a day without fast
+ * plain. Never colour alone. The legend under it names the icons.
+ */
 function MonthGrid({ days }: { days: DayEntry[] }) {
   const lead = days[0].weekday - 1;
   return (
-    <div className="mt-6" aria-label="Zilele lunii">
-      <div className="grid grid-cols-7 border-t border-l border-oak text-center">
+    <div className="mt-6">
+      <div aria-hidden className="grid grid-cols-7 gap-1 text-center">
         {["L", "Ma", "Mi", "J", "V", "S", "D"].map((w, i) => (
-          <div key={w} className={`rubric border-r border-b border-oak py-1 text-[11px] ${i === 6 ? "text-red" : "text-umber"}`}>
+          <div key={w} className={`rubric py-1 text-[11px] ${i === 6 ? "text-red" : "text-umber"}`}>
             {w}
           </div>
         ))}
+      </div>
+      <ol className="grid grid-cols-7 gap-1" aria-label="Zilele lunii">
         {Array.from({ length: lead }, (_, i) => (
-          <div key={`e${i}`} className="border-r border-b border-oak" />
+          <li key={`e${i}`} aria-hidden />
         ))}
         {days.map((d) => {
           const red = d.rank === "praznic" || d.rank === "cruce_rosie" || d.weekday === 7;
+          const tile = TILE[d.fastLevel];
+          const Icon = FAST_ICON[d.fastLevel];
+          const strict = d.fastLevel === "strict";
           return (
-            <a
-              key={d.date}
-              href={`#ziua-${d.day}`}
-              data-date={d.date}
-              className="border-r border-b border-oak py-1.5 font-display text-[15px] font-semibold hover:bg-surface"
-              style={{ color: red ? "var(--rosie-title)" : "var(--ink)" }}
-            >
-              {d.day}
-            </a>
+            <li key={d.date}>
+              <a
+                href={`#ziua-${d.day}`}
+                data-date={d.date}
+                aria-label={`${d.day}${tile ? `, ${tile.label}` : ""}`}
+                className="flex h-14 flex-col items-center justify-center gap-0.5 rounded-sm border border-oak font-display text-[17px] font-semibold leading-none hover:border-umber data-[today=true]:border-2 data-[today=true]:border-red"
+                style={{
+                  background: tile ? `var(--b-${tile.key}-bg)` : "var(--surface)",
+                  color: strict ? "var(--b-strict-fg)" : red ? "var(--rosie-title)" : "var(--ink)",
+                }}
+              >
+                {d.day}
+                <span className="grid h-4 place-items-center" style={{ color: tile ? `var(--b-${tile.key}-fg)` : undefined }}>
+                  {tile && <Icon width={15} height={15} strokeWidth={1.9} aria-hidden />}
+                </span>
+              </a>
+            </li>
           );
         })}
-      </div>
+      </ol>
     </div>
   );
 }

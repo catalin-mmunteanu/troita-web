@@ -1,197 +1,75 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo";
 import { Breadcrumbs, PageHeader } from "@/components/chrome";
-import { ADS, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
-  title: "Confidențialitate și cookie-uri",
+  title: "Confidențialitate",
   description:
-    "Ce date folosesc aplicația Troița și site-ul troita.ro, ce cookie-uri și reclame Google sunt afișate și cum vă puteți retrage acordul.",
+    "Ce date folosesc aplicația Troița și site-ul troita.ro: fără conturi, fără locație, totul pe telefon. Despre reclame și cum vă retrageți acordul.",
   path: "/confidentialitate",
 });
 
-const UPDATED = "19 noiembrie 2026";
+const UPDATED = "27 noiembrie 2026";
 
-/** Who shows Google ads today, for the summary at the top. */
-function adsSummary() {
-  const site = Boolean(ADS.client);
-  if (site && ADS.inApp) return "Atât site-ul, cât și aplicația afișează reclame prin Google";
-  if (site) return "Site-ul afișează reclame prin Google; aplicația nu are reclame";
-  if (ADS.inApp) return "Aplicația afișează reclame prin Google; site-ul nu are reclame";
-  return "Nici site-ul, nici aplicația nu afișează reclame";
-}
-
+/**
+ * Short on purpose: what we keep, what others receive, what you can do.
+ * The ads paragraph is written for the day ads arrive (site: AdSense,
+ * app: AdMob) and is true before it: they "may" appear, always with consent
+ * for personalised ones. Update UPDATED with any change.
+ */
 export default function Confidentialitate() {
   return (
     <>
       <Breadcrumbs items={[{ href: "/", label: "Acasă" }, { label: "Confidențialitate" }]} />
-      <PageHeader eyebrow={`Actualizată la ${UPDATED}`} title="Confidențialitate și cookie-uri" />
+      <PageHeader eyebrow={`Actualizată la ${UPDATED}`} title="Confidențialitate" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-      <article className="prose-troita text-[16.5px]">
-        <p>
-          Această politică descrie ce date folosesc aplicația pentru Android <strong>Troița</strong> și site-ul{" "}
-          <strong>troita.ro</strong>. Pe scurt: nu avem conturi și nu vă cerem locația. {adsSummary()}
-          {ADS.client || ADS.inApp ? ", iar reclamele personalizate apar doar dacă vă dați acordul." : "."}
-        </p>
+        <article className="prose-troita text-[17px]">
+          <p>
+            Troița nu are conturi și nu vă cere locația. Ce notați în aplicație se păstrează doar pe telefon.
+          </p>
 
-        <h2>Cine răspunde de date</h2>
-        <p>
-          Operatorul este o persoană fizică, cu adresa de contact{" "}
-          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
-        </p>
+          <h2>În aplicație</h2>
+          <p>
+            Setările, numele salvate pentru zilele de nume, biserica voastră, favoritele și zilele de post notate
+            sunt păstrate doar pe telefon. Nu le primim și nu le trimitem nimănui; dacă dezinstalați aplicația, se
+            șterg odată cu ea. Nu citim agenda telefonului.
+          </p>
+          <p>
+            Notificările sunt programate tot pe telefon, fără un server care să vi le trimită. Harta își descarcă
+            imaginile de la OpenFreeMap, care vede, ca orice site, adresa IP și zona de hartă afișată.
+          </p>
 
-        <h2>Site-ul troita.ro</h2>
+          <h2>Pe site</h2>
+          <p>
+            Site-ul nu are formulare. Numărăm vizitele cu Vercel Web Analytics, fără cookie-uri și fără să vă
+            identificăm. Găzduirea (Vercel) păstrează pentru scurt timp jurnale tehnice, cu adresa IP, pentru
+            funcționare și securitate.
+          </p>
 
-        {ADS.client ? (
-          <>
-        <h3>Reclame și cookie-uri Google</h3>
-        <p>
-          Site-ul afișează reclame prin <strong>Google AdSense</strong>. Furnizori terți, inclusiv Google, folosesc
-          cookie-uri pentru a afișa reclame pe baza vizitelor anterioare pe acest site sau pe alte site-uri.
-          Cookie-urile de publicitate ale Google le permit lui Google și partenerilor săi să vă afișeze reclame
-          în funcție de vizitele voastre pe acest site și pe alte site-uri de pe internet.
-        </p>
-        <p>
-          La prima vizită, un mesaj Google vă întreabă dacă sunteți de acord cu aceste cookie-uri. Dacă refuzați,
-          vedeți în continuare reclame, dar nepersonalizate. Acestea pot folosi totuși cookie-uri sau
-          identificatori pentru a limita de câte ori vedeți aceeași reclamă și pentru a preveni frauda.
-        </p>
-        <p>
-          <strong>Vă puteți schimba alegerea oricând</strong> din linkul „Preferințe cookie” din subsolul
-          fiecărei pagini.
-        </p>
-        <p>Puteți dezactiva reclamele personalizate și astfel:</p>
-        <ul>
-          <li>
-            din setările Google pentru reclame:{" "}
-            <a href="https://www.google.com/settings/ads" rel="noopener">www.google.com/settings/ads</a>;
-          </li>
-          <li>
-            pentru alți furnizori de publicitate:{" "}
-            <a href="https://www.aboutads.info/choices/" rel="noopener">www.aboutads.info/choices</a> și{" "}
-            <a href="https://www.youronlinechoices.eu/" rel="noopener">www.youronlinechoices.eu</a>.
-          </li>
-        </ul>
-        <p>
-          Lista furnizorilor terți care pot afișa reclame prin Google este publicată de Google, împreună cu felul
-          în care Google folosește datele de pe site-urile partenerilor:{" "}
-          <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">
-            policies.google.com/technologies/partner-sites
-          </a>
-          .
-        </p>
-          </>
-        ) : (
-          <>
-            <h3>Reclame și cookie-uri</h3>
-            <p>
-              Site-ul nu afișează reclame și nu folosește cookie-uri de publicitate. Dacă vom adăuga reclame,
-              această pagină va fi actualizată înainte, iar la prima vizită veți fi întrebați dacă sunteți de
-              acord cu ele.
-            </p>
-          </>
-        )}
+          <h2>Reclame</h2>
+          <p>
+            Site-ul și aplicația pot afișa reclame prin Google (AdSense pe site, AdMob în aplicație). Reclamele
+            personalizate apar doar dacă vă dați acordul, cerut la prima vizită sau la prima pornire, iar alegerea
+            se poate schimba oricând: pe site din „Preferințe cookie”, în subsol, și în aplicație din setări. Fără
+            acord, reclamele sunt nepersonalizate. Cum folosește Google aceste date explică{" "}
+            <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">
+              pagina Google despre site-urile și aplicațiile partenere
+            </a>
+            .
+          </p>
 
-        <h3>Statistici de vizitare</h3>
-        <p>
-          Pentru a ști ce pagini sunt citite folosim Vercel Web Analytics, care numără vizitele în mod agregat,
-          fără cookie-uri și fără a vă identifica.
-        </p>
-
-        <h3>Găzduire</h3>
-        <p>
-          Site-ul este găzduit de Vercel Inc. Serverele păstrează, pentru scurt timp, jurnale tehnice cu adresa IP
-          și paginile cerute, necesare funcționării și securității. Site-ul nu are formulare. Dacă ne scrieți pe
-          e-mail, folosim adresa voastră doar pentru a vă răspunde.
-        </p>
-
-        <h2>Aplicația Troița</h2>
-
-        <h3>Ce rămâne pe telefon</h3>
-        <ul>
-          <li>setările de notificări (ora anunțului zilnic, sunetul, anunțurile pentru posturi și hramuri);</li>
-          <li>bisericile adăugate la favorite și cele însemnate ca vizitate;</li>
-          <li>zilele de post notate, numai dacă activați această opțiune.</li>
-        </ul>
-        <p>
-          Aceste date sunt salvate doar pe telefonul vostru. Nu le colectăm și nu le trimitem nimănui. Dacă
-          dezinstalați aplicația, ele se șterg odată cu ea.
-        </p>
-
-        {ADS.inApp ? (
-          <>
-        <h3>Reclame în aplicație</h3>
-        <p>
-          Aplicația afișează reclame prin <strong>Google AdMob</strong>. Pentru aceasta, AdMob primește de la
-          telefon identificatorul de publicitate Android, adresa IP și informații tehnice despre dispozitiv și
-          aplicație, pe care le folosește pentru a afișa reclame, pentru a le măsura și pentru a preveni frauda.
-        </p>
-        <p>
-          La prima pornire, un formular Google vă întreabă dacă sunteți de acord cu reclamele personalizate.
-          Alegerea se poate schimba oricând din setările aplicației. Identificatorul de publicitate poate fi
-          resetat sau șters din setările telefonului (Setări → Confidențialitate → Reclame). Detalii despre cum
-          folosește Google aceste date:{" "}
-          <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">
-            policies.google.com/technologies/partner-sites
-          </a>
-          .
-        </p>
-          </>
-        ) : (
-          <>
-            <h3>Reclame în aplicație</h3>
-            <p>
-              Aplicația nu afișează reclame și nu folosește identificatorul de publicitate al telefonului. Dacă
-              vom adăuga reclame, această pagină va fi actualizată odată cu versiunea aplicației care le aduce.
-            </p>
-          </>
-        )}
-
-        <h3>Notificări</h3>
-        <p>
-          Notificările sunt programate local, pe telefon. Nu folosim servicii de notificări push. Le puteți opri
-          oricând din aplicație sau din setările telefonului.
-        </p>
-
-        <h3>Locația</h3>
-        <p>Aplicația nu cere și nu folosește permisiunea de localizare.</p>
-
-        <h3>Harta</h3>
-        <p>
-          Pentru a desena harta, aplicația descarcă imaginile hărții de la serviciul OpenFreeMap
-          (openfreemap.org). Acesta primește adresa IP a telefonului și zona de hartă afișată. Datele despre
-          biserici provin din OpenStreetMap și sunt incluse în aplicație. Când apăsați „Drum până acolo”,
-          aplicația deschide aplicația de hărți aleasă de voi, care are propria politică de confidențialitate.
-        </p>
-
-        <h3>Ce nu facem</h3>
-        <ul>
-          <li>nu avem conturi de utilizator;</li>
-          <li>nu vindem date personale;</li>
-          <li>nu folosim reclame personalizate fără acordul vostru.</li>
-        </ul>
-
-        <h2>Drepturile voastre</h2>
-        <p>
-          Conform Regulamentului (UE) 2016/679 (GDPR), aveți dreptul de acces, rectificare, ștergere,
-          restricționare și opoziție privind datele voastre, precum și dreptul de a vă retrage oricând acordul
-          pentru cookie-uri și reclame personalizate. Pentru orice cerere, scrieți-ne la{" "}
-          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. Aveți și dreptul de a depune o plângere la Autoritatea
-          Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (www.dataprotection.ro).
-        </p>
-
-        <h2>Copii</h2>
-        <p>
-          Site-ul și aplicația nu se adresează în mod special copiilor sub 16 ani și nu colectăm cu bună știință
-          date de la aceștia.
-        </p>
-
-        <h2>Modificări</h2>
-        <p>
-          Dacă această politică se schimbă, publicăm aici versiunea nouă și actualizăm data de sus. Schimbările
-          importante sunt anunțate și în aplicație.
-        </p>
-      </article>
+          <h2>Drepturile voastre</h2>
+          <p>
+            Pentru orice întrebare sau cerere privind datele voastre (acces, ștergere, retragerea acordului),
+            scrieți-ne la <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. Puteți depune și o plângere la
+            Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal
+            (dataprotection.ro).
+          </p>
+          <p>
+            Dacă ceva se schimbă, publicăm aici versiunea nouă și actualizăm data de sus.
+          </p>
+        </article>
       </div>
     </>
   );

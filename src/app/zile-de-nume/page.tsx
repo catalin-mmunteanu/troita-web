@@ -134,11 +134,6 @@ export default function ZileDeNumePage() {
             </div>
           ))}
         </div>
-        <p className="mt-8 max-w-[62ch] text-[15px] leading-relaxed text-umber">
-          Sursa listelor: Direcția Generală pentru Evidența Persoanelor (Ministerul Afacerilor Interne), care
-          publică la fiecare sărbătoare mare prenumele care o țin, și calendarul ortodox, pentru sfinții al căror
-          nume este chiar prenumele sărbătorit.
-        </p>
       </Section>
       <AppNote>
         În aplicația Troița, fiecare zi din calendar arată și numele sărbătorite, iar căutarea găsește ziua oricărui
