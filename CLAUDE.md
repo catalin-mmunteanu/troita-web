@@ -135,11 +135,13 @@ say what the app needs (or check troita).
   (`lib/app/site_links.dart` there): a day is
   `/calendar-ortodox/<an>/<luna>#ziua-<zi>`.
 - `ADS.client` — AdSense; off until set (also produces ads.txt/app-ads.txt).
-- `ADS.inApp` — **false** until the app release that ships AdMob; it gates the
-  AdMob section of `/confidentialitate`. The policy must describe what the app
-  really does (Play checks it).
-- `SITE.email` is a personal address while the app's support email is empty on
-  purpose; the owner still has to pick a dedicated mailbox.
+- `ADS.inApp` — **false** until the app release that ships AdMob. The
+  policy (`/confidentialitate`, short and minimal at the owner's wish) says
+  site and app *may* show Google ads, personalised only with consent; when
+  ads actually ship, check that paragraph still matches what they do (Play
+  checks it) and bump its date.
+- `SITE.email` is troita.contact@gmail.com; `SITE.author` only signs the
+  footer.
 
 ## CI
 
